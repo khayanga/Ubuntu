@@ -5,7 +5,7 @@ import { Button } from './ui/button'
 
 const Products = () => {
   return (
-    <div className='container mx-auto mt-3 md:mt-10'>
+    <div className='container mx-auto mt-3 md:mt-10 '>
 
         <h1 className='text-sky-600 text-[24px] font-normal py-6 text-center'>Our products</h1>
         

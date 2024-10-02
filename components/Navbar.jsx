@@ -29,7 +29,7 @@ const Navbar = () => {
         <ul className="flex space-x-8">
           {navLinks.map((link, index) => (
             <li key={index}>
-              <Link href={link.href || '#'} className="text-white text-sm hover:text-gray-400">
+              <Link href={link.href || '#'} className="text-white text-sm hover:text-sky-600">
                 {link.name}
               </Link>
             </li>
@@ -45,7 +45,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className={`absolute top-0 right-0 w-96 h-full bg-gray-700 transition-transform duration-300 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'} md:hidden z-50`}>
+      <div className={`absolute top-0 right-0 w-96 h-96 bg-gray-700 transition-transform duration-300 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'} md:hidden z-50`}>
         {/* Close Button */}
         <div className="flex  p-4">
           <button onClick={toggleMenu} aria-label="Close menu">
@@ -56,7 +56,7 @@ const Navbar = () => {
         <ul className="flex flex-col items-center space-y-4 ">
           {navLinks.map((link, index) => (
             <li key={index}>
-              <Link href={link.href || '#'} className="text-white text-sm hover:text-gray-400">
+              <Link href={link.href || '#'} className="text-white text-sm hover:text-sky-200">
                 {link.name}
               </Link>
             </li>
