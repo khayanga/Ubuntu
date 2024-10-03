@@ -40,12 +40,12 @@ const Navbar = () => {
       {/* Mobile Menu Button */}
       <div className="md:hidden flex items-center">
         <button onClick={toggleMenu} aria-label="Toggle menu">
-          {isOpen ? <FaTimes className="text-white w-6 h-6" /> : <FaBars className="text-white w-6 h-6" />}
+          {isOpen ? <FaTimes className="text-white w-6 h-6" /> : <FaBars className="text-sky-600 w-6 h-6" />}
         </button>
       </div>
 
       {/* Mobile Navigation */}
-      <div className={`absolute top-0 right-0 w-96 h-96 bg-gray-700 transition-transform duration-300 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'} md:hidden z-50`}>
+      <div className={`absolute top-0 right-0 w-56 px-3 h-56 bg-gradient-to-b from-sky-600 to-sky-800 transition-transform duration-300 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'} md:hidden z-50`}>
         {/* Close Button */}
         <div className="flex  p-4">
           <button onClick={toggleMenu} aria-label="Close menu">
@@ -53,7 +53,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        <ul className="flex flex-col items-center space-y-4 ">
+        <ul className="flex flex-col items-start space-y-4 ">
           {navLinks.map((link, index) => (
             <li key={index}>
               <Link href={link.href || '#'} className="text-white text-sm hover:text-sky-200">
