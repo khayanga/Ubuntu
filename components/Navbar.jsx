@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="px-6 py-4 container mx-auto flex justify-between items-center">
+    <div className="px-6 py-4 container mx-auto flex space-x-52 items-center">
       {/* Logo */}
       <Image 
         src="/images/logo.png" 
@@ -64,9 +64,7 @@ const Navbar = () => {
         </ul>
       </div>
       {/* Login Button */}
-      <Button variant="default" className="px-6 hidden md:block">
-        Login
-      </Button>
+      
     </div>
   );
 };

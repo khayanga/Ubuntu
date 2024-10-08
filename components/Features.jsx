@@ -26,10 +26,10 @@ const Features = () => {
             style={{ borderTopRightRadius: '24px', borderBottomLeftRadius: '24px' }}
           >
             <CardContent className="text-white">
-              <div className="h-[250px] md:h-[150px] px-4 mb-2 ">
+              <div className="h-[250px] md:h-[140px] px-4 mb-2 ">
                 <Image
-                  width={150}  
-                  height={150} 
+                  width={140}  
+                  height={140} 
                   alt='cardimage' 
                   src={card.image} 
                   className="object-cover w-full h-full"
