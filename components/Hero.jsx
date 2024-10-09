@@ -3,17 +3,19 @@ import Image from 'next/image'
 import React from 'react'
 import { Button } from './ui/button'
 import Link from 'next/link'
+import { TextGenerateEffect } from './ui/text-generate-effect'
 
 const Hero = () => {
+  const words = `Empowering Smart Water Usage for a Sustainable Future.`;
+
   return (
-    <div className='container flex flex-col items-center md:flex-row md:space-x-40 mx-auto px-6 md:px-2 mt-2'>
+    <div className='container flex flex-col items-center md:flex-row md:space-x-40 mx-auto px-6 md:px-2 mt-8'>
         <div className='md:w-1/2'>
-            <h1 className='text-sky-600
-            font-semibold text-[28px] md:text-[30px]'>Empowering Smarter Water Usage for a Sustainable Future.</h1>
+        <TextGenerateEffect className="text-[28px] md:text-[30px] mb-2" duration={2} filter={false} words={words}/>
+            
             <p className='text-sm  text-white'>
-            Our smart water meters and atms enable real-time monitoring and management of water resources, 
-            helping communities conserve water, 
-            reduce waste, and contribute to global sustainability efforts.
+            Experience the next generation of water solutions with our Smart Water ATMs and Meters. Designed to address the challenges of water access and management, our systems provide a convenient, reliable,
+             and transparent way to ensure everyone gets the water they need.
             Facilitating access to clean water globally while
             fostering prosperity and well-being across Africa.
             </p>
@@ -31,4 +33,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default Hero;

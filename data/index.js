@@ -6,42 +6,42 @@ export const navLinks = [
   ];
 
   export const atmData = [
+    // {
+    //   id: 1,
+    //   image: "/images/analytics.png",
+    //   title: "Real-time data monitoring",
+    //   description: "Monitor water usage in real time, providing accurate and up-to-dateinformation for better water management."
+    // },
     {
       id: 1,
-      image: "/images/analytics.png",
-      title: "Real-time data monitoring",
-      description: "Monitor water usage in real time, providing accurate and up-to-dateinformation for better water management."
-    },
-    {
-      id: 2,
       image: "/images/battery.png", 
       title: "Long battery life",
-      description: "Up to 8 years of battery life ensures long term, reliable performance.Up to 8 years of battery life ensures long term, reliable ."
+      description: "Our Smart Water Meters are designed with energy-efficient technology, providing long battery life for uninterrupted service."
     },
     
+    // {
+    //   id: 3,
+    //   image: "/images/billing.png",
+    //   title: "Digital billig",
+    //   description: "Accurate and transparent billing processes.Accurate and transparent billingprocesses."
+    // },
+    {
+      id: 2,
+      image: "/images/prepay.png",
+      title: "Pre & postpay services",
+      description: " Choose the payment plan that works best for you! our digital Meters offer the convenience of advance payments or usage-based billing."
+    },
     {
       id: 3,
-      image: "/images/billing.png",
-      title: "Digital billig",
-      description: "Accurate and transparent billing processes.Accurate and transparent billingprocesses."
+      image: "/images/report.png",
+      title: "Comprehensive reports",
+      description: "Stay informed with comprehensive water usage reports. Our Meters generate detailed data, giving you insights into your consumption patterns."
     },
     {
       id: 4,
-      image: "/images/prepay.png",
-      title: "Pre & postpay services",
-      description: "The Ubuntu App provides Business Management tools, helps customers find and Order for Clean, Treated Water from our many ATMS."
-    },
-    {
-      id: 5,
-      image: "/images/report.png",
-      title: "Comprehensive reports",
-      description: "The Ubuntu App provides Business Management tools, helps customers find and Order for Clean, Treated Water from our many ATMS."
-    },
-    {
-      id: 6,
       image: "/images/web.png",
       title: "Web intergration",
-      description: "We provide a Business Management Web Dashboard for ATM owners. Manage your water business and monitor your analytics easily."
+      description: "Monitor and manage your water usage remotely with seamless web integration. Access real-time data, through our user-friendly online platform."
     }
   ];
 
@@ -50,26 +50,26 @@ export const navLinks = [
       id: 1,
       image: "/images/timer.png",
       title: "24/7 Access",
-      description: "Monitor water usage in real time, providing accurate and up-to-dateinformation for better water management dateinformation for better water management."
+      description: "Our Smart Water ATMs provide uninterrupted access to clean, safe drinking water around the clock. Whether it's day or night, you can count on us for easy, affordable water right when you need it."
     },
     {
       id: 2,
       image: "/images/scale.png", 
       title: "Scalability",
-      description: "Our ATMs are integrated with mobile money payment services such as M-Pesa to facilitate payments across Africa.a semeles option."
+      description: "Built with scalability in mind, our Smart Water ATMs can easily expand to serve growing communities. As demand increases, the system can accommodate more users, ensuring everyone gets water."
     },
     
     {
       id: 3,
       image: "/images/mpesa.png",
       title: "Mpesa integration",
-      description: "We provide a Business Management Web Dashboard for ATM owners. Manage your water business and monitor your analytics easily."
+      description: "No cash? No problem! Our Smart Water ATMs are integrated with M-Pesa, enabling quick and secure payments via mobile. Access clean water with just a few taps on your phone—convenience at its best."
     },
     {
       id: 4,
       image: "/images/dispensing.png",
       title: "Automated dispensing",
-      description: "The Ubuntu App provides Business Management tools, helps customers find and Order for Clean, Treated Water from our many ATMS."
+      description: " Enjoy hassle-free, automated water dispensing at the touch of a button. With precise controls, our Smart Water ATMs ensure you only pay for the amount of water you need, minimizing waste and maximizing value."
     }
   ];
 
@@ -78,26 +78,26 @@ export const navLinks = [
       id: 1,
       image: "/images/timer.png",
       title: "24/7 Access",
-      description: "Monitor water usage in real time, providing accurate and up-to-dateinformation for better water management dateinformation for better water management."
+      description: "Our Smart Water ATMs provide uninterrupted access to clean, safe drinking water around the clock. Whether it's day or night, you can count on us for easy, affordable water right when you need it."
     },
     {
       id: 2,
       image: "/images/scale.png", 
       title: "Scalability",
-      description: "Our ATMs are integrated with mobile money payment services such as M-Pesa to facilitate payments across Africa.a semeles option."
+      description: "Built with scalability in mind, our Smart Water ATMs can easily expand to serve growing communities. As demand increases, the system can accommodate more users, ensuring everyone gets water."
     },
     
     {
       id: 3,
       image: "/images/mpesa.png",
       title: "Mpesa integration",
-      description: "We provide a Business Management Web Dashboard for ATM owners. Manage your water business and monitor your analytics easily."
+      description: "No cash? No problem! Our Smart Water ATMs are integrated with M-Pesa, enabling quick and secure payments via mobile. Access clean water with just a few taps on your phone—convenience at its best."
     },
     {
       id: 4,
       image: "/images/dispensing.png",
       title: "Automated dispensing",
-      description: "The Ubuntu App provides Business Management tools, helps customers find and Order for Clean, Treated Water from our many ATMS."
+      description: " Enjoy hassle-free, automated water dispensing at the touch of a button. With precise controls, our Smart Water ATMs ensure you only pay for the amount of water you need, minimizing waste and maximizing value."
     }
   ];
 

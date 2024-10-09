@@ -18,13 +18,13 @@ const page = () => {
   return (
     <div className="bg-gray-900 w-full min-h-screen">
         <Navbar/>
-        <div className='container flex flex-col items-center md:flex-row md:space-x-40 mx-auto px-6 md:px-2 mt-8'>
+        <div className='container flex flex-col items-center md:flex-row md:space-x-40 mx-auto px-6 md:px-2 mt-10'>
         <div className='md:w-1/2'>
             <h1 className='text-sky-600
-            font-semibold text-[28px] md:text-[30px]'>Smart Water Meters .</h1>
-            <p className='text-sm  text-white'>
-            "Measure, monitor, and save with our smart water meter – precision in billing, 
-            real-time insights, and enhanced efficiency at your fingertips."Measure, monitor, and save with our smart water meter – precision in billing, real-time insights, and enhanced efficiency at your fingertips."
+            font-semibold text-[28px] md:text-[30px]'>Digital  Water Meters .</h1>
+            <p className='text-sm  text-white mt-3'>
+            Our cutting-edge Smart Water Meters are designed to revolutionize how you manage and monitor water consumption. With real-time tracking, flexible payment options, and seamless integration with digital platforms, you gain full control and visibility over your water usage. Whether you're a homeowner, a business, or a utility provider, our meters provide the accuracy, convenience, and efficiency you need to make informed decisions and reduce waste.
+            Experience the future of water management with intelligent, automated solutions tailored to meet your needs.
             </p>
         </div>
         <div className=' '>
@@ -35,7 +35,7 @@ const page = () => {
         <div className='max-w-6xl mx-auto mt-3 md:mt-10 pb-4 '>
         <h1 className='text-sky-600 text-[24px] font-normal py-6 text-center'>Features</h1>
 
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 px-4 pb-2 justify-items-center'>
+        <div className='flex flex-col md:flex-row  items-center justify-between px-4 gap-4 pb-2'>
         {atmData.map((atm) => (
           <Card 
             key={atm.id} 
@@ -45,10 +45,10 @@ const page = () => {
             style={{ borderTopRightRadius: '24px', borderBottomLeftRadius: '24px' }}
           >
             <CardContent className="text-white">
-              <div className="h-[250px] md:h-[140px]px-4 mb-2 ">
+              <div className="h-[250px] md:h-[140px] px-4 mb-2 ">
                 <Image
-                  width={140}  // Aspect ratio of 16:9, or you can adjust based on card width
-                  height={140}
+                  width={140}  
+                  height={140} 
                   alt='atmimage' 
                   src={atm.image} 
                   className="object-cover w-full h-full"
@@ -61,6 +61,7 @@ const page = () => {
           </Card>
         ))}
         </div>
+
 
         </div>
 

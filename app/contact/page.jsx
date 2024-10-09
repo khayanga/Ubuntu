@@ -15,11 +15,15 @@ import { Label } from "@/components/ui/label";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Confetti from 'react-confetti';
+import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 
 const Page = () => {
+
+  const words = `Reach out to us for a seamless experience !!.`;
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject:'',
     message: ''
   });
   const [status, setStatus] = useState('');
@@ -34,25 +38,28 @@ const Page = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('https://api.waterhub.africa/api/v1/client/contact', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData) 
       });
+  
       const result = await res.json();
       if (res.ok) {
-        setStatus('Message sent successfully!');
-        setShowConfetti(true); // Show confetti
-        setIsSubmitted(true); // Hide form
-        setFormData({ name: '', email: '', message: '' }); // Clear form
-
-        // Hide confetti after 3 seconds
+        setStatus('Thank you for contacting us!');
+        setShowConfetti(true); 
+        setIsSubmitted(true); 
+        setFormData({ name: '', email: '', subject:'', message: '' }); 
+        console.log('succes!')
+  
+        
         setTimeout(() => {
-          setShowConfetti(false);
+          setShowConfetti(false)
         }, 3000);
-
+  
       } else {
         setStatus('Failed to send message');
       }
@@ -60,24 +67,24 @@ const Page = () => {
       setStatus('Error occurred: ' + error.message);
     }
   };
+  
 
   return (
     <div className="bg-gray-900 w-full min-h-screen">
-      {showConfetti && <Confetti />} {/* Show confetti */}
+      {showConfetti && <Confetti />} 
       <Navbar />
 
       <div className="max-w-sm w-full mx-auto mt-12">
-      <h1 className='text-sky-600
-            font-semibold text-[28px] md:text-[30px] text-center'>Reach out to us for a seamless experience !!.</h1>
+      <TextGenerateEffect className="text-center" duration={2} filter={false} words={words}/>
       </div>
 
      
 
       {!isSubmitted ? (
-        <Card className="w-full max-w-md my-8 mx-auto bg-gradient-to-b from-sky-400 to-sky-600">
+        <Card className="w-full max-w-lg my-8 mx-auto bg-sky-950">
           <CardHeader>
-            <CardTitle className="text-2xl text-gray-900">Contact Us</CardTitle>
-            <CardDescription  className="text-gray-700">
+            <CardTitle className="text-2xl text-white">Contact Us</CardTitle>
+            <CardDescription  className="text-white">
               Feel free to reach us out here.
             </CardDescription>
           </CardHeader>
@@ -85,7 +92,8 @@ const Page = () => {
             <form onSubmit={handleSubmit} className="grid gap-3">
               <div className="grid gap-1">
                 <Label htmlFor="name">Name</Label>
-                <Input
+                <input
+                 className='px-4 py-2 bg-gradient-to-r from-sky-400 to-sky-600 placeholder:text-white text-white rounded-md focus:outline-none'
                   type="text"
                   name="name"
                   value={formData.name}
@@ -96,18 +104,31 @@ const Page = () => {
               </div>
               <div className="grid gap-1">
                 <Label htmlFor="email">Email</Label>
-                <Input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Your Email"
-                  required
-                />
+
+                <input type='email'
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                  placeholder='example@gmail.com'
+                  required  
+              className='px-4 py-2 bg-gradient-to-r from-sky-400 to-sky-600 placeholder:text-white text-white rounded-md focus:outline-none'/>
+
+              </div>
+              <div className="grid gap-1">
+                <Label htmlFor="subject">Subject</Label>
+
+                <input type='subject'
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                  placeholder='Title'
+                  required  
+              className='px-4 py-2 bg-gradient-to-r from-sky-400 to-sky-600 placeholder:text-white text-white rounded-md focus:outline-none'/>
               </div>
               <div className="grid gap-1">
                 <Label htmlFor="message">Message</Label>
                 <Textarea
+                 className='bg-gradient-to-r from-sky-400 to-sky-600 placeholder:text-white text-white rounded-md focus:outline-none'
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
@@ -116,14 +137,14 @@ const Page = () => {
                 />
               </div>
 
-              <Button type="submit" className="bg-gray-900 text-white" >
+              <Button type="submit" className="bg-sky-500 text-white mt-4" >
                 Send
               </Button>
             </form>
           </CardContent>
         </Card>
       ) : (
-        // Show success message when form is submitted
+        
         <div className="mt-4 text-center">
           <Card className="w-full max-w-sm my-8 mx-auto bg-gradient-to-r from-sky-400 to-sky-600 ">
             <CardContent className="text-white text-center py-12">

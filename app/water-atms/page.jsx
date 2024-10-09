@@ -21,11 +21,12 @@ const page = () => {
         <div className='container flex flex-col items-center md:flex-row md:space-x-40 mx-auto px-6 md:px-2 mt-8'>
         <div className='md:w-1/2'>
             <h1 className='text-sky-600
-            font-semibold text-[28px] md:text-[30px]'>Smart Water Atm’s .</h1>
+            font-semibold text-[28px] md:text-[30px]'>Smart Water Atms .</h1>
             <p className='text-sm  text-white'>
-            Ubuntu Waterhub Africa introduces the Water Hub, an advanced IoT- powered water vending solution designed 
-            to address these challenges comprehensively. 
-            Our Water Hub offers the following key unique value propositions
+            Our Smart Water ATMs are transforming the way communities access clean, safe drinking water.
+             With 24/7 availability, automated dispensing, and mobile payment integration, 
+             getting water has never been easier. Whether you're in a busy urban area or a remote location, our ATMs ensure reliable and affordable water access whenever you need it. Scalable to meet growing demand,
+             they provide a sustainable solution for efficient water distribution.
             </p>
         </div>
         <div className=' '>

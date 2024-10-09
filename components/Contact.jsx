@@ -1,14 +1,18 @@
 "use client"
 import React, { useState } from 'react'
 import { Button } from './ui/button'
+import { TextGenerateEffect } from './ui/text-generate-effect'
 
 const Contact = () => {
+  const words = `We would like to keep you updated on a regular basis.`;
  
   return (
     <div className='conatiner py-10  mx-auto'>
 
         <div className='max-w-lg mx-auto '>
-            <h1 className='text-sky-600 font-semibold text-[28px] md:text-[30px] text-center'>We would like to keep you updated on a regular basis. </h1>
+
+        <TextGenerateEffect className="text-center" duration={2} filter={false} words={words}/>
+            
         </div>
 
         <form className='max-w-lg mx-auto flex flex-col md:flex-row gap-4  md:gap-5 py-4 mt-3 justify-center items-center '>

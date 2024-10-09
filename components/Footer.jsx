@@ -18,7 +18,7 @@ const Footer = () => {
             <p className='text-white text-[12px] font-light'>Smat water solutions</p>
         </div>
 
-        <div className="text-center mt-4 text-white text-[14px] font-light">
+        <div className="text-center mt-4 text-white text-[12px] font-light">
             Ubuntu Waterhub Africa © {currentYear} . All rights reserved.
         </div>
 
