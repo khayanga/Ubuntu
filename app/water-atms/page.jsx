@@ -14,6 +14,7 @@ import {
   } from "@/components/ui/card";
   import { BadgeCheck } from 'lucide-react';
 import { meterData, pricingData } from '@/data'
+import Link from 'next/link'
 const page = () => {
   return (
     <div className="bg-gray-900 w-full min-h-screen">
@@ -30,7 +31,7 @@ const page = () => {
             </p>
         </div>
         <div className=' '>
-            <Image src="/images/meter.png" width={300} height={280} alt='picure1'/>
+            <Image src="/images/pic1.png" width={300} height={280} alt='picure1'/>
         </div>
         </div>
         {/* Features */}
@@ -126,13 +127,13 @@ const page = () => {
         </div>
         {/* Pricing */}
         <div className='w-full  mx-auto mt-3 md:mt-10 pb-4 bg-gradient-to-b from-white to-sky-200'>
-        <h1 className='text-sky-600 text-[24px] font-normal py-6 text-center'>Pricing</h1>
+        <h1 className='text-gray-900 text-[24px] font-normal py-6 text-center'>Pricing</h1>
 
         <div className=' container mx-auto  flex flex-col md:flex-row  items-center justify-between px-4 gap-4 md:gap-8 pb-2'>
         {pricingData.map((plan,index) => (
           <Card 
             key={index} 
-            className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] 
+            className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] shadow-xl
             text-center flex flex-col justify-between bg-gray-900 pt-4 rounded-[12px]
              "
             
@@ -144,7 +145,7 @@ const page = () => {
               <p className='text-md text-white'>{plan.title}</p>
                <ul className="text-center mt-2 space-y-2 ">
                   {plan.descriptions.map((description, i) => (
-                    <div className="flex flex-row space-x-2 justify-center mt-4">
+                    <div className="flex flex-row space-x-2 justify-start mt-4">
                        <BadgeCheck className='w-4 h-4 text-sky-600 '/>
                     <li key={i} 
                     className="text-sm text-transparent bg-gradient-to-r from-sky-400 to-sky-600 bg-clip-text ">
@@ -155,9 +156,12 @@ const page = () => {
                     
                   ))}
                 </ul>
+                <Link href="/contact">
                 <button className=' bg-gradient-to-r from-sky-400 to-sky-600 p-2 text-[14px] rounded-md mt-6'>
                     Get started
                 </button>
+                </Link>
+                
             </CardContent>
           </Card>
         ))}

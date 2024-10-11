@@ -15,7 +15,7 @@ const Footer = () => {
             width={80} 
             height={80} 
             />
-            <p className='text-white text-[12px] font-light'>Smat water solutions</p>
+            <p className='text-white text-[12px] font-light'>Smart water solutions</p>
         </div>
 
         <div className="text-center mt-4 text-white text-[12px] font-light">
