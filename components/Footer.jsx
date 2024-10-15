@@ -6,7 +6,7 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 const Footer = () => {
     const currentYear = new Date().getFullYear();
   return (
-    <div className='px-6 py-4 container mx-auto flex flex-col  space-y-3 md:flex-row justify-between items-center'>
+    <div className='px-6 py-4 container mx-auto flex flex-col  space-y-3 md:flex-row justify-between items-center max-w-6xl'>
 
         <div className='flex flex-col gap-2 items-center'>
             <Image 
@@ -25,7 +25,7 @@ const Footer = () => {
         <div className='flex flex-col space-y-3 items-start '>
             <div className='flex flex-row space-x-4'>
                 <Phone className='w-4 h-4 text-sky-600 '/>
-                <p className='text-[12px] font-light text-white'>0110048178</p>
+                <p className='text-[12px] font-light text-white'>0794093465</p>
             </div>
             <div className='flex flex-row space-x-4'>
                 <Mail className='w-4 h-4 text-sky-600 '/>

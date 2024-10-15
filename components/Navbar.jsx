@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="px-6 py-4 container mx-auto flex space-x-52 items-center">
+    <div className="px-6 py-4 container mx-auto flex justify-between items-center  max-w-6xl">
       {/* Logo */}
       <Image 
         src="/images/logo.png" 
@@ -45,7 +45,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className={`absolute top-0 right-0 w-56 px-3 h-56 bg-gradient-to-b from-sky-600 to-sky-800 transition-transform duration-300 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'} md:hidden z-50`}>
+      <div className={`absolute top-0 right-0 w-56 px-3 h-64 bg-gradient-to-b from-sky-600 to-sky-800 transition-transform duration-300 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'} md:hidden z-50`}>
         {/* Close Button */}
         <div className="flex  p-4">
           <button onClick={toggleMenu} aria-label="Close menu">

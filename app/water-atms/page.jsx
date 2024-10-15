@@ -17,9 +17,10 @@ import { meterData, pricingData } from '@/data'
 import Link from 'next/link'
 const page = () => {
   return (
-    <div className="bg-gray-900 w-full min-h-screen">
+    <main className="relative bg-gray-900 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
+      <div className="max-w-7xl w-full ">
         <Navbar/>
-        <div className='container flex flex-col items-center md:flex-row md:space-x-40 mx-auto px-6 md:px-2 mt-8'>
+        <div className='container flex flex-col items-center md:flex-row md:space-x-40 mx-auto px-6 md:px-2 mt-8 max-w-6xl'>
         <div className='md:w-1/2'>
             <h1 className='text-sky-600
             font-semibold text-[28px] md:text-[30px]'>Smart Water Atms .</h1>
@@ -68,7 +69,7 @@ const page = () => {
         </div>
 
         {/* Benefits */}
-        <div className='container mx-auto mt-3 md:mt-10 pb-4  '>
+        <div className='container mx-auto mt-3 md:mt-10 pb-4 max-w-6xl '>
         <h1 className='text-sky-600 text-[24px] font-normal py-6 text-center'>Benefits</h1>
 
         <div className='flex flex-col md:flex-row  items-center justify-between px-4 gap-4 md:gap-10 pb-2'>
@@ -126,10 +127,10 @@ const page = () => {
 
         </div>
         {/* Pricing */}
-        <div className='w-full  mx-auto mt-3 md:mt-10 pb-4 bg-gradient-to-b from-white to-sky-200'>
+        <div className='w-full mx-auto mt-3 md:mt-10 pb-4 bg-gradient-to-b from-white to-sky-200'>
         <h1 className='text-gray-900 text-[24px] font-normal py-6 text-center'>Pricing</h1>
 
-        <div className=' container mx-auto  flex flex-col md:flex-row  items-center justify-between px-4 gap-4 md:gap-8 pb-2'>
+        <div className=' container mx-auto  max-w-6xl flex flex-col md:flex-row  items-center justify-between px-4 gap-4 md:gap-8 pb-2'>
         {pricingData.map((plan,index) => (
           <Card 
             key={index} 
@@ -172,6 +173,9 @@ const page = () => {
         <Contact/>
         <Footer/>
     </div>
+
+    </main>
+    
   )
 }
 
