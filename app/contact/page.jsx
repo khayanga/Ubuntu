@@ -75,7 +75,7 @@ const Page = () => {
       <Navbar />
 
       <div className="max-w-sm w-full mx-auto mt-12">
-      <TextGenerateEffect className="text-center" duration={2} filter={false} words={words}/>
+      <TextGenerateEffect className="text-center text-sky-600" duration={2} filter={false} words={words}/>
       </div>
 
      

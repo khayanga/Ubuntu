@@ -19,7 +19,7 @@ const Contact = () => {
   return (
     <div className='container py-10 mx-auto'>
       <div className='max-w-lg mx-auto'>
-        <TextGenerateEffect className="text-center" duration={2} filter={false} words={words} />
+        <TextGenerateEffect className="text-center text-sky-600" duration={2} filter={false} words={words} />
       </div>
 
       <form 
