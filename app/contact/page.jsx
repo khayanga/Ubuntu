@@ -28,7 +28,7 @@ const Page = () => {
   });
   const [status, setStatus] = useState('');
   const [showConfetti, setShowConfetti] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false); // Track submission status
+  const [isSubmitted, setIsSubmitted] = useState(false); //
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -74,14 +74,15 @@ const Page = () => {
       {showConfetti && <Confetti />} 
       <Navbar />
 
-      <div className="max-w-sm w-full mx-auto mt-12">
+      <div className="max-w-md w-full mx-auto mt-12 px-6">
       <TextGenerateEffect className="text-center text-sky-600" duration={2} filter={false} words={words}/>
       </div>
 
      
 
       {!isSubmitted ? (
-        <Card className="w-full max-w-lg my-8 mx-auto bg-sky-950">
+        <div className='px-6'>
+          <Card className="w-full max-w-lg my-8 mx-auto  bg-sky-950">
           <CardHeader>
             <CardTitle className="text-2xl text-white">Contact Us</CardTitle>
             <CardDescription  className="text-white">
@@ -138,11 +139,14 @@ const Page = () => {
               </div>
 
               <Button type="submit" className="bg-sky-500 text-white mt-4" >
-                Send
+                Submit
               </Button>
             </form>
           </CardContent>
         </Card>
+
+        </div>
+        
       ) : (
         
         <div className="mt-4 text-center">

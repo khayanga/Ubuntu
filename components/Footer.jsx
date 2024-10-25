@@ -15,25 +15,25 @@ const Footer = () => {
             width={80} 
             height={80} 
             />
-            <p className='text-white text-[12px] font-light'>Smart water solutions</p>
+            <p className='text-white text-[14px] font-light'>Smart water solutions</p>
         </div>
 
-        <div className="text-center mt-4 text-white text-[12px] font-light">
+        <div className="text-center mt-4 text-white text-[14px] font-light">
             Ubuntu Waterhub Africa © {currentYear} . All rights reserved.
         </div>
 
         <div className='flex flex-col space-y-3 items-start '>
             <div className='flex flex-row space-x-4'>
                 <Phone className='w-4 h-4 text-sky-600 '/>
-                <p className='text-[12px] font-light text-white'>0794093465</p>
+                <p className='text-[14px] font-light text-white'>0794093465</p>
             </div>
             <div className='flex flex-row space-x-4'>
                 <Mail className='w-4 h-4 text-sky-600 '/>
-                <p className='text-[12px] font-light text-white'>info@waterhub.africa</p>
+                <p className='text-[14px] font-light text-white'>info@waterhub.africa</p>
             </div>
             <div className='flex flex-row space-x-4'>
                 <MapPin className='w-4 h-4 text-sky-600 '/>
-                <p className='text-[12px] font-light text-white'>Avon Center, Industrial Area</p>
+                <p className='text-[14px] font-light text-white'>Avon Center, Industrial Area</p>
             </div>
         </div>
 

@@ -26,7 +26,7 @@ const Features = () => {
             style={{ borderTopRightRadius: '24px', borderBottomLeftRadius: '24px' }}
           >
             <CardContent className="text-white">
-              <div className="h-[250px] md:h-[140px] px-4 mb-2 ">
+              <div className="h-[180px] md:h-[140px] px-4 mb-2 ">
                 <Image
                   width={140}  
                   height={140} 

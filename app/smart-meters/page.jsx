@@ -29,7 +29,7 @@ const page = () => {
             </p>
         </div>
         <div className=' '>
-            <Image src="/images/meter.png" width={300} height={280} alt='picure1'/>
+            <Image src="/images/pic2.png" width={350} height={250} alt='picure1'/>
         </div>
         </div>
         {/* Features */}
@@ -46,7 +46,7 @@ const page = () => {
             style={{ borderTopRightRadius: '24px', borderBottomLeftRadius: '24px' }}
           >
             <CardContent className="text-white">
-              <div className="h-[250px] md:h-[140px] px-4 mb-2 ">
+              <div className="h-[180px] md:h-[140px] px-4 mb-2 ">
                 <Image
                   width={140}  
                   height={140} 
