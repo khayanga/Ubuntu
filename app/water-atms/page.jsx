@@ -170,6 +170,23 @@ const page = () => {
 
         </div>
 
+        {/* Steps */}
+        <div className='container flex flex-col items-center gap-11 md:flex-row md:space-x-20 mx-auto px-6 md:px-2 my-8 md:my-12 max-w-6xl'>
+        <div className=" md:w-2/5 ">
+            <h1 className='text-sky-600
+            font-semibold text-[28px] md:text-[30px]'>Mpesa pay steps.</h1>
+            <p className='text-sm  text-white'>
+            The ATM utilises both the Mpesa and tag pay to facilitate payment for water. 
+            The following are the steps towards using the mpesa pay mode.
+            </p>
+        </div>
+        <div className=' md:w-3/5'>
+            <Image src="/images/steps.png" width={1500} height={500} alt='picure1'
+            className="object-cover w-full h-full"/>
+        </div>
+        </div>
+
+
         <Contact/>
         <Footer/>
     </div>

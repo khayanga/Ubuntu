@@ -29,7 +29,7 @@ const Navbar = () => {
         <ul className="flex space-x-8">
           {navLinks.map((link, index) => (
             <li key={index}>
-              <Link href={link.href || '#'} className="text-white text-sm hover:text-sky-600">
+              <Link href={link.href || '#'} className="text-white text-md hover:text-sky-600">
                 {link.name}
               </Link>
             </li>

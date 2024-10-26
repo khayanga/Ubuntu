@@ -19,12 +19,7 @@ export const navLinks = [
       description: "Our Smart Water Meters are designed with energy-efficient technology, providing long battery life for uninterrupted service."
     },
     
-    // {
-    //   id: 3,
-    //   image: "/images/billing.png",
-    //   title: "Digital billig",
-    //   description: "Accurate and transparent billing processes.Accurate and transparent billingprocesses."
-    // },
+    
     {
       id: 2,
       image: "/images/prepay.png",
