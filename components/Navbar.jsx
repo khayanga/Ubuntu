@@ -17,12 +17,15 @@ const Navbar = () => {
   return (
     <div className="px-6 py-4 container mx-auto flex justify-between items-center  max-w-6xl">
       {/* Logo */}
+      <Link href="/">
       <Image 
         src="/images/logo.png" 
         alt="Logo" 
         width={100} 
         height={100} 
       />
+      </Link>
+      
 
       {/* Desktop Navigation */}
       <nav className="hidden md:flex">

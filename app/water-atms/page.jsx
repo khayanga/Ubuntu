@@ -130,11 +130,11 @@ const page = () => {
         <div className='w-full mx-auto mt-3 md:mt-10 pb-12 bg-gradient-to-b from-white to-sky-200'>
         <h1 className='text-gray-900 text-[24px] font-normal py-6 text-center'>Pricing</h1>
 
-        <div className=' container mx-auto  max-w-6xl flex flex-col md:flex-row  items-center justify-between px-4 gap-4 md:gap-8 pb-2'>
+        <div className=' container mx-auto  max-w-6xl flex flex-col md:flex-row  justify-center items-center  px-4 gap-4 md:gap-8 pb-2'>
         {pricingData.map((plan,index) => (
           <Card 
             key={index} 
-            className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] shadow-xl
+            className="w-full max-w-[380px]  shadow-xl
             text-center flex flex-col justify-between bg-gray-900 pt-4 rounded-[12px]
              "
             
@@ -146,7 +146,7 @@ const page = () => {
               <p className='text-md text-white'>{plan.title}</p>
                <ul className="text-center mt-2 space-y-2 ">
                   {plan.descriptions.map((description, i) => (
-                    <div className="flex flex-row space-x-2 justify-start mt-4">
+                    <div className="flex flex-row space-x-2 justify-center mt-4">
                        <BadgeCheck className='w-4 h-4 text-sky-600 '/>
                     <li key={i} 
                     className="text-sm text-transparent bg-gradient-to-r from-sky-400 to-sky-600 bg-clip-text ">
@@ -171,7 +171,7 @@ const page = () => {
         </div>
 
         {/* Steps */}
-        <div className='container flex flex-col items-center gap-11 md:flex-row md:space-x-20 mx-auto px-6 md:px-2 my-8 md:my-12 max-w-6xl'>
+        <div className='container flex flex-col items-center gap-11 md:flex-row md:space-x-20 mx-auto px-6 md:px-2 my-10 md:my-12 max-w-6xl'>
         <div className=" md:w-2/5 ">
             <h1 className='text-sky-600
             font-semibold text-[28px] md:text-[30px]'>Mpesa pay steps.</h1>
@@ -186,7 +186,21 @@ const page = () => {
         </div>
         </div>
 
-
+        {/* Tag pay */}
+        <div className='container flex flex-col items-center gap-11 md:flex-row md:space-x-20 mx-auto px-6 md:px-2 my-10 md:mt-20 max-w-6xl'>
+        <div className=" md:w-2/5 ">
+            <h1 className='text-sky-600
+            font-semibold text-[28px] md:text-[30px]'>Tag pay steps.</h1>
+            <p className='text-sm  text-white'>
+            The ATM utilises both the Mpesa and tag pay to facilitate payment for water. 
+            The following are the steps towards using the tag.
+            </p>
+        </div>
+        <div className=' md:w-3/5'>
+            <Image src="/images/tag_pay.png" width={1500} height={500} alt='picure1'
+            className="object-cover w-full h-full"/>
+        </div>
+        </div>
         <Contact/>
         <Footer/>
     </div>

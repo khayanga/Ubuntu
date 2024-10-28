@@ -82,7 +82,8 @@ const Page = () => {
 
       {!isSubmitted ? (
         <div className='px-6'>
-          <Card className="w-full max-w-lg my-8 mx-auto  bg-sky-950">
+          <Card className="w-full max-w-lg my-8 mx-auto rounded-lg
+            bg-sky-950">
           <CardHeader>
             <CardTitle className="text-2xl text-white">Contact Us</CardTitle>
             <CardDescription  className="text-white">

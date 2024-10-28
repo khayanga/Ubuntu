@@ -108,25 +108,16 @@ export const navLinks = [
       buttonLabel: "Get now",
     },
     {
-      title: "Staggered Payment",
-      price: "70,000 KES",
+      title: "Adons",
+      price: "Customized",
       descriptions: [
-        "Installation 15-30,000",
-        "Minimum Deposit 70,000",
-        "Rest Paid within 18 months",
-      ],
-      buttonLabel: "Get now",
-    },
-    {
-      title: "Customized",
-      price: "25,000 KES",
-      descriptions: [
-        "Installation 15-30,000",
-        "Minimum Deposit 70,000",
-        "Rest Paid within 18 months",
+        "Installation 15,000",
+        `Extra 1" tap 25,000`,
+        `Extra 2" tap 34,500`,
       ],
       buttonLabel: "Get now",
     }
+    
   ];
   
   

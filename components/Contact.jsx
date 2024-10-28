@@ -41,13 +41,13 @@ const Contact = () => {
   };
   
   return (
-    <div className='container py-10 mx-auto'>
+    <div className='container py-10 mx-auto my-8'>
       <div className='max-w-lg mx-auto'>
         <TextGenerateEffect className="text-center text-sky-600" duration={2} filter={false} words={words} />
       </div>
 
       <form 
-        className='max-w-lg mx-auto flex flex-col  gap-4 md:gap-6 py-4 mt-3 justify-center items-center'
+        className='max-w-lg mx-auto flex flex-col  gap-4 md:gap-6 py-4 mt-3 mb-14 justify-center items-center'
         onSubmit={handleSubmit}
       >
 

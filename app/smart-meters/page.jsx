@@ -29,7 +29,7 @@ const page = () => {
             </p>
         </div>
         <div className=' '>
-            <Image src="/images/pic2.png" width={500} height={250} alt='picure1'/>
+            <Image src="/images/pic2.png" width={400} height={350} alt='picure1'/>
         </div>
         </div>
         {/* Features */}
