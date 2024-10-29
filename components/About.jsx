@@ -7,7 +7,7 @@ const About = () => {
     <div className='container flex flex-col max-w-6xl items-center md:flex-row md:space-x-40 mx-auto px-6 md:px-2 mt-3 md:mt-6 py-8
     '>
         <div className=' hidden md:block'>
-            <Image src="/images/pic1.png" width={350} height={250} alt='picure1'/>
+            <Image src="/images/pic2.png" width={350} height={250} alt='picure1'/>
         </div>
         <div className='md:w-1/2'>
             <h2 className='text-sky-600 text-[24px] font-normal'>Who are we</h2>

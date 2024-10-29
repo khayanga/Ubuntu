@@ -20,7 +20,7 @@ const page = () => {
     <main className="relative bg-gray-900 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
       <div className="max-w-7xl w-full ">
         <Navbar/>
-        <div className='container flex flex-col items-center md:flex-row md:space-x-40 mx-auto px-6 md:px-2 mt-8 max-w-6xl'>
+        <div className='container flex flex-col items-center md:flex-row gap-3 md:space-x-40 mx-auto px-6 md:px-2 mt-8 max-w-6xl'>
         <div className='md:w-1/2'>
             <h1 className='text-sky-600
             font-semibold text-[28px] md:text-[30px]'>Smart Water Atms .</h1>
@@ -32,7 +32,7 @@ const page = () => {
             </p>
         </div>
         <div className=' '>
-            <Image src="/images/pic1.png" width={350} height={250} alt='picure1'/>
+            <Image src="/images/pic1.png" width={250} height={150} alt='picure1'/>
         </div>
         </div>
         {/* Features */}
