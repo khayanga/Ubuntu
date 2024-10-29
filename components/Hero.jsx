@@ -13,15 +13,13 @@ const Hero = () => {
         <div className='w-full  md:w-1/2'>
         <TextGenerateEffect className="text-[28px] md:text-[30px] mb-2 text-sky-600"  duration={2} filter={false} words={words}/>
             
-            <p className='text-sm  text-white'>
-            Experience the next generation of water solutions with our Smart Water ATMs and Meters. Designed to address the challenges of water access and management, our systems provide a convenient, reliable,
-             and transparent way to ensure everyone gets the water they need.
-            Facilitating access to clean water globally while
-            fostering prosperity and well-being across Africa.
+            <p className='text-sm mb-2  text-white leading-normal'>
+            Discover the future of water management with our advanced Water ATMs and Smart Meters—designed to meet the pressing needs of water access, transparency, and sustainability. Our solutions make accessing clean water secure, convenient, and reliable, empowering communities and water entrepreneurs alike. Together, 
+            we’re transforming water access across Africa, fostering health, prosperity, and lasting change.
             </p>
-            <Link href="/contact">
+            <Link href="/water-atms">
             <Button variant="default" className="px-6 mt-4 rounded-full">
-              Get started
+              Learn more
             </Button>
             </Link>
             

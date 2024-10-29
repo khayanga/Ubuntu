@@ -102,14 +102,14 @@ export const navLinks = [
       price: "170,000 KES",
       descriptions: [
         "Installation 15-30,000",
-        "2'1 standard Flow-sensors",
-        "2'1 standard Motorized Ball Valves",
+        `2"1 standard Flow-sensors`,
+        `2"1 standard Motorized Ball Valves`,
       ],
       buttonLabel: "Get now",
     },
     {
-      title: "Adons",
-      price: "Customized",
+      title: "Addons",
+      price: "Customization",
       descriptions: [
         "Installation 15,000",
         `Extra 1" tap 25,000`,

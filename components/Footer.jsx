@@ -11,6 +11,8 @@ const Footer = () => {
   return (
 
     <div  className='px-6 py-4 container mx-auto flex flex-col items-center max-w-6xl'>
+
+        
     <div className='flex flex-col space-y-12 md:flex-row justify-between items-center  w-full'>
 
             <div className='flex flex-col gap-4 items-center md:items-start'>

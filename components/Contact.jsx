@@ -2,9 +2,10 @@
 import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { TextGenerateEffect } from './ui/text-generate-effect';
+import { BackgroundBeams } from './ui/background-beams';
 
 const Contact = () => {
-  const words = `We would like to keep you updated on a regular basis.`;
+  const words = `We would like to keep you updated on a regular basis join our news letter.`;
   const [formData, setFormData] = useState({
     name: '',
     email: ''
@@ -41,8 +42,11 @@ const Contact = () => {
   };
   
   return (
-    <div className='container py-10 mx-auto my-8'>
-      <div className='max-w-lg mx-auto'>
+    <div className='relative antialiased bg-gradient-to-b from-white to-sky-200 w-full mt-16 mb-4
+     rounded-lg shadow-2xl'>
+      <div className='container py-8 mx-auto  relative z-10 '>
+      
+      <div className='max-w-lg mx-auto  '>
         <TextGenerateEffect className="text-center text-sky-600" duration={2} filter={false} words={words} />
       </div>
 
@@ -59,7 +63,7 @@ const Contact = () => {
           required
           value={formData.name}
           onChange={handleChange}
-          className='px-4 py-2 bg-gradient-to-r from-sky-400 to-sky-600 placeholder:text-white text-white rounded-md focus:outline-none'
+          className='px-4 py-2 bg-gradient-to-r relative z-10 from-sky-400 to-sky-600 placeholder:text-white text-white rounded-md focus:outline-none'
         />
         <input
           type='email'
@@ -68,19 +72,24 @@ const Contact = () => {
           required
           value={formData.email}
           onChange={handleChange}
-          className='px-4 py-2 bg-gradient-to-r from-sky-400 to-sky-600 placeholder:text-white text-white rounded-md focus:outline-none'
+          className='px-4 py-2 bg-gradient-to-r relative z-10 from-sky-400 to-sky-600 placeholder:text-white text-white rounded-md focus:outline-none'
         />
 
         </div>
         
 
-        <Button variant="default" className="px-6">
+        <Button variant="default" className="px-6 relative z-10">
           Subscribe
         </Button>
       </form>
 
       {status && <p className="text-center mt-4 text-sky-600">{status}</p>}
     </div>
+
+    <BackgroundBeams/>
+
+    </div>
+    
   );
 };
 

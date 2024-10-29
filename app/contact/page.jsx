@@ -16,6 +16,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Confetti from 'react-confetti';
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
+import { BackgroundBeams } from '@/components/ui/background-beams';
 
 const Page = () => {
 
@@ -81,17 +82,18 @@ const Page = () => {
      
 
       {!isSubmitted ? (
-        <div className='px-6'>
-          <Card className="w-full max-w-lg my-8 mx-auto rounded-lg
-            bg-sky-950">
+        <div className='px-6 relative antialiased  '>
+           <BackgroundBeams/>
+          <Card className="w-full z-10 max-w-lg my-8 mx-auto rounded-md
+            bg-gradient-to-b from-sky-100 to-sky-200">
           <CardHeader>
-            <CardTitle className="text-2xl text-white">Contact Us</CardTitle>
-            <CardDescription  className="text-white">
+            <CardTitle className="text-2xl text-gray-900">Contact Us</CardTitle>
+            <CardDescription  className="text-gray-900">
               Feel free to reach us out here.
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleSubmit} className="grid gap-3">
+            <form onSubmit={handleSubmit} className="grid gap-3 relative z-10">
               <div className="grid gap-1">
                 <Label htmlFor="name">Name</Label>
                 <input

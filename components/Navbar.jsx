@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="px-6 py-4 container mx-auto flex justify-between items-center  max-w-6xl">
+    <div className="px-6 py-5 container mx-auto flex justify-between items-center  max-w-6xl">
       {/* Logo */}
       <Link href="/">
       <Image 

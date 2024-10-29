@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import Image from 'next/image'
 import React from 'react'
+import { motion } from 'framer-motion';
 import {
     Card,
     CardContent,
@@ -24,11 +25,11 @@ const page = () => {
         <div className='md:w-1/2'>
             <h1 className='text-sky-600
             font-semibold text-[28px] md:text-[30px]'>Smart Water Atms .</h1>
-            <p className='text-sm  text-white'>
-            Our Smart Water ATMs are transforming the way communities access clean, safe drinking water.
-             With 24/7 availability, automated dispensing, and mobile payment integration, 
-             getting water has never been easier. Whether you're in a busy urban area or a remote location, our ATMs ensure reliable and affordable water access whenever you need it. Scalable to meet growing demand,
-             they provide a sustainable solution for efficient water distribution.
+            <p className='text-sm  text-white leading-normal'>
+            Discover the future of water access with our Smart Water ATMs, engineered to deliver a seamless and sustainable solution for communities in need. These advanced water dispensing units are designed for convenience, efficiency, and environmental responsibility.
+            Manufactured by Ubuntu Waterhub Africa, a pioneering Kenyan company dedicated to innovating the water sector through IoT and technology-driven solutions, our Smart Water ATMs enable users to access clean water easily and securely.
+            Equipped with user-friendly interfaces and real-time monitoring capabilities, these ATMs ensure reliable water dispensing while promoting transparency in water management. Our technology empowers local water entrepreneurs, enhancing their ability to serve communities effectively.
+            Join us in transforming water access across Africa, fostering health and prosperity through smart, sustainable solutions.
             </p>
         </div>
         <div className=' '>
@@ -39,9 +40,12 @@ const page = () => {
         <div className='max-w-6xl mx-auto mt-3 md:mt-10 pb-4 '>
         <h1 className='text-sky-600 text-[24px] font-normal py-6 text-center'>Features</h1>
 
-        <div className='flex flex-col md:flex-row  items-center justify-between px-4 gap-4 pb-2'>
+        <div className='flex flex-col md:flex-row  items-center justify-between px-4 gap-4  pb-2'>
         {meterData.map((meter) => (
-          <Card 
+          <motion.div  
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.2, type: 'tween' }}>
+            <Card 
             key={meter.id} 
             className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] py-4 
             text-center flex flex-col justify-between
@@ -63,6 +67,9 @@ const page = () => {
               <p className='text-sm text-gray-800'>{meter.description}</p>
             </CardContent>
           </Card>
+
+          </motion.div>
+          
         ))}
         </div>
 

@@ -1,6 +1,7 @@
 'use client'
 import { cardData } from '@/data'
 import React from 'react'
+import { motion } from 'framer-motion';
 import {
     Card,
     CardContent,
@@ -18,6 +19,9 @@ const Features = () => {
 
         <div className='flex flex-col md:flex-row  items-center justify-between px-4 gap-4 pb-2'>
         {cardData.map((card) => (
+        <motion.div
+        whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.2, type: 'tween' }}>
           <Card 
             key={card.id} 
             className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] py-4 
@@ -40,6 +44,9 @@ const Features = () => {
               <p className='text-sm text-gray-800'>{card.description}</p>
             </CardContent>
           </Card>
+
+        </motion.div>
+          
         ))}
         </div>
 

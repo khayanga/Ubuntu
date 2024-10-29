@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import Image from 'next/image'
 import React from 'react'
+import { motion } from 'framer-motion';
 import {
     Card,
     CardContent,
@@ -23,9 +24,10 @@ const page = () => {
         <div className='md:w-1/2'>
             <h1 className='text-sky-600
             font-semibold text-[28px] md:text-[30px]'>Digital  Water Meters .</h1>
-            <p className='text-sm  text-white mt-3'>
-            Our cutting-edge Smart Water Meters are designed to revolutionize how you manage and monitor water consumption. With real-time tracking, flexible payment options, and seamless integration with digital platforms, you gain full control and visibility over your water usage. Whether you're a homeowner, a business, or a utility provider, our meters provide the accuracy, convenience, and efficiency you need to make informed decisions and reduce waste.
-            Experience the future of water management with intelligent, automated solutions tailored to meet your needs.
+            <p className='text-sm  text-white mt-3 leading-normal'>
+            Introducing our Digital Water Meters, cutting-edge devices designed to provide accurate and real-time tracking of water consumption. Engineered with advanced smart technology, these meters offer precise measurements and insightful data analytics, empowering users to monitor and manage their water resources with ease.
+              Our Digital Water Meters facilitate efficient water management by providing remote monitoring capabilities, allowing users to track usage patterns and identify potential leaks or inefficiencies instantly. This proactive approach not only conserves water but also helps reduce costs for households and businesses alike.
+              With a focus on sustainability and resource optimization, our Digital Water Meters are essential tools for fostering responsible water usage in communities across Africa. Join us in our mission to promote transparency and efficiency in water consumption, ensuring a brighter, more sustainable future for all.
             </p>
         </div>
         <div className=' '>
@@ -38,7 +40,9 @@ const page = () => {
 
         <div className='flex flex-col md:flex-row  items-center justify-between px-4 gap-4 pb-2'>
         {atmData.map((atm) => (
-          <Card 
+          <motion.div whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.2, type: 'tween' }}>
+            <Card 
             key={atm.id} 
             className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] py-4 
             text-center flex flex-col justify-between
@@ -60,6 +64,9 @@ const page = () => {
               <p className='text-sm text-gray-800'>{atm.description}</p>
             </CardContent>
           </Card>
+
+          </motion.div>
+          
         ))}
         </div>
 
