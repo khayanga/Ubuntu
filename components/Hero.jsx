@@ -9,7 +9,7 @@ const Hero = () => {
   const words = `Empowering Smart Water Usage for a Sustainable Future.`;
 
   return (
-    <div className='container flex flex-col gap-3  items-center md:flex-row md:space-x-40 mx-auto px-6 md:px-2 mt-8  max-w-6xl'>
+    <div className='container flex flex-col gap-3  items-center md:flex-row md:space-x-40 mx-auto px-6 md:px-2 mt-10 md:mb-28  max-w-6xl'>
         <div className='w-full  md:w-1/2'>
         <TextGenerateEffect className="text-[28px] md:text-[30px] mb-2 text-sky-600"  duration={2} filter={false} words={words}/>
             

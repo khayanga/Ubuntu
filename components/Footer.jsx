@@ -10,10 +10,17 @@ const Footer = () => {
     const currentYear = new Date().getFullYear();
   return (
 
-    <div  className='px-6 py-4 container mx-auto flex flex-col items-center max-w-6xl'>
+    <div  className='relative w-full px-6 py-4 container mx-auto flex flex-col items-center '>
+
+        {/* <Image
+          src="/images/water.jpg"
+          layout="fill"
+          className="w-full h-full  object-cover mix-blend-overlay opacity-55"
+          alt="Contact background image"
+        /> */}
 
         
-    <div className='flex flex-col space-y-12 md:flex-row justify-between items-center  w-full'>
+        <div className='relative z-10 flex flex-col space-y-12 md:flex-row justify-between items-center  w-full'>
 
             <div className='flex flex-col gap-4 items-center md:items-start'>
                 <Image 
@@ -92,14 +99,13 @@ const Footer = () => {
 
            
 
-                </div>
+        </div>
 
-                <hr class="border-t border-gray-400 w-full mx-auto my-6"/>
-
+                <hr class="border-t border-gray-400 w-full mx-auto my-6 relative z-10"/>
 
             {/* Copyright */}
 
-            <div className="text-center  text-gray-400 text-[12px] font-light">
+            <div className="text-center  text-gray-400 text-[12px] font-light relative z-10">
                 Ubuntu Waterhub Africa © {currentYear} . All rights reserved.
             </div>
 

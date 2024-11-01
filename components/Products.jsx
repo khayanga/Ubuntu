@@ -6,12 +6,12 @@ import Link from 'next/link'
 
 const Products = () => {
   return (
-    <div className='container mx-auto mt-3 md:mt-10  max-w-6xl'>
+    <div className='container mx-auto mt-10 md:mb-28   max-w-6xl'>
 
         <h1 className='text-sky-600 text-[24px] font-normal py-6 text-center'>Our products</h1>
         
 
-        <div className='py-4 flex flex-col items-center md:flex-row md:space-x-40 gap-4  mx-auto px-6 md:px-2 mt-3 md:mt-6'>
+        <div className='py-4 flex flex-col items-center md:flex-row md:space-x-40 gap-12  mx-auto px-6 md:px-2 mt-3 md:mt-6'>
         <div className=' '>
             <Image src="/images/atm.png" width={500} height={300} alt='picure1'/>
         </div>
@@ -28,12 +28,12 @@ const Products = () => {
             </p>
             <Link href="/water-atms">
             <Button variant="default" className="px-4  mt-4 rounded-full">
-                Read more
+                Learn more
             </Button></Link>
         </div>
         
         </div>
-        <div className='py-8 flex flex-col items-center md:flex-row md:space-x-40 gap-4 mx-auto px-6 md:px-2 mt-3 md:mt-6'>
+        <div className='py-8 flex flex-col items-center md:flex-row md:space-x-40 gap-12 mx-auto px-6 md:px-2 mt-3 md:mt-6'>
         
         <div className='md:w-1/2'>
             
@@ -48,7 +48,7 @@ const Products = () => {
 
             <Link href="/smart-meters">
             <Button variant="default" className="px-4  mt-4 rounded-full">
-                Read more
+            Learn more
             </Button></Link>
            
         </div>

@@ -3,8 +3,8 @@ import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import Image from 'next/image'
-import React from 'react'
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react'
+import { motion, useInView } from 'framer-motion';
 import {
     Card,
     CardContent,
@@ -15,15 +15,41 @@ import {
   } from "@/components/ui/card";
   import { BadgeCheck } from 'lucide-react';
 import { atmData} from '@/data'
+import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
 const page = () => {
+  const words = `Digital Water Meters.`;
+
+  const AnimatedSection = ({ children }) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref);
+  
+    const variants = {
+      hidden: { scale: 0.8, opacity: 0 },
+      visible: { scale: 1, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
+    };
+  
+    return (
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        exit="hidden"
+        variants={variants}
+      >
+        {children}
+      </motion.div>
+    );
+  };
   return (
+    
+    
     <main className='relative bg-gray-900 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5'>
       <div className="max-w-7xl w-full ">
         <Navbar/>
-        <div className='max-w-6xl container flex flex-col items-center md:flex-row md:space-x-40 mx-auto px-6 md:px-2 mt-10'>
+        <AnimatedSection>
+        <div className=' max-w-6xl container flex flex-col items-center md:flex-row md:space-x-40 mx-auto px-6 md:px-2 mt-10 md:mb-32'>
         <div className='md:w-1/2'>
-            <h1 className='text-sky-600
-            font-semibold text-[28px] md:text-[30px]'>Digital  Water Meters .</h1>
+        <TextGenerateEffect className="text-[28px] md:text-[30px] mb-2 text-sky-600"  duration={2} filter={false} words={words}/>
             <p className='text-sm  text-white mt-3 leading-normal'>
             Introducing our Digital Water Meters, cutting-edge devices designed to provide accurate and real-time tracking of water consumption. Engineered with advanced smart technology, these meters offer precise measurements and insightful data analytics, empowering users to monitor and manage their water resources with ease.
               Our Digital Water Meters facilitate efficient water management by providing remote monitoring capabilities, allowing users to track usage patterns and identify potential leaks or inefficiencies instantly. This proactive approach not only conserves water but also helps reduce costs for households and businesses alike.
@@ -34,8 +60,12 @@ const page = () => {
             <Image src="/images/pic2.png" width={350} height={250} alt='picure1'/>
         </div>
         </div>
+
+        </AnimatedSection>
+       
         {/* Features */}
-        <div className='max-w-6xl mx-auto mt-3 md:mt-10 pb-4 '>
+        <AnimatedSection>
+        <div className=' max-w-6xl mx-auto mt-10 md:mb-32 pb-4 '>
         <h1 className='text-sky-600 text-[24px] font-normal py-6 text-center'>Features</h1>
 
         <div className='flex flex-col md:flex-row  items-center justify-between px-4 gap-4 pb-2'>
@@ -73,8 +103,12 @@ const page = () => {
 
         </div>
 
+
+        </AnimatedSection>
+        
         {/* Benefits */}
-        <div className='container mx-auto mt-3 md:mt-10 pb-4 max-w-6xl '>
+        <AnimatedSection>
+        <div className=' container mx-auto mt-10 md:mb-32 pb-4 max-w-6xl '>
         <h1 className='text-sky-600 text-[24px] font-normal py-6 text-center'>Benefits</h1>
 
         <div className='flex flex-col md:flex-row  items-center justify-between px-4 gap-4 md:gap-10 pb-2'>
@@ -164,8 +198,11 @@ const page = () => {
         </div>
 
         </div>
+
+        </AnimatedSection>
         
-        <Contact/>
+        
+        <AnimatedSection><Contact /></AnimatedSection>
         <Footer/>
     </div>
 

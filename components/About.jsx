@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const About = () => {
   return (
-    <div className='container flex flex-col max-w-6xl items-center md:flex-row md:space-x-40 mx-auto px-6 md:px-2 mt-3 md:mt-6 py-8
+    <div className='container flex flex-col max-w-6xl items-center md:flex-row md:space-x-40 mx-auto px-6 md:px-2 mt-10 md:mb-28 py-8
     '>
         <div className=' hidden md:block'>
             <Image src="/images/pic2.png" width={350} height={250} alt='picure1'/>
@@ -16,7 +16,7 @@ const About = () => {
                 </h3>
             <p className='text-sm my-4 text-white leading-normal'>
             At Ubuntu Waterhub Africa, we are passionate about transforming water access,
-             sanitation, and hygiene across the continent. Weare a Kenyan-based company in Nairobi, 
+             sanitation, and hygiene across the continent. We are a Kenyan-based company in Nairobi, 
              we harness innovative technology to create smart solutions that empower local water entrepreneurs. Our commitment to providing advanced vending and management tools enables communities to secure reliable access to clean water.
           By collaborating with industry leaders and NGOs, we amplify our impact and extend our reach to those who need it most. Together, we are fostering sustainable change, driving prosperity, and ensuring that every community has access to the essential resource of safe water.
 

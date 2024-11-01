@@ -17,10 +17,9 @@ import Footer from '@/components/Footer';
 import Confetti from 'react-confetti';
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 import { BackgroundBeams } from '@/components/ui/background-beams';
+import Image from 'next/image';
 
 const Page = () => {
-
-  const words = `Reach out to us for a seamless experience !!.`;
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,7 +28,7 @@ const Page = () => {
   });
   const [status, setStatus] = useState('');
   const [showConfetti, setShowConfetti] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false); //
+  const [isSubmitted, setIsSubmitted] = useState(false); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -74,21 +73,50 @@ const Page = () => {
     <div className="bg-gray-900 w-full min-h-screen">
       {showConfetti && <Confetti />} 
       <Navbar />
+      <div className="relative w-full h-[300px]">
+        <Image
+          src="/images/call.jpg"
+          layout="fill"
+          className="w-full h-full  object-cover mix-blend-overlay opacity-100"
+          alt="Contact background image"
+        />
+      {/* hero section */}
+      <div className="max-w-lg w-full mx-auto  py-8 px-6 z-20 relative ">
+     
+      <h1 className="text-center text-[28px] font-bold text-sky-600">
+      Reach out to us for a seamless experience !!
+      </h1>
+      <p className='text white mt-4 leading-normal text-center '>We’re here to answer any questions, discuss your unique needs, or explore how we can work together. Our team is dedicated to providing prompt and efficient support, 
+        ensuring your experience with us is seamless from start to finish.</p>
 
-      <div className="max-w-md w-full mx-auto mt-12 px-6">
-      <TextGenerateEffect className="text-center text-sky-600" duration={2} filter={false} words={words}/>
+        
       </div>
 
      
 
+      </div>
+
       {!isSubmitted ? (
-        <div className='px-6 relative antialiased  '>
+        // contact forms
+        <div className='px-6 relative antialiased flex flex-col md:flex-row mx-auto justify-center items-center gap-2 md:gap-20 bg-gray-900 pb-6 md:mb-10'>
            <BackgroundBeams/>
-          <Card className="w-full z-10 max-w-lg my-8 mx-auto rounded-md
-            bg-gradient-to-b from-sky-100 to-sky-200">
+
+           <div className='p-2  my-8  '>
+              <div className='w-full md:max-w-md  '>
+                <h2 className='text-white text-[24px] font-bold '>
+                  How can we help You ?
+                </h2>
+                <p className='text-sm my-2 leading-normal'>
+                Whether you’re interested in learning more about our services, need technical assistance, or have a specific query, we’d love to help. 
+                Simply fill out the contact form below or use any of the options to get in touch.
+                </p>
+            </div>
+           </div>
+          <Card className="w-full z-10 max-w-lg md:my-16  rounded-md
+            ">
           <CardHeader>
-            <CardTitle className="text-2xl text-gray-900">Contact Us</CardTitle>
-            <CardDescription  className="text-gray-900">
+            <CardTitle className="text-2xl text-white">Contact Us</CardTitle>
+            <CardDescription  className="text-white">
               Feel free to reach us out here.
             </CardDescription>
           </CardHeader>

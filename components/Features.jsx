@@ -14,7 +14,7 @@ import Image from 'next/image'
 
 const Features = () => {
   return (
-    <div className='max-w-6xl mx-auto mt-3 md:mt-10 pb-4 '>
+    <div className='max-w-6xl mx-auto mt-10 md:mb-28  md:mt-10 pb-4 '>
         <h1 className='text-sky-600 text-[24px] font-normal py-6 text-center'>Features</h1>
 
         <div className='flex flex-col md:flex-row  items-center justify-between px-4 gap-4 pb-2'>
