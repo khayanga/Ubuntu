@@ -26,7 +26,7 @@ const Features = () => {
             key={card.id} 
             className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] py-4 
             text-center flex flex-col justify-between
-            bg-gradient-to-b from-white to-sky-200 "
+            bg-white/90 backdrop-blur-lg "
             style={{ borderTopRightRadius: '24px', borderBottomLeftRadius: '24px' }}
           >
             <CardContent className="text-white">

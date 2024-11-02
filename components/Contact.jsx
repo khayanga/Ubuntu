@@ -43,16 +43,11 @@ const Contact = () => {
   };
   
   return (
-    <div className='relative antialiased w-full mt-10 md:mb-28 
+    <div className='relative max-w-5xl rounded-md bg-white/10 backdrop-blur-lg antialiased mx-auto mt-10 md:mb-28 
       shadow-2xl'>
-      <Image
-          src="/images/water.jpg"
-          layout="fill"
-          className="w-full h-full  rounded-xl object-cover mix-blend-overlay opacity-55"
-          alt="Contact background image"
-        />
+      
 
-      <div className='container md:pt-32 py-8 mx-auto  relative z-10 '>
+      <div className=' py-8 mx-auto  z-10 '>
       
         <div className='max-w-lg mx-auto  '>
           <h1 className='text-[28px] font-bold text-white text-center'>
@@ -96,7 +91,7 @@ const Contact = () => {
         {status && <p className="text-center mt-4 text-white">{status}</p>}
       </div>
 
-    {/* <BackgroundBeams/> */}
+    <BackgroundBeams/> 
 
     </div>
     

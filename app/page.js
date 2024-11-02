@@ -10,6 +10,7 @@ import Products from "@/components/Products";
 import { Spotlight } from "@/components/ui/spotlight";
 
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
 
 export default function Home() {
@@ -38,8 +39,16 @@ export default function Home() {
   return (
 
     <div className="relative bg-gray-900 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
+
+
+        <Image
+          src="/images/water.jpg"
+          layout="fill"
+          className="w-full h-full  object-cover mix-blend-overlay opacity-55"
+          alt="Contact background image"
+        />
       
-      <div className="max-w-7xl w-full ">
+      <div className="max-w-7xl w-full relative z-10">
         <Navbar />
         <AnimatedSection><Hero /></AnimatedSection>
         <AnimatedSection><About /></AnimatedSection>

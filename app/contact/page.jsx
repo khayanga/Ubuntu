@@ -18,6 +18,7 @@ import Confetti from 'react-confetti';
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 import { BackgroundBeams } from '@/components/ui/background-beams';
 import Image from 'next/image';
+import { Mail, MapPin, Phone } from 'lucide-react';
 
 const Page = () => {
   const [formData, setFormData] = useState({
@@ -70,40 +71,71 @@ const Page = () => {
   
 
   return (
-    <div className="bg-gray-900 w-full min-h-screen">
-      {showConfetti && <Confetti />} 
-      <Navbar />
-      <div className="relative w-full h-[300px]">
+    <main className="relative  bg-gray-900 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
+
         <Image
-          src="/images/call.jpg"
+          src="/images/water.jpg"
           layout="fill"
-          className="w-full h-full  object-cover mix-blend-overlay opacity-100"
+          className="w-full h-full  object-cover mix-blend-overlay opacity-55"
           alt="Contact background image"
         />
-      {/* hero section */}
-      <div className="max-w-lg w-full mx-auto  py-8 px-6 z-20 relative ">
-     
-      <h1 className="text-center text-[28px] font-bold text-sky-600">
-      Reach out to us for a seamless experience !!
-      </h1>
-      <p className='text white mt-4 leading-normal text-center '>We’re here to answer any questions, discuss your unique needs, or explore how we can work together. Our team is dedicated to providing prompt and efficient support, 
-        ensuring your experience with us is seamless from start to finish.</p>
+      <div  className="max-w-7xl w-full relative z-10">
+       
+        <Navbar />
+        {showConfetti && <Confetti />}
+
+         {/* hero section */}
+         <div className="max-w-4xl  bg-white/10 backdrop-blur-lg rounded-md relative z-10 w-full mx-auto md:mb-32 mt-10 mb-8 h-[300px] py-8 px-6">
+         <BackgroundBeams/>
+          <h1 className="text-center text-[28px] font-bold text-sky-600">
+          Reach out to us for a seamless experience.
+          </h1>
+          <p className='text white mt-4 md:mb-16 leading-normal text-center '>We’re here to answer any questions, discuss your unique needs, or explore how we can work together. Our team is dedicated to providing prompt and efficient support, 
+            ensuring your experience with us is seamless from start to finish.</p>
+
+
+        <div className="md:flex md:flex-row hidden mt-6  flex-col gap-4 md:gap-10  p-2 mb-4 justify-center items-center mx-auto">
+          <div className='bg-gradient-to-b from-sky-300 to-sky-600 w-[200px] text-center p-4
+          flex flex-col gap-2 justify-center items-center rounded-md'>
+            <Phone className='w-8 h-8 font-bold text-gray-800' />
+            <h2 className='text-[16px] font-bold tracking-wider text-gray-800'>Phone</h2>
+            <p className='leading-normal text-white'> Call us directly to speak with a member of our team.</p>
+          </div>
+
+
+          <div className='bg-gradient-to-b from-sky-300 to-sky-600 w-[200px] text-center p-4
+          flex flex-col gap-2 justify-center items-center rounded-md'>
+            <Mail className='w-8 h-8 font-bold text-gray-800' />
+            <h2 className='text-[16px] font-bold tracking-wider text-gray-800'>E-mail</h2>
+            <p className='leading-normal text-white'> Send us an email, and we’ll respond as soon as possible.</p>
+          </div>
+
+          <div className='bg-gradient-to-b from-sky-300 to-sky-600 w-[200px] text-center p-4 
+          flex flex-col gap-2 justify-center items-center rounded-md'>
+            <MapPin className='w-8 h-8 font-bold text-gray-800' />
+            <h2 className='text-[16px] font-bold tracking-wider text-gray-800'>Visit Us</h2>
+            <p className='leading-normal text-white'> Find us at our office for a face-to-face conversation.</p>
+          </div>
+
+          
+        </div>
 
         
-      </div>
 
-     
+        
+        </div>
 
-      </div>
+      
 
       {!isSubmitted ? (
         // contact forms
-        <div className='px-6 relative antialiased flex flex-col md:flex-row mx-auto justify-center items-center gap-2 md:gap-20 bg-gray-900 pb-6 md:mb-10'>
+        <div className='px-6  mt-12 relative z-10  antialiased flex flex-col md:flex-row mx-auto justify-center items-center gap-2 md:gap-20  pb-6 md:mb-10'>
+          
            <BackgroundBeams/>
 
-           <div className='p-2  my-8  '>
-              <div className='w-full md:max-w-md  '>
-                <h2 className='text-white text-[24px] font-bold '>
+           <div className='p-2  my-8 '>
+              <div className='w-full md:max-w-md '>
+                <h2 className='text-sky-600 tracking-wide text-[24px] font-bold '>
                   How can we help You ?
                 </h2>
                 <p className='text-sm my-2 leading-normal'>
@@ -112,12 +144,11 @@ const Page = () => {
                 </p>
             </div>
            </div>
-          <Card className="w-full z-10 max-w-lg md:my-16  rounded-md
-            ">
+          <Card className="w-full z-10 max-w-lg md:my-16  rounded-md">
           <CardHeader>
-            <CardTitle className="text-2xl text-white">Contact Us</CardTitle>
+            <CardTitle className="text-2xl text-sky-600">Contact Us</CardTitle>
             <CardDescription  className="text-white">
-              Feel free to reach us out here.
+              Fill in the form below.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -125,7 +156,7 @@ const Page = () => {
               <div className="grid gap-1">
                 <Label htmlFor="name">Name</Label>
                 <input
-                 className='px-4 py-2 bg-gradient-to-r from-sky-400 to-sky-600 placeholder:text-white text-white rounded-md focus:outline-none'
+                 className='px-4 py-2 bg-white/10 backdrop-blur-lg   placeholder:text-white text-white rounded-md focus:outline-none'
                   type="text"
                   name="name"
                   value={formData.name}
@@ -143,7 +174,7 @@ const Page = () => {
                 onChange={handleChange}
                   placeholder='example@gmail.com'
                   required  
-              className='px-4 py-2 bg-gradient-to-r from-sky-400 to-sky-600 placeholder:text-white text-white rounded-md focus:outline-none'/>
+                  className='px-4 py-2 bg-white/10 backdrop-blur-lg placeholder:text-white text-white rounded-md focus:outline-none'/>
 
               </div>
               <div className="grid gap-1">
@@ -155,12 +186,14 @@ const Page = () => {
                 onChange={handleChange}
                   placeholder='Title'
                   required  
-              className='px-4 py-2 bg-gradient-to-r from-sky-400 to-sky-600 placeholder:text-white text-white rounded-md focus:outline-none'/>
+              className='px-4 py-2 
+              bg-white/10 backdrop-blur-lg placeholder:text-white text-white rounded-md focus:outline-none'/>
               </div>
               <div className="grid gap-1">
                 <Label htmlFor="message">Message</Label>
                 <Textarea
-                 className='bg-gradient-to-r from-sky-400 to-sky-600 placeholder:text-white text-white rounded-md focus:outline-none'
+                 className='
+                 bg-white/10 backdrop-blur-lg placeholder:text-white text-white rounded-md focus:outline-none'
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
@@ -169,7 +202,7 @@ const Page = () => {
                 />
               </div>
 
-              <Button type="submit" className="bg-sky-500 text-white mt-4" >
+              <Button type="submit" className="bg-sky-600 text-white mt-4" >
                 Submit
               </Button>
             </form>
@@ -181,7 +214,8 @@ const Page = () => {
       ) : (
         
         <div className="mt-4 text-center">
-          <Card className="w-full max-w-sm my-8 mx-auto bg-gradient-to-r from-sky-400 to-sky-600 ">
+          <Card className="w-full max-w-sm my-8 mx-auto 
+          bg-white/10 backdrop-blur-lg ">
             <CardContent className="text-white text-center py-12">
               {status}
             </CardContent>
@@ -191,6 +225,8 @@ const Page = () => {
 
       <Footer />
     </div>
+    </main>
+    
   );
 };
 

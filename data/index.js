@@ -2,7 +2,7 @@ export const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Water Atms', href: '/water-atms' },
     { name: 'Smart Meters', href: '/smart-meters' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Contact Us', href: '/contact' },
   ];
 
   export const atmData = [

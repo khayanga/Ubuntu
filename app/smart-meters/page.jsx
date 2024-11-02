@@ -44,7 +44,14 @@ const page = () => {
     
     
     <main className='relative bg-gray-900 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5'>
-      <div className="max-w-7xl w-full ">
+
+        <Image
+          src="/images/water.jpg"
+          layout="fill"
+          className="w-full h-full  object-cover mix-blend-overlay opacity-55"
+          alt="Contact background image"
+        />
+      <div className="max-w-7xl w-full relative z-10">
         <Navbar/>
         <AnimatedSection>
         <div className=' max-w-6xl container flex flex-col items-center md:flex-row md:space-x-40 mx-auto px-6 md:px-2 mt-10 md:mb-32'>
@@ -76,7 +83,7 @@ const page = () => {
             key={atm.id} 
             className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] py-4 
             text-center flex flex-col justify-between
-            bg-gradient-to-b from-white to-sky-200 "
+            bg-white/90 backdrop-blur-lg"
             style={{ borderTopRightRadius: '24px', borderBottomLeftRadius: '24px' }}
           >
             <CardContent className="text-white">

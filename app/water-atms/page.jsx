@@ -16,6 +16,7 @@ import {
   import { BadgeCheck } from 'lucide-react';
 import { meterData, pricingData } from '@/data'
 import Link from 'next/link'
+import { BackgroundBeams } from '@/components/ui/background-beams'
 const page = () => {
   const AnimatedSection = ({ children }) => {
     const ref = useRef(null);
@@ -40,7 +41,13 @@ const page = () => {
   };
   return (
     <main className="relative bg-gray-900 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-      <div className="max-w-7xl w-full ">
+      <Image
+          src="/images/water.jpg"
+          layout="fill"
+          className="w-full h-full  object-cover mix-blend-overlay opacity-55"
+          alt="Contact background image"
+        />
+      <div className="max-w-7xl w-full z-10">
         <Navbar/>
         {/* hero */}
         <AnimatedSection>
@@ -76,7 +83,7 @@ const page = () => {
             key={meter.id} 
             className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] py-4 
             text-center flex flex-col justify-between
-            bg-gradient-to-b from-white to-sky-200 "
+            bg-white/90 backdrop-blur-lg "
             style={{ borderTopRightRadius: '24px', borderBottomLeftRadius: '24px' }}
           >
             <CardContent className="text-white">
@@ -139,7 +146,7 @@ const page = () => {
             <div className=' flex flex-col space-y-6 md:w-1/2 p-2'>
                 <div className=' space-y-2'>
 
-                <button className='flex flex-row space-x-2 bg-gradient-to-r from-sky-400 to-sky-600 p-2 rounded-full'>
+                <button className='flex flex-row space-x-2  p-2 rounded-full bg-gradient-to-r from-sky-400 to-sky-600'>
                     <BadgeCheck className='w-4 h-4 text-white '/>
                     <p className='text-[12px]  text-white'>Convinient Payment Systems</p>
                 </button>
@@ -169,29 +176,30 @@ const page = () => {
         
         {/* Pricing */}
         <AnimatedSection>
-        <div className='w-full mx-auto mt-10 md:mb-28 pb-12 bg-gradient-to-b rounded-xl from-white to-sky-200'>
-        <h1 className='text-gray-900 text-[24px] font-normal py-6 text-center'>Pricing</h1>
+        <div className='w-full mx-auto mt-10 md:mb-28 pb-12 bg-white/10 backdrop-blur-lg shadoow-2xl rounded-lg max-w-5xl'>
+        <h1 className='text-white text-[24px] font-bold py-6 text-center'>Pricing</h1>
 
         <div className=' container mx-auto  max-w-6xl flex flex-col md:flex-row  justify-center items-center  px-4 gap-4 md:gap-8 pb-2'>
+        <BackgroundBeams/>
         {pricingData.map((plan,index) => (
           <Card 
             key={index} 
-            className="w-full max-w-[380px]  shadow-xl
-            text-center flex flex-col justify-between bg-gray-900 pt-4 rounded-[12px]
+            className="w-full max-w-[380px]  shadow-xl relative z-10
+            text-center flex flex-col justify-between bg-gradient-to-b from-sky-300 to-sky-600 pt-4 rounded-[12px]
              "
             
           >
             <CardHeader>
-                <CardTitle className="text-sky-600">{plan.price}</CardTitle>
+                <CardTitle className="text-gray-900">{plan.price}</CardTitle>
             </CardHeader>
-            <CardContent className="text-white">
-              <p className='text-md text-white'>{plan.title}</p>
+            <CardContent className="text-gray-800">
+              <p className='text-md text-gray-800'>{plan.title}</p>
                <ul className="text-center mt-2 space-y-2 ">
                   {plan.descriptions.map((description, i) => (
                     <div className="flex flex-row space-x-2 justify-center mt-4">
-                       <BadgeCheck className='w-4 h-4 text-sky-600 '/>
+                       <BadgeCheck className='w-4 h-4 text-white '/>
                     <li key={i} 
-                    className="text-sm text-transparent bg-gradient-to-r from-sky-400 to-sky-600 bg-clip-text ">
+                    className="text-sm text-white ">
                       {description}
                     </li>
 
@@ -200,7 +208,7 @@ const page = () => {
                   ))}
                 </ul>
                 <Link href="/contact">
-                <button className=' bg-gradient-to-r from-sky-400 to-sky-600 p-2 text-[14px] rounded-md mt-6'>
+                <button className=' bg-gray-800 text-white p-2 text-[14px] rounded-md mt-6'>
                     Get started
                 </button>
                 </Link>
