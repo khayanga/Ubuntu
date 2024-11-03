@@ -17,7 +17,9 @@ import {
 import { meterData, pricingData } from '@/data'
 import Link from 'next/link'
 import { BackgroundBeams } from '@/components/ui/background-beams'
+import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
 const page = () => {
+  const words =`Smart Water Atm.`
   const AnimatedSection = ({ children }) => {
     const ref = useRef(null);
     const isInView = useInView(ref);
@@ -53,8 +55,7 @@ const page = () => {
         <AnimatedSection>
         <div className='container flex flex-col items-center md:flex-row gap-3 md:space-x-40 mx-auto px-6 md:px-2  mt-10 md:mb-32 max-w-6xl'>
         <div className='md:w-1/2'>
-            <h1 className='text-sky-600
-            font-semibold text-[28px] md:text-[30px]'>Smart Water Atms .</h1>
+        <TextGenerateEffect className="text-[28px] md:text-[30px] mb-2 text-sky-600"  duration={2} filter={false} words={words}/>
             <p className='text-sm  text-white leading-normal'>
             Discover the future of water access with our Smart Water ATMs, engineered to deliver a seamless and sustainable solution for communities in need. These advanced water dispensing units are designed for convenience, efficiency, and environmental responsibility.
             Manufactured by Ubuntu Waterhub Africa, a pioneering Kenyan company dedicated to innovating the water sector through IoT and technology-driven solutions, our Smart Water ATMs enable users to access clean water easily and securely.

@@ -84,19 +84,25 @@ const Page = () => {
         <Navbar />
         {showConfetti && <Confetti />}
 
-         {/* hero section */}
-         <div className="max-w-4xl  bg-white/10 backdrop-blur-lg rounded-md relative z-10 w-full mx-auto md:mb-32 mt-10 mb-8 h-[300px] py-8 px-6">
+         
+      
+
+      {!isSubmitted ? (
+
+        <>
+        {/* hero section */}
+        <div className="max-w-4xl  bg-white/10 backdrop-blur-lg rounded-md relative z-10 w-full mx-auto md:mb-32 mt-10 mb-8 h-[300px] py-8 px-6">
          <BackgroundBeams/>
           <h1 className="text-center text-[28px] font-bold text-sky-600">
           Reach out to us for a seamless experience.
           </h1>
-          <p className='text white mt-4 md:mb-16 leading-normal text-center '>We’re here to answer any questions, discuss your unique needs, or explore how we can work together. Our team is dedicated to providing prompt and efficient support, 
+          <p className='text-white mt-4 md:mb-16 leading-normal text-center '>We’re here to answer any questions, discuss your unique needs, or explore how we can work together. Our team is dedicated to providing prompt and efficient support, 
             ensuring your experience with us is seamless from start to finish.</p>
 
 
         <div className="md:flex md:flex-row hidden mt-6  flex-col gap-4 md:gap-10  p-2 mb-4 justify-center items-center mx-auto">
           <div className='bg-gradient-to-b from-sky-300 to-sky-600 w-[200px] text-center p-4
-          flex flex-col gap-2 justify-center items-center rounded-md'>
+          flex flex-col gap-2 justify-center items-center rounded-md '>
             <Phone className='w-8 h-8 font-bold text-gray-800' />
             <h2 className='text-[16px] font-bold tracking-wider text-gray-800'>Phone</h2>
             <p className='leading-normal text-white'> Call us directly to speak with a member of our team.</p>
@@ -119,104 +125,100 @@ const Page = () => {
 
           
         </div>
-
-        
-
-        
+    
         </div>
 
-      
+         
+          <div className='px-6  mt-12 relative z-10  antialiased flex flex-col md:flex-row mx-auto justify-center items-center gap-2 md:gap-20  pb-6 md:mb-10'>
+            
+            <BackgroundBeams/>
 
-      {!isSubmitted ? (
-        // contact forms
-        <div className='px-6  mt-12 relative z-10  antialiased flex flex-col md:flex-row mx-auto justify-center items-center gap-2 md:gap-20  pb-6 md:mb-10'>
-          
-           <BackgroundBeams/>
-
-           <div className='p-2  my-8 '>
-              <div className='w-full md:max-w-md '>
-                <h2 className='text-sky-600 tracking-wide text-[24px] font-bold '>
-                  How can we help You ?
-                </h2>
-                <p className='text-sm my-2 leading-normal'>
-                Whether you’re interested in learning more about our services, need technical assistance, or have a specific query, we’d love to help. 
-                Simply fill out the contact form below or use any of the options to get in touch.
-                </p>
+            <div className='p-2  my-8 '>
+                <div className='w-full md:max-w-md '>
+                  <h2 className='text-sky-600 tracking-wide text-[24px] font-bold '>
+                    How can we help You ?
+                  </h2>
+                  <p className='text-sm my-2  text-white leading-normal'>
+                  Whether you’re interested in learning more about our services, need technical assistance, or have a specific query, we’d love to help. 
+                  Simply fill out the contact form below or use any of the options to get in touch.
+                  </p>
+              </div>
             </div>
-           </div>
-          <Card className="w-full z-10 max-w-lg md:my-16  rounded-md">
-          <CardHeader>
-            <CardTitle className="text-2xl text-sky-600">Contact Us</CardTitle>
-            <CardDescription  className="text-white">
-              Fill in the form below.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleSubmit} className="grid gap-3 relative z-10">
-              <div className="grid gap-1">
-                <Label htmlFor="name">Name</Label>
-                <input
-                 className='px-4 py-2 bg-white/10 backdrop-blur-lg   placeholder:text-white text-white rounded-md focus:outline-none'
-                  type="text"
-                  name="name"
-                  value={formData.name}
+            <Card className="w-full z-10 max-w-lg md:my-16  rounded-md">
+            <CardHeader>
+              <CardTitle className="text-2xl text-sky-600">Contact Us</CardTitle>
+              <CardDescription  className="text-white">
+                Fill in the form below.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleSubmit} className="grid gap-3 relative z-10">
+                <div className="grid gap-1">
+                  <Label htmlFor="name">Name</Label>
+                  <input
+                  className='px-4 py-2 bg-white/10 backdrop-blur-lg   placeholder:text-white text-white rounded-md focus:outline-none'
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your Name"
+                    required
+                  />
+                </div>
+                <div className="grid gap-1">
+                  <Label htmlFor="email">Email</Label>
+
+                  <input type='email'
+                  name="email"
+                  value={formData.email}
                   onChange={handleChange}
-                  placeholder="Your Name"
-                  required
-                />
-              </div>
-              <div className="grid gap-1">
-                <Label htmlFor="email">Email</Label>
+                    placeholder='example@gmail.com'
+                    required  
+                    className='px-4 py-2 bg-white/10 backdrop-blur-lg placeholder:text-white text-white rounded-md focus:outline-none'/>
 
-                <input type='email'
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                  placeholder='example@gmail.com'
-                  required  
-                  className='px-4 py-2 bg-white/10 backdrop-blur-lg placeholder:text-white text-white rounded-md focus:outline-none'/>
+                </div>
+                <div className="grid gap-1">
+                  <Label htmlFor="subject">Subject</Label>
 
-              </div>
-              <div className="grid gap-1">
-                <Label htmlFor="subject">Subject</Label>
-
-                <input type='subject'
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                  placeholder='Title'
-                  required  
-              className='px-4 py-2 
-              bg-white/10 backdrop-blur-lg placeholder:text-white text-white rounded-md focus:outline-none'/>
-              </div>
-              <div className="grid gap-1">
-                <Label htmlFor="message">Message</Label>
-                <Textarea
-                 className='
-                 bg-white/10 backdrop-blur-lg placeholder:text-white text-white rounded-md focus:outline-none'
-                  name="message"
-                  value={formData.message}
+                  <input type='subject'
+                  name="subject"
+                  value={formData.subject}
                   onChange={handleChange}
-                  placeholder="Your Message"
-                  required
-                />
-              </div>
+                    placeholder='Title'
+                    required  
+                className='px-4 py-2 
+                bg-white/10 backdrop-blur-lg placeholder:text-white text-white rounded-md focus:outline-none'/>
+                </div>
+                <div className="grid gap-1">
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea
+                  className='
+                  bg-white/10 backdrop-blur-lg placeholder:text-white text-white rounded-md focus:outline-none'
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Your Message"
+                    required
+                  />
+                </div>
 
-              <Button type="submit" className="bg-sky-600 text-white mt-4" >
-                Submit
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
+                <Button type="submit" className="bg-sky-600 text-white mt-4" >
+                  Submit
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
 
-        </div>
+          </div>
+        </>
+        
         
       ) : (
         
-        <div className="mt-4 text-center">
-          <Card className="w-full max-w-sm my-8 mx-auto 
-          bg-white/10 backdrop-blur-lg ">
-            <CardContent className="text-white text-center py-12">
+        <div className="my-20 text-center">
+          <Card className="w-full max-w-lg mt-24 mx-auto 
+          bg-gradient-to-b from-sky-300 to-sky-600 ">
+            <CardContent className="text-white text-center text-[28px] font-bold tracking-wider py-20">
               {status}
             </CardContent>
           </Card>
