@@ -19,8 +19,20 @@ import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 import { BackgroundBeams } from '@/components/ui/background-beams';
 import Image from 'next/image';
 import { Mail, MapPin, Phone } from 'lucide-react';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const Page = () => {
+
+  const mapContainerStyle = {
+    width: '85%',
+    height: '400px'
+  };
+  // -1.3024426362444637, 36.838232092060586
+  const center = {
+    lat: -1.3024426362444637,  
+    lng: 36.838232092060586 
+  };
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -71,7 +83,7 @@ const Page = () => {
   
 
   return (
-    <main className="relative  bg-gray-900 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
+    <main className="relative  bg-gray-900 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-7 px-5">
 
         <Image
           src="/images/water.jpg"
@@ -91,7 +103,7 @@ const Page = () => {
 
         <>
         {/* hero section */}
-        <div className="max-w-4xl  bg-white/10 backdrop-blur-lg rounded-md relative z-10 w-full mx-auto md:mb-32 mt-10 mb-8 h-[300px] py-8 px-6">
+        <div className="max-w-4xl  bg-white/10 backdrop-blur-lg rounded-md relative z-10 w-full mx-auto md:mb-32 mt-10 mb-8 md:h-[300px] h-[350px] py-8 px-6">
          <BackgroundBeams/>
           <h1 className="text-center text-[28px] font-bold text-sky-600">
           Reach out to us for a seamless experience.
@@ -129,7 +141,7 @@ const Page = () => {
         </div>
 
          
-          <div className='px-6  mt-12 relative z-10  antialiased flex flex-col md:flex-row mx-auto justify-center items-center gap-2 md:gap-20  pb-6 md:mb-10'>
+          <div className='px-4 mt-12 relative z-10  antialiased flex flex-col md:flex-row mx-auto justify-center items-center gap-2 md:gap-20  pb-6 md:mb-4'>
             
             <BackgroundBeams/>
 
@@ -224,6 +236,16 @@ const Page = () => {
           </Card>
         </div>
       )}
+
+      {/* Map section  */}
+      
+      <div className="my-4 md:mb-16 relative z-10  flex items-center justify-center">
+          <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}>
+            <GoogleMap mapContainerStyle={mapContainerStyle} center={center} zoom={15}>
+              <Marker position={center} />
+            </GoogleMap>
+          </LoadScript>
+        </div>
 
       <Footer />
     </div>

@@ -11,7 +11,7 @@ const Products = () => {
         <h1 className='text-sky-600 text-[24px] font-normal py-6 text-center'>Our products</h1>
         
 
-        <div className='py-4 flex flex-col items-center md:flex-row md:space-x-40 gap-12  mx-auto px-6 md:px-2 mt-3 md:mt-6'>
+        <div className='py-4 flex flex-col items-center md:flex-row md:space-x-40 gap-12  mx-auto px-3 md:px-2 mt-3 md:mt-6'>
         <div className=' '>
             <Image src="/images/atm.png" width={500} height={300} alt='picure1'/>
         </div>

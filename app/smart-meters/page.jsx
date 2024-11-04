@@ -43,7 +43,7 @@ const page = () => {
   return (
     
     
-    <main className='relative bg-gray-900 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5'>
+    <main className='relative bg-gray-900 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-7 px-5'>
 
         <Image
           src="/images/water.jpg"
@@ -118,7 +118,7 @@ const page = () => {
         <div className=' container mx-auto mt-10 md:mb-32 pb-4 max-w-6xl '>
         <h1 className='text-sky-600 text-[24px] font-normal py-6 text-center'>Benefits</h1>
 
-        <div className='flex flex-col md:flex-row  items-center justify-between px-4 gap-4 md:gap-10 pb-2'>
+        <div className='flex flex-col md:flex-row  items-center justify-between gap-4 md:gap-10 pb-2'>
             <div className=' flex flex-col space-y-6  md:w-1/2 p-2'>
                 <div className=' space-y-2'>
 
