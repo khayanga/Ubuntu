@@ -6,95 +6,88 @@ export const navLinks = [
   ];
 
   export const atmData = [
-    // {
-    //   id: 1,
-    //   image: "/images/analytics.png",
-    //   title: "Real-time data monitoring",
-    //   description: "Monitor water usage in real time, providing accurate and up-to-dateinformation for better water management."
-    // },
     {
       id: 1,
       image: "/images/battery.png", 
-      title: "Long battery life",
-      description: "Our Smart Water Meters are designed with energy-efficient technology, providing long battery life for uninterrupted service."
+      title: "Long Battery Life",
+      description: "Our Smart Water Meters feature energy-efficient technology for long-lasting battery life, ensuring service when you need it."
     },
-    
-    
     {
       id: 2,
       image: "/images/prepay.png",
-      title: "Pre & postpay services",
-      description: " Choose the payment plan that works best for you! our digital Meters offer the convenience of advance payments or usage-based billing."
+      title: "Flexible Payment Options",
+      description: "Select the payment method that fits you best! Our meters provide advance payments or usage-based billing for easy access."
     },
     {
       id: 3,
       image: "/images/report.png",
-      title: "Comprehensive reports",
-      description: "Stay informed with comprehensive water usage reports. Our Meters generate detailed data, giving you insights into your consumption patterns."
+      title: "Comprehensive Reports",
+      description: "Stay informed with detailed water usage reports that give insights into your consumption patterns for better management."
     },
     {
       id: 4,
       image: "/images/web.png",
-      title: "Web intergration",
-      description: "Monitor and manage your water usage remotely with seamless web integration. Access real-time data, through our user-friendly online platform."
+      title: "Web Integration",
+      description: "Easily manage your water usage remotely through web integration, accessing real-time data via our online platform."
     }
   ];
+  
+  
 
   export const cardData = [
     {
       id: 1,
       image: "/images/timer.png",
       title: "24/7 Access",
-      description: "Our Smart Water ATMs provide uninterrupted access to clean, safe drinking water around the clock. Whether it's day or night, you can count on us for easy, affordable water right when you need it."
+      description: "Enjoy round-the-clock access to clean, safe drinking water whenever you need it. We ensure you stay hydrated day and night!"
     },
     {
       id: 2,
       image: "/images/scale.png", 
       title: "Scalability",
-      description: "Built with scalability in mind, our Smart Water ATMs can easily expand to serve growing communities. As demand increases, the system can accommodate more users, ensuring everyone gets water."
+      description: "Designed to grow with your community, our Smart Water ATMs can easily adapt to increasing demand, ensuring everyone has access."
     },
-    
     {
       id: 3,
       image: "/images/mpesa.png",
-      title: "Mpesa integration",
-      description: "No cash? No problem! Our Smart Water ATMs are integrated with M-Pesa, enabling quick and secure payments via mobile. Access clean water with just a few taps on your phone—convenience at its best."
+      title: "M-Pesa Integration",
+      description: "No cash? No worries! Our ATMs support M-Pesa, making mobile payments quick and secure for effortless water access."
     },
     {
       id: 4,
       image: "/images/dispensing.png",
-      title: "Automated dispensing",
-      description: " Enjoy hassle-free, automated water dispensing at the touch of a button. With precise controls, our Smart Water ATMs ensure you only pay for the amount of water you need, minimizing waste and maximizing value."
+      title: "Automated Dispensing",
+      description: "Get hassle-free water dispensing at the touch of a button. Only pay for what you need with our precise control system."
     }
   ];
-
+  
   export const meterData = [
     {
       id: 1,
       image: "/images/timer.png",
       title: "24/7 Access",
-      description: "Our Smart Water ATMs provide uninterrupted access to clean, safe drinking water around the clock. Whether it's day or night, you can count on us for easy, affordable water right when you need it."
+      description: "Enjoy round-the-clock access to clean, safe drinking water whenever you need it. We ensure you stay hydrated day and night!"
     },
     {
       id: 2,
       image: "/images/scale.png", 
       title: "Scalability",
-      description: "Built with scalability in mind, our Smart Water ATMs can easily expand to serve growing communities. As demand increases, the system can accommodate more users, ensuring everyone gets water."
+      description: "Designed to grow with your community, our Smart Water ATMs can easily adapt to increasing demand, ensuring everyone has access."
     },
-    
     {
       id: 3,
       image: "/images/mpesa.png",
-      title: "Mpesa integration",
-      description: "No cash? No problem! Our Smart Water ATMs are integrated with M-Pesa, enabling quick and secure payments via mobile. Access clean water with just a few taps on your phone—convenience at its best."
+      title: "M-Pesa Integration",
+      description: "No cash? No worries! Our ATMs support M-Pesa, making mobile payments quick and secure for effortless water access."
     },
     {
       id: 4,
       image: "/images/dispensing.png",
-      title: "Automated dispensing",
-      description: " Enjoy hassle-free, automated water dispensing at the touch of a button. With precise controls, our Smart Water ATMs ensure you only pay for the amount of water you need, minimizing waste and maximizing value."
+      title: "Automated Dispensing",
+      description: "Get hassle-free water dispensing at the touch of a button. Only pay for what you need with our precise control system."
     }
   ];
+  
 
   export const pricingData = [
     {

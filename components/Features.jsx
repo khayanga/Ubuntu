@@ -15,7 +15,7 @@ import Image from 'next/image'
 const Features = () => {
   return (
     <div className='max-w-6xl mx-auto mt-10 md:mb-28  md:mt-10 pb-4 '>
-        <h1 className='text-sky-600 text-[24px] font-normal py-6 text-center'>Features</h1>
+        <h1 className='text-sky-600 text-[24px] font-bold py-6 text-center'>Features</h1>
 
         <div className='flex flex-col md:flex-row  items-center justify-between px-4 gap-4 pb-2'>
         {cardData.map((card) => (
@@ -41,7 +41,7 @@ const Features = () => {
               </div>
               
               <h4 className='my-2 text-sky-600 font-medium'>{card.title}</h4>
-              <p className='text-sm text-gray-800'>{card.description}</p>
+              <p className='text-md text-gray-800'>{card.description}</p>
             </CardContent>
           </Card>
 

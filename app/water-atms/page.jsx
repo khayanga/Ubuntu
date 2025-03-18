@@ -55,12 +55,9 @@ const page = () => {
         <AnimatedSection>
         <div className='container flex flex-col items-center md:flex-row gap-3 md:space-x-40 mx-auto px-6 md:px-2  mt-10 md:mb-32 max-w-6xl'>
         <div className='md:w-1/2'>
-        <TextGenerateEffect className="text-[28px] md:text-[30px] mb-2 text-sky-600"  duration={2} filter={false} words={words}/>
-            <p className='text-sm  text-white leading-normal'>
-            Discover the future of water access with our Smart Water ATMs, engineered to deliver a seamless and sustainable solution for communities in need. These advanced water dispensing units are designed for convenience, efficiency, and environmental responsibility.
-            Manufactured by Ubuntu Waterhub Africa, a pioneering Kenyan company dedicated to innovating the water sector through IoT and technology-driven solutions, our Smart Water ATMs enable users to access clean water easily and securely.
-            Equipped with user-friendly interfaces and real-time monitoring capabilities, these ATMs ensure reliable water dispensing while promoting transparency in water management. Our technology empowers local water entrepreneurs, enhancing their ability to serve communities effectively.
-            Join us in transforming water access across Africa, fostering health and prosperity through smart, sustainable solutions.
+        <TextGenerateEffect className="text-[28px] md:text-[40px]  mb-2 text-sky-600"  duration={2} filter={false} words={words}/>
+            <p className='text-sm  md:text-lg md:tracking-wider text-white leading-normal'>
+            Our Smart Water ATMs offer secure, easy access to clean water, promoting sustainability and transparency. Designed by Ubuntu Waterhub Africa, they empower local entrepreneurs to serve communities effectively with user-friendly, efficient, and environmentally responsible water dispensing solutions.
             </p>
         </div>
         <div className=' '>
@@ -73,7 +70,7 @@ const page = () => {
         {/* Features */}
         <AnimatedSection>
         <div className='max-w-6xl mx-auto mt-10 md:mb-32 pb-4 '>
-        <h1 className='text-sky-600 text-[24px] font-normal py-6 text-center'>Features</h1>
+        <h1 className='text-sky-600 text-[24px] font-bold py-6 text-center'>Features</h1>
 
         <div className='flex flex-col md:flex-row  items-center justify-between px-4 gap-4  pb-2'>
         {meterData.map((meter) => (
@@ -99,7 +96,7 @@ const page = () => {
               </div>
               
               <h4 className='my-2 text-sky-600 font-medium'>{meter.title}</h4>
-              <p className='text-sm text-gray-800'>{meter.description}</p>
+              <p className='text-md text-gray-800'>{meter.description}</p>
             </CardContent>
           </Card>
 
@@ -116,28 +113,28 @@ const page = () => {
         {/* Benefits */}
         <AnimatedSection>
         <div className='container mx-auto mt-10 md:mb-32 pb-4 max-w-6xl '>
-        <h1 className='text-sky-600 text-[24px] font-normal py-6 text-center'>Benefits</h1>
+        <h1 className='text-sky-600 text-[24px] font-bold py-6 text-center'>Benefits</h1>
 
         <div className='flex flex-col md:flex-row  items-center justify-between  gap-4 md:gap-10 pb-2'>
             <div className=' flex flex-col space-y-6  md:w-1/2 p-2'>
                 <div className=' space-y-2'>
 
                 <button className='flex flex-row space-x-2 bg-gradient-to-r from-sky-400 to-sky-600 p-2 rounded-full'>
-                    <BadgeCheck className='w-4 h-4 text-white '/>
-                    <p className='text-[12px]  text-white'>24/7 Access to clean water</p>
+                    <BadgeCheck className='w-6 h-6 font-bold text-white '/>
+                    <p className='text-[16px]  text-white'>24/7 Access to clean water</p>
                 </button>
 
-                <p className='text-sm text-white'>Provides constant access to clean water, even in areas with limited infrastructure.</p>
+                <p className='text-sm  md:text-lg  text-white'>Provides constant access to clean water, even in areas with limited infrastructure.</p>
 
                 </div>
                 <div className=' space-y-2'>
 
                 <button className='flex flex-row space-x-2 bg-gradient-to-r from-sky-400 to-sky-600 p-2 rounded-full'>
-                    <BadgeCheck className='w-4 h-4 text-white '/>
-                    <p className='text-[12px]  text-white'>Enterprenuer empowerment</p>
+                    <BadgeCheck className='w-6 h-6 font-bold text-white '/>
+                    <p className='text-[16px]  text-white'>Enterprenuer empowerment</p>
                 </button>
 
-                <p className='text-sm text-white'>Enables real-time system control, monitoring, and management for water business entrepreneurs.</p>
+                <p className='text-sm  md:text-lg  text-white'>Enables real-time system control, monitoring, and management for water business entrepreneurs.</p>
 
                 </div>
 
@@ -148,21 +145,21 @@ const page = () => {
                 <div className=' space-y-2'>
 
                 <button className='flex flex-row space-x-2  p-2 rounded-full bg-gradient-to-r from-sky-400 to-sky-600'>
-                    <BadgeCheck className='w-4 h-4 text-white '/>
-                    <p className='text-[12px]  text-white'>Convinient Payment Systems</p>
+                    <BadgeCheck className='w-6 h-6 font-bold text-white '/>
+                    <p className='text-[16px]  text-white'>Convinient Payment Systems</p>
                 </button>
 
-                <p className='text-sm text-white'>Integration with mobile payment technologies like Mpesa allows easy water payment via smartphones.</p>
+                <p className='text-sm  md:text-lg  text-white'>Integration with mobile payment technologies like Mpesa allows easy water payment via smartphones.</p>
 
                 </div>
                 <div className=' space-y-2'>
 
                 <button className='flex flex-row space-x-2 bg-gradient-to-r from-sky-400 to-sky-600 p-2 rounded-full'>
-                    <BadgeCheck className='w-4 h-4 text-white '/>
-                    <p className='text-[12px]  text-white'>Sustainable and Cost-Effective</p>
+                    <BadgeCheck className='w-6 h-6 font-bold text-white '/>
+                    <p className='text-[16px]  text-white'>Sustainable and Cost-Effective</p>
                 </button>
 
-                <p className='text-sm text-white'>Spill proof design minimizes water wastage, and solar power compatibility enhances sustainability.</p>
+                <p className='text-sm  md:text-lg  text-white'>Spill proof design minimizes water wastage, and solar power compatibility enhances sustainability.</p>
 
                 </div>
 
@@ -198,9 +195,9 @@ const page = () => {
                <ul className="text-center mt-2 space-y-2 ">
                   {plan.descriptions.map((description, i) => (
                     <div className="flex flex-row space-x-2 justify-center mt-4">
-                       <BadgeCheck className='w-4 h-4 text-white '/>
+                       <BadgeCheck className='w-6 h-6 font-bold text-white '/>
                     <li key={i} 
-                    className="text-sm text-white ">
+                    className="text-sm  md:text-lg  text-white ">
                       {description}
                     </li>
 
@@ -230,7 +227,7 @@ const page = () => {
         <div className=" md:w-2/5 ">
             <h1 className='text-sky-600
             font-semibold text-[28px] md:text-[30px]'>Mpesa pay steps.</h1>
-            <p className='text-sm  text-white'>
+            <p className='text-sm text-white  md:text-lg md:tracking-wider'>
             The ATM utilises both the Mpesa and tag pay to facilitate payment for water. 
             The following are the steps towards using the mpesa pay mode.
             </p>
@@ -250,7 +247,7 @@ const page = () => {
         <div className=" md:w-2/5 ">
             <h1 className='text-sky-600
             font-semibold text-[28px] md:text-[30px]'>Tag pay steps.</h1>
-            <p className='text-sm  text-white'>
+            <p className='text-sm text-white md:text-lg md:tracking-wider'>
             The ATM utilises both the Mpesa and tag pay to facilitate payment for water. 
             The following are the steps towards using the tag.
             </p>

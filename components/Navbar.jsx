@@ -22,8 +22,8 @@ const Navbar = () => {
         <Image 
           src="/images/logo.png" 
           alt="Logo" 
-          width={100} 
-          height={100} 
+          width={150} 
+          height={150} 
         />
       </Link>
 
@@ -34,7 +34,7 @@ const Navbar = () => {
             <li key={index}>
               <Link 
                 href={link.href || '#'} 
-                className={`${pathname === link.href ? 'text-sky-600' : 'text-white'} text-md hover:text-sky-600`}
+                className={`${pathname === link.href ? 'text-sky-600' : 'text-white'} text-md font-bold hover:text-sky-600`}
               >
                 {link.name}
               </Link>

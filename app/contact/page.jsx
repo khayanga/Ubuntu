@@ -105,10 +105,10 @@ const Page = () => {
         {/* hero section */}
         <div className="max-w-4xl  bg-white/10 backdrop-blur-lg rounded-md relative z-10 w-full mx-auto md:mb-32 mt-10 mb-8 md:h-[300px] h-[350px] py-8 px-6">
          <BackgroundBeams/>
-          <h1 className="text-center text-[28px] font-bold text-sky-600">
+          <h1 className="text-center text-[28px] md:text-[32px] font-bold text-sky-600">
           Reach out to us for a seamless experience.
           </h1>
-          <p className='text-white mt-4 md:mb-16 leading-normal text-center '>We’re here to answer any questions, discuss your unique needs, or explore how we can work together. Our team is dedicated to providing prompt and efficient support, 
+          <p className='text-white mt-4 md:mb-16 leading-normal text-center font-light text-sm  md:text-lg md:tracking-wider'>We’re here to answer any questions, discuss your unique needs, or explore how we can work together. Our team is dedicated to providing prompt and efficient support, 
             ensuring your experience with us is seamless from start to finish.</p>
 
 
@@ -150,7 +150,7 @@ const Page = () => {
                   <h2 className='text-sky-600 tracking-wide text-[24px] font-bold '>
                     How can we help You ?
                   </h2>
-                  <p className='text-sm my-2  text-white leading-normal'>
+                  <p className='text-sm font-light  md:text-lg md:tracking-wider my-2  text-white leading-normal'>
                   Whether you’re interested in learning more about our services, need technical assistance, or have a specific query, we’d love to help. 
                   Simply fill out the contact form below or use any of the options to get in touch.
                   </p>
@@ -221,7 +221,7 @@ const Page = () => {
             </CardContent>
           </Card>
 
-          </div>
+          </div> 
         </>
         
         

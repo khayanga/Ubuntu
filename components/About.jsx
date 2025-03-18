@@ -11,16 +11,12 @@ const About = () => {
         </div>
         <div className='md:w-1/2'>
             <h2 className='text-sky-600 text-[24px] font-bold mb-2'>Who are we</h2>
-            <h3 className='text-white
+            {/* <h3 className='text-white
             text-[24px] '>Transforming communities across Africa with access to safe, clean water
-                </h3>
-            <p className='text-sm my-4 text-white leading-normal'>
-            At Ubuntu Waterhub Africa, we are passionate about transforming water access,
-             sanitation, and hygiene across the continent. We are a Kenyan-based company in Nairobi, 
-             we harness innovative technology to create smart solutions that empower local water entrepreneurs. Our commitment to providing advanced vending and management tools enables communities to secure reliable access to clean water.
-          By collaborating with industry leaders and NGOs, we amplify our impact and extend our reach to those who need it most. Together, we are fostering sustainable change, driving prosperity, and ensuring that every community has access to the essential resource of safe water.
-
-
+                </h3> */}
+            <p className='text-sm  md:text-lg md:tracking-wider my-4 text-white leading-normal'>
+            Ubuntu Waterhub Africa is dedicated to transforming water access across Africa. Based in Nairobi, we use smart technology to empower local water entrepreneurs with tools for reliable, clean water. Through partnerships with industry leaders and NGOs,
+             we’re driving sustainable change, prosperity, and ensuring safe water for all communities.
             </p>
         </div>
         

@@ -5,12 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "start": "NODE_ENV=production node server.js",
     "lint": "next lint"
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "@react-google-maps/api": "^2.20.3",
     "@tabler/icons-react": "^3.20.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",

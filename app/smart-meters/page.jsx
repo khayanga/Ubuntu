@@ -56,11 +56,11 @@ const page = () => {
         <AnimatedSection>
         <div className=' max-w-6xl container flex flex-col items-center md:flex-row md:space-x-40 mx-auto px-6 md:px-2 mt-10 md:mb-32'>
         <div className='md:w-1/2'>
-        <TextGenerateEffect className="text-[28px] md:text-[30px] mb-2 text-sky-600"  duration={2} filter={false} words={words}/>
-            <p className='text-sm  text-white mt-3 leading-normal'>
-            Introducing our Digital Water Meters, cutting-edge devices designed to provide accurate and real-time tracking of water consumption. Engineered with advanced smart technology, these meters offer precise measurements and insightful data analytics, empowering users to monitor and manage their water resources with ease.
-              Our Digital Water Meters facilitate efficient water management by providing remote monitoring capabilities, allowing users to track usage patterns and identify potential leaks or inefficiencies instantly. This proactive approach not only conserves water but also helps reduce costs for households and businesses alike.
-              With a focus on sustainability and resource optimization, our Digital Water Meters are essential tools for fostering responsible water usage in communities across Africa. Join us in our mission to promote transparency and efficiency in water consumption, ensuring a brighter, more sustainable future for all.
+        <TextGenerateEffect className="text-[28px] md:text-[40px] mb-2 text-sky-600"  duration={2} filter={false} words={words}/>
+            <p className='text-sm  md:text-lg md:tracking-wider text-white mt-3 leading-normal'>
+            
+            Our Digital Water Meters offer accurate, real-time tracking and insightful analytics, empowering users to manage water resources efficiently. With remote monitoring, they help identify leaks and usage patterns, 
+            promoting conservation and sustainability in communities across Africa.
             </p>
         </div>
         <div className=' '>
@@ -98,7 +98,7 @@ const page = () => {
               </div>
               
               <h4 className='my-2 text-sky-600 font-medium'>{atm.title}</h4>
-              <p className='text-sm text-gray-800'>{atm.description}</p>
+              <p className='text-md text-gray-800'>{atm.description}</p>
             </CardContent>
           </Card>
 
@@ -114,99 +114,68 @@ const page = () => {
         </AnimatedSection>
         
         {/* Benefits */}
+
         <AnimatedSection>
-        <div className=' container mx-auto mt-10 md:mb-32 pb-4 max-w-6xl '>
-        <h1 className='text-sky-600 text-[24px] font-normal py-6 text-center'>Benefits</h1>
+          <div className="container mx-auto mt-10 md:mb-32 pb-4 max-w-6xl">
+            <h1 className="text-sky-600 text-[24px] font-normal py-6 text-center">Benefits</h1>
 
-        <div className='flex flex-col md:flex-row  items-center justify-between gap-4 md:gap-10 pb-2'>
-            <div className=' flex flex-col space-y-6  md:w-1/2 p-2'>
-                <div className=' space-y-2'>
-
-                <button className='flex flex-row space-x-2 bg-gradient-to-r from-sky-400 to-sky-600 p-2 rounded-full'>
-                    <BadgeCheck className='w-4 h-4 text-white '/>
-                    <p className='text-[12px]  text-white'>Accurate billing</p>
-                </button>
-
-                <p className='text-sm text-white'>
-                Eliminates billing disputes with precise, real-time water usage data, ensuring fair billing.
-                </p>
-
-                </div>
-                <div className=' space-y-2'>
-
-                <button className='flex flex-row space-x-2 bg-gradient-to-r from-sky-400 to-sky-600 p-2 rounded-full'>
-                    <BadgeCheck className='w-4 h-4 text-white '/>
-                    <p className='text-[12px]  text-white'>Tarrifs</p>
-                </button>
-
-                <p className='text-sm text-white'>
-                Tariffs are customized according to the admin's specifications and can be changed at any time.The justified price charged for water service to cover the reasonable cost of providing the service.
-                </p>
-
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-10 pb-2">
+              <div className="flex flex-col space-y-6 md:w-1/2 p-2">
+                <div className="space-y-2">
+                  <button className="flex flex-row space-x-2 bg-gradient-to-r from-sky-400 to-sky-600 p-2 rounded-full">
+                    <BadgeCheck className="w-6 h-6 font-bold text-white" />
+                    <p className="text-[16px] text-white">Accurate Billing</p>
+                  </button>
+                  <p className="text-sm md:text-lg text-white">Ensures fair, precise billing with real-time usage data, eliminating disputes.</p>
                 </div>
 
-                <div className=' space-y-2'>
-
-                <button className='flex flex-row space-x-2 bg-gradient-to-r from-sky-400 to-sky-600 p-2 rounded-full'>
-                    <BadgeCheck className='w-4 h-4 text-white '/>
-                    <p className='text-[12px]  text-white'>Remote monitoring</p>
-                </button>
-
-                <p className='text-sm text-white'>
-                Allows utility providers and consumers to monitor water usage remotely, providing convenience and timely access to information.
-                </p>
-
+                <div className="space-y-2">
+                  <button className="flex flex-row space-x-2 bg-gradient-to-r from-sky-400 to-sky-600 p-2 rounded-full">
+                    <BadgeCheck className="w-6 h-6 font-bold text-white" />
+                    <p className="text-[16px] text-white">Tariffs</p>
+                  </button>
+                  <p className="text-sm md:text-lg text-white">Admin-adjusted tariffs cover service costs, keeping pricing fair and flexible.</p>
                 </div>
 
-            
+                <div className="space-y-2">
+                  <button className="flex flex-row space-x-2 bg-gradient-to-r from-sky-400 to-sky-600 p-2 rounded-full">
+                    <BadgeCheck className="w-6 h-6 font-bold text-white" />
+                    <p className="text-[16px] text-white">Remote Monitoring</p>
+                  </button>
+                  <p className="text-sm md:text-lg text-white">Easily track usage remotely for timely information and added convenience.</p>
+                </div>
+              </div>
 
+              <div className="flex flex-col space-y-6 md:w-1/2 p-2">
+                <div className="space-y-2">
+                  <button className="flex flex-row space-x-2 bg-gradient-to-r from-sky-400 to-sky-600 p-2 rounded-full">
+                    <BadgeCheck className="w-6 h-6 font-bold text-white" />
+                    <p className="text-[16px] text-white">Predictive Maintenance</p>
+                  </button>
+                  <p className="text-sm md:text-lg text-white">Uses data to plan maintenance, reducing downtime and extending asset life.</p>
+                </div>
+
+                <div className="space-y-2">
+                  <button className="flex flex-row space-x-2 bg-gradient-to-r from-sky-400 to-sky-600 p-2 rounded-full">
+                    <BadgeCheck className="w-6 h-6 font-bold text-white" />
+                    <p className="text-[16px] text-white">Scalability</p>
+                  </button>
+                  <p className="text-sm md:text-lg text-white">Easily scales to meet growing demand, supporting expanding communities.</p>
+                </div>
+
+                <div className="space-y-2">
+                  <button className="flex flex-row space-x-2 bg-gradient-to-r from-sky-400 to-sky-600 p-2 rounded-full">
+                    <BadgeCheck className="w-6 h-6 font-bold text-white" />
+                    <p className="text-[16px] text-white">Regulatory Compliance</p>
+                  </button>
+                  <p className="text-sm md:text-lg text-white">Enables compliance with regulations through accurate, timely data reporting.</p>
+                </div>
+              </div>
             </div>
-            <div className=' flex flex-col space-y-6  md:w-1/2 p-2'>
-                <div className=' space-y-2'>
-
-                <button className='flex flex-row space-x-2 bg-gradient-to-r from-sky-400 to-sky-600 p-2 rounded-full'>
-                    <BadgeCheck className='w-4 h-4 text-white '/>
-                    <p className='text-[12px]  text-white'>Predictive maintance</p>
-                </button>
-
-                <p className='text-sm text-white'>
-                Uses data analytics to predict and schedule maintenance, reducing downtime and extending infrastructure.
-                </p>
-
-                </div>
-                <div className=' space-y-2'>
-
-                <button className='flex flex-row space-x-2 bg-gradient-to-r from-sky-400 to-sky-600 p-2 rounded-full'>
-                    <BadgeCheck className='w-4 h-4 text-white '/>
-                    <p className='text-[12px]  text-white'>Scalability</p>
-                </button>
-
-                <p className='text-sm text-white'>
-                Easily scalable to accommodate growing populations and expanding service areas, making it a future-proof investment.
-                </p>
-
-                </div>
-                <div className=' space-y-2'>
-
-                    <button className='flex flex-row space-x-2 bg-gradient-to-r from-sky-400 to-sky-600 p-2 rounded-full'>
-                        <BadgeCheck className='w-4 h-4 text-white '/>
-                        <p className='text-[12px]  text-white'>Regulatory compliance</p>
-                    </button>
-
-                    <p className='text-sm text-white'>
-                    Helps utility providers comply with water usage regulations and reporting requirements by providing accurate and timely data.
-                    </p>
-
-                </div>
-
-            
-
-            </div>
-        </div>
-
-        </div>
-
+          </div>
         </AnimatedSection>
+
+        
         
         
         <AnimatedSection><Contact /></AnimatedSection>
