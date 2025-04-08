@@ -17,6 +17,18 @@ module.exports = {
       },
     },
     extend: {
+      colors: {
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        'water-blue': {
+          400: '#3b82f6', 
+          600: '#2563eb', 
+          
+        },
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

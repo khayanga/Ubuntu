@@ -1,17 +1,13 @@
 "use client";
-
-import About from "@/components/About";
-import Contact from "@/components/Contact";
-import Features from "@/components/Features";
+import Features from "@/components/home/Features";
 import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
+import Hero from "@/components/home/Hero";
 import Navbar from "@/components/Navbar";
-import Products from "@/components/Products";
-import { Spotlight } from "@/components/ui/spotlight";
-
+import Products from "@/components/home/Products";
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
 import { useRef } from "react";
+import Newsletter from "@/components/home/Newsletter";
+import Testimonials from "@/components/home/Testimonials";
 
 export default function Home() {
   const AnimatedSection = ({ children }) => {
@@ -20,7 +16,11 @@ export default function Home() {
 
     const variants = {
       hidden: { scale: 0.8, opacity: 0 },
-      visible: { scale: 1, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
+      visible: {
+        scale: 1,
+        opacity: 1,
+        transition: { duration: 0.6, ease: "easeOut" },
+      },
     };
 
     return (
@@ -37,30 +37,26 @@ export default function Home() {
   };
 
   return (
-
-    <div className="relative bg-gray-900 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-7 px-5">
-
-
-        <Image
-          src="/images/water.jpg"
-          layout="fill"
-          className="w-full h-full  object-cover mix-blend-overlay opacity-55"
-          alt="Contact background image"
-        />
-      
-      <div className="max-w-7xl w-full relative z-10">
-        <Navbar />
-        <AnimatedSection><Hero /></AnimatedSection>
-        <AnimatedSection><About /></AnimatedSection>
-        <AnimatedSection><Products /></AnimatedSection>
-        <AnimatedSection><Features /></AnimatedSection>
-        <AnimatedSection><Contact /></AnimatedSection>
-        
+    <div className="min-h-screen flex flex-col mx-auto">
+      <Navbar />
+      <div>
+        <AnimatedSection>
+          <Hero />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Features />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Products />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Testimonials />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Newsletter />
+        </AnimatedSection>
       </div>
       <Footer />
     </div>
   );
 }
-
-
-

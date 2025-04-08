@@ -1,78 +1,132 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation'; // Use usePathname instead of useRouter
-import { navLinks } from '@/data';
-import Image from 'next/image';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import React, { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { navLinks } from "@/data";
+import Image from "next/image";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { useTheme } from "next-themes";
+import { Button } from "./ui/button";
+import { MoonIcon, SunIcon } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname(); // Get current path
+  const { theme, setTheme } = useTheme();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <div className="px-6 py-5 container mx-auto flex justify-between items-center max-w-6xl">
-      {/* Logo */}
-      <Link href="/">
-        <Image 
-          src="/images/logo.png" 
-          alt="Logo" 
-          width={150} 
-          height={150} 
-        />
-      </Link>
+    <header className="sticky top-0 z-50 max-w-8xl border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-16 items-center justify-between px-4 sm:px-6">
+        {/* Logo */}
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/logo.png"
+            alt="Logo"
+            width={100}
+            height={40}
+            className="h-auto w-24 sm:w-28"
+            priority
+          />
+        </Link>
+        <nav className="hidden md:flex items-center gap-8">
+          <ul className="flex space-x-12">
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                <Link
+                  href={link.href || "#"}
+                  className="text-sm hover:text-water-blue-600 dark:hover:text-water-blue-400 transition-colors"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-      {/* Desktop Navigation */}
-      <nav className="hidden md:flex">
-        <ul className="flex space-x-8">
-          {navLinks.map((link, index) => (
-            <li key={index}>
-              <Link 
-                href={link.href || '#'} 
-                className={`${pathname === link.href ? 'text-sky-600' : 'text-white'} text-md font-bold hover:text-sky-600`}
-              >
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+        <div className="hidden md:flex items-center gap-4">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="hover:bg-accent"
+          >
+            {theme === "dark" ? (
+              <MoonIcon className="h-[1.2rem] w-[1.2rem]" />
+            ) : (
+              <SunIcon className="h-[1.2rem] w-[1.2rem]" />
+            )}
+            <span className="sr-only">Toggle theme</span>
+          </Button>
 
-      {/* Mobile Menu Button */}
-      <div className="md:hidden flex items-center">
-        <button onClick={toggleMenu} aria-label="Toggle menu">
-          {isOpen ? <FaTimes className="text-white w-6 h-6" /> : <FaBars className="text-sky-600 w-6 h-6" />}
-        </button>
-      </div>
-
-      {/* Mobile Navigation */}
-      <div className={`absolute top-0 right-0 w-56 px-3 h-64 bg-gradient-to-b from-sky-600 to-sky-800 transition-transform duration-300 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'} md:hidden z-50`}>
-        {/* Close Button */}
-        <div className="flex p-4">
-          <button onClick={toggleMenu} aria-label="Close menu">
-            <FaTimes className="text-white w-6 h-6" />
-          </button>
+          <Button
+            asChild
+            variant="default"
+            
+          >
+            <Link href="/contact">Contact Us</Link>
+          </Button>
         </div>
 
-        <ul className="flex flex-col items-start space-y-4">
-          {navLinks.map((link, index) => (
-            <li key={index}>
-              <Link 
-                href={link.href || '#'} 
-                className={`${pathname === link.href ? 'text-white' : 'text-white'} text-sm hover:text-sky-200`}
-              >
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="md:hidden flex items-center gap-4">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="md:hidden"
+          >
+            {theme === "dark" ? (
+              <MoonIcon className="h-[1.2rem] w-[1.2rem]" />
+            ) : (
+              <SunIcon className="h-[1.2rem] w-[1.2rem]" />
+            )}
+            <span className="sr-only">Toggle theme</span>
+          </Button>
+
+          <button
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+            className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+          >
+            {isOpen ? (
+              <FaTimes className="w-5 h-5 text-foreground" />
+            ) : (
+              <FaBars className="w-5 h-5 text-foreground" />
+            )}
+          </button>
+        </div>
       </div>
-    </div>
+      {isOpen && (
+        <div className="md:hidden container py-4 border-t">
+          <nav className="px-6 py-4 ">
+            <ul className="flex flex-col space-y-4 mb-2">
+              {navLinks.map((link, index) => (
+                <li key={index}>
+                  <Link
+                    href={link.href || "#"}
+                    className={`block py-1 text-sm font-medium hover:text-water-blue-600 dark:hover:text-water-blue-400 transition-colors`}
+                    onClick={toggleMenu}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <Link
+              href="/contact"
+              className="text-sm mt-4 hover:text-water-blue-600 dark:hover:text-water-blue-400 transition-colors"
+              onClick={toggleMenu}
+            >
+              Contact Us
+            </Link>
+          </nav>
+        </div>
+      )}
+    </header>
   );
 };
 

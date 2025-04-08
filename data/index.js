@@ -2,7 +2,7 @@ export const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Water Atms', href: '/water-atms' },
     { name: 'Smart Meters', href: '/smart-meters' },
-    { name: 'Contact Us', href: '/contact' },
+    { name: 'Schedule Demo', href: '/schedule-demo' },
   ];
 
   export const atmData = [
@@ -32,7 +32,36 @@ export const navLinks = [
     }
   ];
   
-  
+  export const products = [
+    {
+      title: "Smart Water Meters",
+      description: "Our state-of-the-art smart water meters provide accurate readings, leak detection, and real-time monitoring. Designed with precision engineering and advanced IoT technology, these meters help utilities and consumers manage water resources efficiently.",
+      features: [
+        "Ultra-precise measurement technology",
+        "Wireless connectivity for remote monitoring",
+        "Long battery life with low power consumption",
+        "Tamper-proof design with alert system"
+      ],
+      image: "/images/smartmeter.png",
+      link: "/smart-meters",
+      reverse: false,
+      imageClass: "object-contain" 
+    },
+    {
+      title: "Water ATMs",
+      description: "Our innovative Water ATMs provide clean, safe drinking water on demand. These self-service kiosks are perfect for communities, educational institutions, and public spaces, ensuring access to purified water at affordable prices.",
+      features: [
+        "Multi-stage water purification system",
+        "Contactless payment options",
+        "24/7 water availability with remote monitoring",
+        "Solar power compatibility for off-grid locations"
+      ],
+      image: "/images/atm.png",
+      link: "/water-atms",
+      reverse: true,
+      imageClass: "object-contain"
+    }
+  ];
 
   export const cardData = [
     {
@@ -87,6 +116,52 @@ export const navLinks = [
       description: "Get hassle-free water dispensing at the touch of a button. Only pay for what you need with our precise control system."
     }
   ];
+  
+  export const testimonials = [
+    {
+      quote: "Ubuntu Waterhub smart meters helped us detect leaks, reduce wastage, and lower costs. The real-time data makes facility management simpler and more efficient.",
+      author: "Sarah Johnson",
+      role: "Facility Manager",
+      company: "Green Valley Properties",
+      rating: 5,
+    },
+    {
+      quote: "With Ubuntu Waterhub, we monitor water usage easily. The dashboard is user-friendly, and their support team guided us through every step of implementation.",
+      author: "Michael Chen",
+      role: "Water Resource Director",
+      company: "Westlake City Council",
+      rating: 5,
+    },
+    {
+      quote: "The Water ATMs have given our community 24/7 access to clean water. They’re easy to use, reliable, and reduce dependency on plastic bottles.",
+      author: "Priya Patel",
+      role: "Community Development Officer",
+      company: "Harmony Foundation",
+      rating: 4,
+    },
+    {
+      quote: "Ubuntu Waterhub helped us install a tailored solution. We've improved efficiency, reduced water bills, and received excellent support throughout the entire project journey.",
+      author: "James Wilson",
+      role: "Operations Director",
+      company: "Clearwater Resorts",
+      rating: 5,
+    },
+    {
+      quote: "After using Ubuntu Waterhub, our university reduced water usage and increased awareness. The system supports our green goals and student-led sustainability initiatives.",
+      author: "Elena Rodriguez",
+      role: "Sustainability Manager",
+      company: "Western University",
+      rating: 4,
+    },
+    {
+      quote: "We now track water flow in real time, spot anomalies quickly, and make better decisions. Ubuntu Waterhub has boosted service delivery across departments.",
+      author: "Daniel Okoth",
+      role: "Environmental Engineer",
+      company: "Nairobi Smart City Project",
+      rating: 5,
+    },
+  ];
+  
   
 
   export const pricingData = [
