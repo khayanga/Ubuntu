@@ -7,7 +7,7 @@ import { products } from "@/data";
 
 const Products = () => {
   return (
-    <section className="section-padding lg:py-32 md:py-24 py-16 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className=" lg:py-32 md:py-24 py-16  px-4 sm:px-6 lg:px-8">
       <div className="container">
         <div className="max-w-2xl mx-auto text-center mb-16">
           <h2 className="text-3xl font-bold mb-4 text-sky-600">

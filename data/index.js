@@ -1,3 +1,5 @@
+import { BarChart, Clock, Droplets, Shield, Smartphone, Zap } from "lucide-react";
+
 export const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Water Atms', href: '/water-atms' },
@@ -34,20 +36,6 @@ export const navLinks = [
   
   export const products = [
     {
-      title: "Smart Water Meters",
-      description: "Our state-of-the-art smart water meters provide accurate readings, leak detection, and real-time monitoring. Designed with precision engineering and advanced IoT technology, these meters help utilities and consumers manage water resources efficiently.",
-      features: [
-        "Ultra-precise measurement technology",
-        "Wireless connectivity for remote monitoring",
-        "Long battery life with low power consumption",
-        "Tamper-proof design with alert system"
-      ],
-      image: "/images/smartmeter.png",
-      link: "/smart-meters",
-      reverse: false,
-      imageClass: "object-contain" 
-    },
-    {
       title: "Water ATMs",
       description: "Our innovative Water ATMs provide clean, safe drinking water on demand. These self-service kiosks are perfect for communities, educational institutions, and public spaces, ensuring access to purified water at affordable prices.",
       features: [
@@ -60,7 +48,22 @@ export const navLinks = [
       link: "/water-atms",
       reverse: true,
       imageClass: "object-contain"
+    },
+    {
+      title: "Smart Water Meters",
+      description: "Our state-of-the-art smart water meters provide accurate readings, leak detection, and real-time monitoring. Designed with precision engineering and advanced IoT technology, these meters help utilities and consumers manage water resources efficiently.",
+      features: [
+        "Ultra-precise measurement technology",
+        "Wireless connectivity for remote monitoring",
+        "Long battery life with low power consumption",
+        "Tamper-proof design with alert system"
+      ],
+      image: "/images/smartmeter.png",
+      link: "/smart-meters",
+      reverse: false,
+      imageClass: "object-contain" 
     }
+    
   ];
 
   export const cardData = [
@@ -162,7 +165,93 @@ export const navLinks = [
     },
   ];
   
-  
+  export const features = [
+    {
+      icon: <Droplets size={28} />,
+      title: 'Advanced Leak Detection',
+      description: 'Identify and prevent water leaks with precision technology, reducing waste and saving costs.'
+    },
+    {
+      icon: <BarChart size={28} />,
+      title: 'Real-time Analytics',
+      description: 'Access comprehensive water usage data and insights through our intuitive dashboard.'
+    },
+    {
+      icon: <Smartphone size={28} />,
+      title: 'Mobile Management',
+      description: 'Control and monitor your water systems remotely through our user-friendly mobile application.'
+    },
+    {
+      icon: <Shield size={28} />,
+      title: 'Enhanced Security',
+      description: 'Protect water resources with advanced authentication and tamper-proof systems.'
+    },
+    {
+      icon: <Clock size={28} />,
+      title: 'Automated Scheduling',
+      description: 'Set schedules for water distribution and receive timely notifications and alerts.'
+    },
+    {
+      icon: <Zap size={28} />,
+      title: 'Energy Efficient',
+      description: 'Low power consumption design with extended battery life for uninterrupted operation.'
+    }
+  ];
+
+  export const waterMeterFeatures = [
+    {
+      id: "measurement-tech",
+      name: "Measurement Technology",
+      description: "Select the flow measurement technology that best suits your needs",
+      options: [
+        { value: "ultrasonic", label: "Ultrasonic (Standard)", pricing: "Included" },
+        { value: "electromagnetic", label: "Electromagnetic", pricing: "Premium" },
+        { value: "mechanical", label: "Mechanical", pricing: "Economy" }
+      ]
+    },
+    {
+      id: "connectivity",
+      name: "Connectivity Options",
+      description: "Choose how your meters will transmit data",
+      options: [
+        { value: "nb-iot", label: "NB-IoT", pricing: "Standard" },
+        { value: "lora", label: "LoRaWAN", pricing: "Standard" },
+        { value: "cellular", label: "4G/LTE Cellular", pricing: "Premium" },
+        { value: "sigfox", label: "Sigfox", pricing: "Economy" }
+      ]
+    },
+    {
+      id: "battery",
+      name: "Battery Life",
+      description: "Select your preferred battery lifespan",
+      options: [
+        { value: "5yr", label: "5 Year", pricing: "Economy" },
+        { value: "10yr", label: "10 Year", pricing: "Standard" },
+        { value: "15yr", label: "15 Year", pricing: "Premium" }
+      ]
+    },
+    {
+      id: "alerts",
+      name: "Alert Systems",
+      description: "Choose which alert functionalities you need",
+      options: [
+        { value: "basic", label: "Basic (Leaks & Tampering)", pricing: "Included" },
+        { value: "advanced", label: "Advanced (Leak, Burst, Tampering, Reverse Flow)", pricing: "Premium" },
+        { value: "custom", label: "Custom Alert Configuration", pricing: "Custom" }
+      ]
+    },
+    {
+      id: "software",
+      name: "Management Software",
+      description: "Select the software package for monitoring and management",
+      options: [
+        { value: "basic", label: "Basic Web Dashboard", pricing: "Included" },
+        { value: "advanced", label: "Advanced Analytics Platform", pricing: "Premium" },
+        { value: "enterprise", label: "Enterprise Integration Suite", pricing: "Enterprise" }
+      ]
+    }
+  ];
+
 
   export const pricingData = [
     {

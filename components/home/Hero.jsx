@@ -9,7 +9,7 @@ import { animate, inView, stagger } from "framer-motion";
 const Hero = () => {
   const words = `Smart Water Mangement Solutions.`;
   const [isVisible, setIsVisible] = useState(false);
-
+  const [particles, setParticles] = useState([]);
   useEffect(() => {
     setIsVisible(true);
     inView(".hero-section", ({ target }) => {
@@ -41,30 +41,35 @@ const Hero = () => {
       }
     );
   }, []);
+  
+
+useEffect(() => {
+  const newParticles = Array.from({ length: 15 }).map(() => ({
+    width: `${Math.random() * 10 + 5}px`,
+    height: `${Math.random() * 10 + 5}px`,
+    top: `${Math.random() * 100}%`,
+    left: `${Math.random() * 100}%`,
+    animation: `float ${Math.random() * 10 + 10}s linear infinite`,
+  }));
+  setParticles(newParticles);
+}, []);
 
   return (
-    <section className="relative overflow-hidden  max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden mx-auto px-4 sm:px-6 lg:px-8">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[800px] h-[800px] rounded-full bg-blue-100 blur-3xl opacity-30 dark:opacity-10"></div>
         <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[800px] h-[800px] rounded-full bg-blue-100 blur-3xl opacity-20 dark:opacity-5"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-blue-200 blur-3xl opacity-10 dark:opacity-5 animate-pulse"></div>
-
-        {/* Added animated particles */}
         <div className="absolute inset-0">
-          {Array.from({ length: 15 }).map((_, index) => (
+          {particles.map((style, index) => (
             <div
               key={index}
               className="absolute rounded-full bg-sky-500 opacity-20"
-              style={{
-                width: `${Math.random() * 10 + 5}px`,
-                height: `${Math.random() * 10 + 5}px`,
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                animation: `float ${Math.random() * 10 + 10}s linear infinite`,
-              }}
+              style={style}
             />
           ))}
         </div>
+
       </div>
 
       <div className="container py-8 md:py-16 lg:py-24">

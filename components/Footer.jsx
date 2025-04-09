@@ -11,12 +11,12 @@ import Link from "next/link";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="bg-gray-950 text-white">
+    <footer className="bg-gray-950 text-white relative">
       <div className="container py-12 md:py-16 ">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 ">
           <div className="flex flex-col gap-4 items-center md:items-start">
             <Image
-              className="mb-6"
+              className="mb-4"
               src="/images/logo.png"
               alt="Logo"
               width={140}

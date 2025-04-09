@@ -1,14 +1,13 @@
 "use client";
-
 import React, { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { navLinks } from "@/data";
 import Image from "next/image";
-import { FaBars, FaTimes } from "react-icons/fa";
 import { useTheme } from "next-themes";
 import { Button } from "./ui/button";
-import { MoonIcon, SunIcon } from "lucide-react";
+import { LuMenu, LuMoon, LuSun } from "react-icons/lu";
+import { LiaTimesSolid } from "react-icons/lia";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 max-w-8xl border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50  border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between px-4 sm:px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center">
@@ -38,7 +37,7 @@ const Navbar = () => {
               <li key={index}>
                 <Link
                   href={link.href || "#"}
-                  className="text-sm hover:text-water-blue-600 dark:hover:text-water-blue-400 transition-colors"
+                  className="text-sm hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -55,9 +54,9 @@ const Navbar = () => {
             className="hover:bg-accent"
           >
             {theme === "dark" ? (
-              <MoonIcon className="h-[1.2rem] w-[1.2rem]" />
+              <LuMoon  className="h-[1.2rem] w-[1.2rem]" />
             ) : (
-              <SunIcon className="h-[1.2rem] w-[1.2rem]" />
+              <LuSun className="h-[1.2rem] w-[1.2rem]" />
             )}
             <span className="sr-only">Toggle theme</span>
           </Button>
@@ -79,9 +78,9 @@ const Navbar = () => {
             className="md:hidden"
           >
             {theme === "dark" ? (
-              <MoonIcon className="h-[1.2rem] w-[1.2rem]" />
+              <LuMoon className="h-[1.2rem] w-[1.2rem]" />
             ) : (
-              <SunIcon className="h-[1.2rem] w-[1.2rem]" />
+              <LuSun className="h-[1.2rem] w-[1.2rem]" />
             )}
             <span className="sr-only">Toggle theme</span>
           </Button>
@@ -92,9 +91,9 @@ const Navbar = () => {
             className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
           >
             {isOpen ? (
-              <FaTimes className="w-5 h-5 text-foreground" />
+              <LiaTimesSolid className="w-5 h-5 text-foreground" />
             ) : (
-              <FaBars className="w-5 h-5 text-foreground" />
+              <LuMenu className="w-5 h-5 text-foreground" />
             )}
           </button>
         </div>

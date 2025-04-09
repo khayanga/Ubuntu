@@ -7,7 +7,7 @@ import { Button } from '../ui/button';
 const Newsletter = () => {
   return (
     <section className="py-16 md:py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-sky-600 -z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-sky-600 -z-10"></div>
       
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden -z-5">
@@ -17,7 +17,7 @@ const Newsletter = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] border border-white/5 rounded-full"></div>
       </div>
       
-      <div className="container relative z-10">
+      <div className=" container relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
             Ready to transform your water management?

@@ -30,6 +30,7 @@ export default function Home() {
         animate={isInView ? "visible" : "hidden"}
         exit="hidden"
         variants={variants}
+        className="w-full"
       >
         {children}
       </motion.div>
@@ -37,26 +38,32 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col mx-auto">
+    <main className="min-h-screen flex flex-col">
       <Navbar />
-      <div>
+
+      <div className="flex-grow ">
         <AnimatedSection>
           <Hero />
         </AnimatedSection>
+
         <AnimatedSection>
           <Features />
         </AnimatedSection>
+
         <AnimatedSection>
           <Products />
         </AnimatedSection>
+
         <AnimatedSection>
           <Testimonials />
         </AnimatedSection>
+
         <AnimatedSection>
           <Newsletter />
         </AnimatedSection>
       </div>
+
       <Footer />
-    </div>
+    </main>
   );
 }

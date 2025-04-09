@@ -64,11 +64,11 @@ const TestimonialCard = ({ quote, author, role, company, rating }) => {
     }, []);
   
     return (
-      <section className=" bg-gray-50 dark:bg-gray-900/30 lg:py-32 md:py-24 py-16 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8relative overflow-hidden">
+      <section className=" bg-gray-50 dark:bg-gray-900/30 lg:py-32 md:py-24 py-16 mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-300/10 dark:bg-blue-700/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-300/10 dark:bg-blue-700/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
   
-        <div className="container relative z-10">
+        <div className=" relative z-10">
           <div className="max-w-2xl mx-auto text-center mb-12">
             <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-sky-600 dark:bg-blue-900/30 dark:border-blue-800 dark:text-blue-300 mb-4 animate-item">
               <span className="text-sm font-medium">Customer Stories</span>
