@@ -29,7 +29,7 @@ const MeterOverview = () => {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
               <div className="flex items-start space-x-2">
-                <LuDroplet className="h-5 w-5 text-blue-500 mt-0.5" />
+                <LuDroplet className="h-5 w-5 text-sky-600 mt-0.5" />
                 <div>
                   <h3 className="font-medium">Leak Detection</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-300">
@@ -38,14 +38,14 @@ const MeterOverview = () => {
                 </div>
               </div>
               <div className="flex items-start space-x-2">
-                <FiZap className="h-5 w-5 text-blue-500 mt-0.5" />
+                <FiZap className="h-5 w-5 text-sky-600 mt-0.5" />
                 <div>
                   <h3 className="font-medium">Low Power</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-300">5+ year battery life</p>
                 </div>
               </div>
               <div className="flex items-start space-x-2">
-                <Check className="h-5 w-5 text-blue-500 mt-0.5" />
+                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
                 <div>
                   <h3 className="font-medium">High Accuracy</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-300">
@@ -54,7 +54,7 @@ const MeterOverview = () => {
                 </div>
               </div>
               <div className="flex items-start space-x-2">
-                <ShieldCheck className="h-5 w-5 text-blue-500 mt-0.5" />
+                <ShieldCheck className="h-5 w-5 text-sky-600 mt-0.5" />
                 <div>
                   <h3 className="font-medium">Tamper-Proof</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-300">

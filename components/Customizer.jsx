@@ -38,7 +38,7 @@ const formSchema = z.object({
   }),
 });
 
-const MeterCustomizer = ({ productName, productType, features }) => {
+const ProductCustomizer = ({ productName, productType, features }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedFeatures, setSelectedFeatures] = useState({});
@@ -114,7 +114,7 @@ const MeterCustomizer = ({ productName, productType, features }) => {
     <>
       <Button 
         onClick={() => setIsOpen(true)} 
-        className="bg-blue-600 hover:bg-blue-700 text-white"
+        className="bg-blue-50 text-sky-600 hover:bg-blue-50 shadow-lg hover:shadow-xl transition-all"
       >
         Customize & Get Quote <ArrowRight className="ml-2 h-4 w-4" />
       </Button>
@@ -177,7 +177,7 @@ const MeterCustomizer = ({ productName, productType, features }) => {
                             <Input 
                               placeholder="Your full name" 
                               {...field} 
-                              className="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white"
+                              className="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700"
                             />
                           </FormControl>
                           <FormMessage className="text-red-500 dark:text-red-400" />
@@ -196,7 +196,7 @@ const MeterCustomizer = ({ productName, productType, features }) => {
                               type="email" 
                               placeholder="your@email.com" 
                               {...field}
-                              className="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white"
+                              className="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700"
                             />
                           </FormControl>
                           <FormMessage className="text-red-500 dark:text-red-400" />
@@ -214,7 +214,7 @@ const MeterCustomizer = ({ productName, productType, features }) => {
                             <Input 
                               placeholder="+1 (555) 000-0000" 
                               {...field}
-                              className="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white"
+                              className="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700"
                             />
                           </FormControl>
                           <FormMessage className="text-red-500 dark:text-red-400" />
@@ -232,7 +232,7 @@ const MeterCustomizer = ({ productName, productType, features }) => {
                             <Input 
                               placeholder="Your company name" 
                               {...field}
-                              className="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white"
+                              className="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700"
                             />
                           </FormControl>
                           <FormMessage className="text-red-500 dark:text-red-400" />
@@ -252,7 +252,7 @@ const MeterCustomizer = ({ productName, productType, features }) => {
                               min="1" 
                               placeholder="Number of units needed" 
                               {...field}
-                              className="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white"
+                              className="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700"
                             />
                           </FormControl>
                           <FormMessage className="text-red-500 dark:text-red-400" />
@@ -270,7 +270,7 @@ const MeterCustomizer = ({ productName, productType, features }) => {
                         <FormControl>
                           <Textarea 
                             placeholder="Tell us about any specific needs or requirements..." 
-                            className="min-h-[100px] bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white "
+                            className="min-h-[100px] bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700 "
                             {...field} 
                           />
                         </FormControl>
@@ -313,7 +313,7 @@ const MeterCustomizer = ({ productName, productType, features }) => {
                     </Button>
                     <Button 
                       type="submit" 
-                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                      className="bg-sky-600 hover:bg-blue-700 text-white"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? "Submitting..." : "Request Quote"}
@@ -329,4 +329,4 @@ const MeterCustomizer = ({ productName, productType, features }) => {
   );
 };
 
-export default MeterCustomizer;
+export default ProductCustomizer;

@@ -1,9 +1,10 @@
 import React from 'react'
 import { Button } from '../ui/button'
 import Link from 'next/link'
-import { waterMeterFeatures } from '@/data'
 import ProductCustomizer from '../Customizer'
+import { atmFeatures } from '@/data'
 import Decoration from '../Decoration'
+
 const Banner = () => {
    
   return (
@@ -13,16 +14,16 @@ const Banner = () => {
       <div className="container">
             <div className="max-w-3xl">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                Smart Water Meters
+              Water ATMs
               </h1>
               <p className="text-xl text-blue-100 mb-8">
-                Advanced metering technology for precise measurement, leak detection, and consumption monitoring.
+              Self-service purified water dispensers providing clean, safe drinking water 24/7.
               </p>
               <div className="flex flex-wrap gap-4 relative z-10">
                 <ProductCustomizer 
                   productName="Smart Water Meter" 
-                  productType="water-meter" 
-                  features={waterMeterFeatures} 
+                  productType="water-atm" 
+                  features={atmFeatures} 
                 />
                 <Button
                 asChild

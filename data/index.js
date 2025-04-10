@@ -253,29 +253,89 @@ export const navLinks = [
   ];
 
 
-  export const pricingData = [
-    {
-      title: "Standard Payment",
-      price: "170,000 KES",
-      descriptions: [
-        "Installation 15-30,000",
-        `2"1 standard Flow-sensors`,
-        `2"1 standard Motorized Ball Valves`,
-      ],
-      buttonLabel: "Get now",
-    },
-    {
-      title: "Addons",
-      price: "Customization",
-      descriptions: [
-        "Installation 15,000",
-        `Extra 1" tap 25,000`,
-        `Extra 2" tap 34,500`,
-      ],
-      buttonLabel: "Get now",
-    }
-    
-  ];
-  
+
+
+export const atmFeatures = [
+  {
+    id: "purification",
+    name: "Purification Technology",
+    description: "Select the water purification technology that best suits your needs",
+    options: [
+      { value: "ro-uv", label: "RO + UV (Standard)", pricing: "Included" },
+      { value: "ro-uv-uf", label: "RO + UV + UF + Mineralization", pricing: "Premium" },
+      { value: "uf-uv", label: "UF + UV", pricing: "Economy" }
+    ]
+  },
+  {
+    id: "capacity",
+    name: "Dispensing Capacity",
+    description: "Choose your daily water dispensing capacity",
+    options: [
+      { value: "1000l", label: "1,000 Liters/day", pricing: "Economy" },
+      { value: "3000l", label: "3,000 Liters/day", pricing: "Standard" },
+      { value: "5000l", label: "5,000+ Liters/day", pricing: "Premium" }
+    ]
+  },
+  {
+    id: "payment",
+    name: "Payment Options",
+    description: "Select which payment methods to include",
+    options: [
+      { value: "basic", label: "Coin/Card Only", pricing: "Economy" },
+      { value: "standard", label: "Coin/Card/Mobile Pay", pricing: "Standard" },
+      { value: "premium", label: "All Methods + RFID + QR", pricing: "Premium" }
+    ]
+  },
+  {
+    id: "power",
+    name: "Power Configuration",
+    description: "Choose the power source configuration",
+    options: [
+      { value: "mains", label: "Mains Power Only", pricing: "Economy" },
+      { value: "hybrid", label: "Hybrid (Mains + Battery Backup)", pricing: "Standard" },
+      { value: "solar", label: "Solar Compatible", pricing: "Premium" }
+    ]
+  },
+  {
+    id: "monitoring",
+    name: "Remote Monitoring",
+    description: "Select your preferred monitoring capabilities",
+    options: [
+      { value: "basic", label: "Basic Status Monitoring", pricing: "Included" },
+      { value: "advanced", label: "Advanced Diagnostics & Alerts", pricing: "Premium" },
+      { value: "premium", label: "Full Suite + Predictive Maintenance", pricing: "Enterprise" }
+    ]
+  },
+  {
+    id: "housing",
+    name: "Housing Options",
+    description: "Choose the external housing type",
+    options: [
+      { value: "standard", label: "Standard Indoor", pricing: "Economy" },
+      { value: "weatherproof", label: "Weatherproof", pricing: "Standard" },
+      { value: "ruggedized", label: "Ruggedized for Harsh Environments", pricing: "Premium" }
+    ]
+  }
+];
+
+
+ export const faqItems = [
+  {
+    question: "How quickly will I receive a response?",
+    answer: "We aim to respond to all inquiries within 24 business hours. For urgent matters, please call our support line directly."
+  },
+  {
+    question: "Do you offer product demonstrations?",
+    answer: "Yes! You can schedule a demo through our website or by contacting our sales team directly at sales@aquaflow.com."
+  },
+  {
+    question: "What support options are available?",
+    answer: "We offer email support, phone support, and on-site technical assistance for enterprise customers. All products come with a standard support package."
+  },
+  {
+    question: "Do you ship internationally?",
+    answer: "Yes, we ship our products worldwide. Shipping costs and delivery times vary by location. Contact our sales team for specific information."
+  }
+];
   
   
