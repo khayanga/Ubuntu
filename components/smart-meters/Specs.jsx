@@ -24,7 +24,7 @@ const WaterMeterSpecs = () => {
           </Table>
         </div>
   
-        <div>
+        {/* <div>
           <h3 className="text-xl font-bold mb-4 text-sky-600">Key Features</h3>
           <ul className="space-y-3">
             {features.map((feature, index) => (
@@ -37,9 +37,9 @@ const WaterMeterSpecs = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
   
-        <div>
+        {/* <div>
           <h3 className="text-xl font-bold mb-4 text-sky-600">Connectivity</h3>
           <ul className="space-y-3">
             {connectivity.map((item, index) => (
@@ -52,7 +52,7 @@ const WaterMeterSpecs = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
       </div>
     );
   };

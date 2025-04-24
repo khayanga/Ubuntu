@@ -104,19 +104,16 @@ const AtmSpecs = () => {
                   </li>
                   <li className="flex items-start">
                     <span className="text-sky-600 mr-2">✓</span>
-                    <span className="text-gray-600 dark:text-gray-300">Complete installation by certified technicians</span>
+                    <span className="text-gray-600 dark:text-gray-300">Complete installation by technicians</span>
                   </li>
-                  <li className="flex items-start">
-                    <span className="text-sky-600 mr-2">✓</span>
-                    <span className="text-gray-600 dark:text-gray-300">Water quality testing and verification</span>
-                  </li>
+                  
                   <li className="flex items-start">
                     <span className="text-sky-600 mr-2">✓</span>
                     <span className="text-gray-600 dark:text-gray-300">Staff training for basic operation</span>
                   </li>
                 </ul>
               </div>
-              <div>
+              {/* <div>
                 <h4 className="font-medium text-lg mb-3">Maintenance Packages</h4>
                 <ul className="space-y-2">
                   <li className="flex items-start">
@@ -136,7 +133,7 @@ const AtmSpecs = () => {
                     <span className="text-gray-600 dark:text-gray-300">System performance optimization</span>
                   </li>
                 </ul>
-              </div>
+              </div> */}
               <div>
                 <h4 className="font-medium text-lg mb-3">Technical Support</h4>
                 <ul className="space-y-2">
@@ -167,16 +164,9 @@ const AtmSpecs = () => {
                   </li>
                   <li className="flex items-start">
                     <span className="text-sky-600 mr-2">✓</span>
-                    <span className="text-gray-600 dark:text-gray-300">Marketing and awareness materials</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-sky-600 mr-2">✓</span>
                     <span className="text-gray-600 dark:text-gray-300">Usage analytics and reporting</span>
                   </li>
-                  <li className="flex items-start">
-                    <span className="text-sky-600 mr-2">✓</span>
-                    <span className="text-gray-600 dark:text-gray-300">Community engagement programs</span>
-                  </li>
+                  
                 </ul>
               </div>
             </div>

@@ -54,9 +54,9 @@ export default function Home() {
           <Products />
         </AnimatedSection>
 
-        <AnimatedSection>
+        {/* <AnimatedSection>
           <Testimonials />
-        </AnimatedSection>
+        </AnimatedSection> */}
 
         <AnimatedSection>
           <Newsletter />

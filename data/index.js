@@ -1,4 +1,5 @@
-import { BarChart, Clock, Droplets, Shield, Smartphone, Zap } from "lucide-react";
+import {  Banknote, ChartNoAxesCombined,  Check,  Handshake, LaptopMinimal, Shield, ShieldCheck, TimerReset, Zap } from "lucide-react";
+
 
 export const navLinks = [
     { name: 'Home', href: '/' },
@@ -37,12 +38,13 @@ export const navLinks = [
   export const products = [
     {
       title: "Water ATMs",
-      description: "Our innovative Water ATMs provide clean, safe drinking water on demand. These self-service kiosks are perfect for communities, educational institutions, and public spaces, ensuring access to purified water at affordable prices.",
+      description: "Our innovative Water ATMs provide clean, safe drinking water on demand. These self-service kiosks are perfect for communities, educational institutions, and public spaces, ensuring access to clean water at affordable prices.",
       features: [
-        "Multi-stage water purification system",
-        "Contactless payment options",
-        "24/7 water availability with remote monitoring",
-        "Solar power compatibility for off-grid locations"
+        "Automated water dispensing",
+        "Scalability for growing communities",
+        "24/7 access to clean water",
+        "Green energy compatible",
+        "M-Pesa integration for cashless transactions"
       ],
       image: "/images/atm.png",
       link: "/water-atms",
@@ -53,10 +55,10 @@ export const navLinks = [
       title: "Smart Water Meters",
       description: "Our state-of-the-art smart water meters provide accurate readings, leak detection, and real-time monitoring. Designed with precision engineering and advanced IoT technology, these meters help utilities and consumers manage water resources efficiently.",
       features: [
-        "Ultra-precise measurement technology",
-        "Wireless connectivity for remote monitoring",
+        "Flexible payment options (prepaid/postpaid)",
+        "Comprehensive reports and analytics",
         "Long battery life with low power consumption",
-        "Tamper-proof design with alert system"
+        "Web integration for remote management",
       ],
       image: "/images/smartmeter.png",
       link: "/smart-meters",
@@ -119,7 +121,7 @@ export const navLinks = [
       description: "Get hassle-free water dispensing at the touch of a button. Only pay for what you need with our precise control system."
     }
   ];
-  
+
   export const testimonials = [
     {
       quote: "Ubuntu Waterhub smart meters helped us detect leaks, reduce wastage, and lower costs. The real-time data makes facility management simpler and more efficient.",
@@ -164,37 +166,42 @@ export const navLinks = [
       rating: 5,
     },
   ];
-  
+
   export const features = [
     {
-      icon: <Droplets size={28} />,
-      title: 'Advanced Leak Detection',
-      description: 'Identify and prevent water leaks with precision technology, reducing waste and saving costs.'
+      icon: <TimerReset size={28} />,
+      title: '24/7 Access to Clean Water',
+      description: 'Our Water ATMs provide round-the-clock access to clean, safe drinking water, ensuring you stay hydrated at all times.'
+      
     },
     {
-      icon: <BarChart size={28} />,
-      title: 'Real-time Analytics',
-      description: 'Access comprehensive water usage data and insights through our intuitive dashboard.'
+      icon: <Handshake size={28} />,
+      title: 'Business Empowerment',
+      description: 'Empower your business with our smart water solutions, designed to enhance efficiency and reduce operational costs.'
+     
     },
     {
-      icon: <Smartphone size={28} />,
-      title: 'Mobile Management',
-      description: 'Control and monitor your water systems remotely through our user-friendly mobile application.'
+      icon: <LaptopMinimal size={28} />,
+      title: 'Web Integration',
+      description: 'Easily manage your water usage remotely through web integration, accessing real-time data via our online platform.',
     },
     {
       icon: <Shield size={28} />,
-      title: 'Enhanced Security',
-      description: 'Protect water resources with advanced authentication and tamper-proof systems.'
+      title: 'Integrity & Security',
+      description: 'Our smart water solutions are designed with advanced security features to protect your data and ensure the integrity of your water supply.'
+      
     },
     {
-      icon: <Clock size={28} />,
-      title: 'Automated Scheduling',
-      description: 'Set schedules for water distribution and receive timely notifications and alerts.'
+      icon: <ChartNoAxesCombined size={28} />,
+      title: 'Scalability',
+      description: 'Our smart water solutions are designed to grow with your community, ensuring everyone has access to clean water.'
+      
     },
     {
       icon: <Zap size={28} />,
-      title: 'Energy Efficient',
-      description: 'Low power consumption design with extended battery life for uninterrupted operation.'
+      title: 'Green Energy Compatible',
+      description: 'Our Water ATMs are compatible with green energy solutions, reducing your carbon footprint and promoting sustainability.'
+      
     }
   ];
 
@@ -251,9 +258,6 @@ export const navLinks = [
       ]
     }
   ];
-
-
-
 
 export const atmFeatures = [
   {
@@ -326,7 +330,7 @@ export const atmFeatures = [
   },
   {
     question: "Do you offer product demonstrations?",
-    answer: "Yes! You can schedule a demo through our website or by contacting our sales team directly at sales@aquaflow.com."
+    answer: "Yes! You can schedule a demo through our website or by contacting our sales team directly at info@waterhub.africa"
   },
   {
     question: "What support options are available?",
@@ -336,6 +340,29 @@ export const atmFeatures = [
     question: "Do you ship internationally?",
     answer: "Yes, we ship our products worldwide. Shipping costs and delivery times vary by location. Contact our sales team for specific information."
   }
+];
+
+export const atmItems = [
+  {
+    icon: Banknote,
+    title: "Tarrifs",
+    description: "Fair and flexible pricing",
+  },
+  {
+    icon: Zap,
+    title: "Low Power",
+    description: "5+ year battery life",
+  },
+  {
+    icon: Check,
+    title: "High Accuracy",
+    description: "±0.5% measurement precision",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Tamper-Proof",
+    description: "Advanced security features",
+  },
 ];
   
   

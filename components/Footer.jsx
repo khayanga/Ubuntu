@@ -3,10 +3,8 @@ import React from "react";
 import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
-import dynamic from "next/dynamic";
 import { navLinks } from "@/data";
 import Link from "next/link";
-
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -25,21 +23,41 @@ const Footer = () => {
 
             <h1 className="text-gray-400">Follow us on our social networks</h1>
 
-            <div className="flex flex-row gap-4  justify-center items-center">
-              <Link href="https://www.instagram.com/ubuntu_waterhub/" className="text-gray-300 hover:text-sky-600 transition-colors">
-                <FaInstagram className="w-6 h-6 " />
+            <div className="flex flex-row gap-4 justify-center items-center">
+              <Link
+                href="https://www.instagram.com/ubuntu_waterhub/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-sky-600 transition-colors"
+              >
+                <FaInstagram className="w-6 h-6" />
               </Link>
 
-              <Link href="https://www.linkedin.com/company/ubuntu-waterhub-africa/" className="text-gray-300 hover:text-sky-600 transition-colors">
-                <FaLinkedin className="w-6 h-6 " />
+              <Link
+                href="https://www.linkedin.com/company/ubuntu-waterhub-africa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-sky-600 transition-colors"
+              >
+                <FaLinkedin className="w-6 h-6" />
               </Link>
 
-              <Link href="https://www.facebook.com/profile.php?id=61564003078907"className="text-gray-300 hover:text-sky-600 transition-colors">
-                <FaFacebook className="w-6 h-6 " />
+              <Link
+                href="https://www.facebook.com/profile.php?id=61564003078907"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-sky-600 transition-colors"
+              >
+                <FaFacebook className="w-6 h-6" />
               </Link>
 
-              <Link href="https://x.com/UbuntuWaterhub"className ="text-gray-300 hover:text-sky-600 transition-colors">
-                <FaTwitter className="w-6 h-6 " />
+              <Link
+                href="https://x.com/UbuntuWaterhub"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-sky-600 transition-colors"
+              >
+                <FaTwitter className="w-6 h-6" />
               </Link>
             </div>
           </div>
@@ -48,7 +66,9 @@ const Footer = () => {
            */}
 
           <nav className="items-center ">
-            <h1 className="text-gray-400 font-bold mb-3 text-center">Company Links</h1>
+            <h1 className="text-gray-400 font-bold mb-3 text-center">
+              Company Links
+            </h1>
             <ul className="space-y-2  text-center">
               {navLinks.map((link, index) => (
                 <li key={index}>

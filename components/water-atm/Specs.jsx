@@ -32,7 +32,7 @@ const Specs = () => {
         </Table>
       </div>
 
-      <div>
+      {/* <div>
         <h3 className="text-xl font-bold mb-4">Purification Technology</h3>
         <ul className="space-y-3">
           {purification.map((item, index) => (
@@ -45,9 +45,9 @@ const Specs = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
 
-      <div>
+      {/* <div>
         <h3 className="text-xl font-bold mb-4">Payment & Operation</h3>
         <ul className="space-y-3">
           {payments.map((item, index) => (
@@ -60,7 +60,7 @@ const Specs = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 };
