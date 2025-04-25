@@ -1,25 +1,27 @@
-"use client"
-import Footer from '@/components/Footer'
-import Navbar from '@/components/Navbar'
+"use client";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import Banner from "@/components/smart-meters/Banner";
+import MeterOverview from "@/components/smart-meters/MeterOverview";
+import MetersSpecs from "@/components/smart-meters/MetersSpecs";
+import MeterCta from "@/components/smart-meters/MeterCta";
 
-import React, { useRef } from 'react'
-import { motion, useInView } from 'framer-motion';
-import Banner from '@/components/smart-meters/Banner'
-import MeterOverview from '@/components/smart-meters/MeterOverview'
-import MetersSpecs from '@/components/smart-meters/MetersSpecs'
-import MeterCta from '@/components/smart-meters/MeterCta'
 const page = () => {
- 
-
   const AnimatedSection = ({ children }) => {
     const ref = useRef(null);
     const isInView = useInView(ref);
-  
+
     const variants = {
       hidden: { scale: 0.8, opacity: 0 },
-      visible: { scale: 1, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
+      visible: {
+        scale: 1,
+        opacity: 1,
+        transition: { duration: 0.6, ease: "easeOut" },
+      },
     };
-  
+
     return (
       <motion.div
         ref={ref}
@@ -34,17 +36,24 @@ const page = () => {
   };
   return (
     <main className="min-h-screen flex flex-col">
-      <Navbar/>
+      <Navbar />
       <div className="flex-grow ">
-        <AnimatedSection><Banner/></AnimatedSection>
-        <AnimatedSection><MeterOverview/></AnimatedSection>
-        <AnimatedSection><MetersSpecs/></AnimatedSection>
-        <AnimatedSection><MeterCta/></AnimatedSection>
+        <AnimatedSection>
+          <Banner />
+        </AnimatedSection>
+        <AnimatedSection>
+          <MeterOverview />
+        </AnimatedSection>
+        <AnimatedSection>
+          <MetersSpecs />
+        </AnimatedSection>
+        <AnimatedSection>
+          <MeterCta />
+        </AnimatedSection>
       </div>
-      <Footer/>
+      <Footer />
     </main>
-    
-  )
-}
+  );
+};
 
-export default page
+export default page;

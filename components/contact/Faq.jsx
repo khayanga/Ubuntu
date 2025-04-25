@@ -3,7 +3,6 @@ import { Card, CardContent } from "../ui/card";
 import { faqItems } from "@/data";
 
 const Faq = () => {
-
   return (
     <section className=" bg-gray-50 dark:bg-gray-900/30 lg:py-32 md:py-24 py-16 mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-sky-300/10 dark:bg-sky-700/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
@@ -24,17 +23,17 @@ const Faq = () => {
         </div>
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {faqItems.map((item, index) => (
-            <Card key={index} className="border-none shadow-xl bg-white dark:bg-gray-800/50 backdrop-blur-sm">
+            <Card
+              key={index}
+              className="border-none shadow-xl bg-white dark:bg-gray-800/50 backdrop-blur-sm"
+            >
               <CardContent className="pt-6">
                 <h3 className="font-semibold text-lg mb-2 group-hover:text-sky-600 transition-colors">
                   {item.question}
                 </h3>
-                <p className="text-muted-foreground">
-                  {item.answer}
-                </p>
+                <p className="text-muted-foreground">{item.answer}</p>
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-sky-500 to-sky-300"></div>
               </CardContent>
-              
             </Card>
           ))}
         </div>

@@ -1,11 +1,7 @@
 import { ChartNoAxesCombined } from "lucide-react";
 import Image from "next/image";
 import React from "react";
-import {
-  LuBanknote,
-  LuDroplets,
-  LuTimer,
-} from "react-icons/lu";
+import { LuBanknote, LuDroplets, LuTimer } from "react-icons/lu";
 const AtmOverview = () => {
   return (
     <section className="py-16 md:py-20">

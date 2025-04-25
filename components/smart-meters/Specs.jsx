@@ -66,7 +66,6 @@ const WaterMeterSpecs = () => {
     { name: 'Power Source', value: 'Lithium battery (5+ year lifespan)' },
     { name: 'Operating Temperature', value: '-10°C to 55°C' },
     { name: 'IP Rating', value: 'IP68 (fully waterproof)' },
-    { name: 'Certifications', value: 'ISO 4064, MID (Measuring Instruments Directive)' },
     { name: 'Data Storage', value: 'Up to 24 months of usage data' },
   ];
   

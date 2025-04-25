@@ -364,5 +364,116 @@ export const atmItems = [
     description: "Advanced security features",
   },
 ];
+export const applicationsData = [
+    {
+      category: "Residential",
+      items: [
+        "Single-family homes",
+        "Apartment buildings with individual metering",
+        "Vacation properties with remote monitoring",
+      ],
+    },
+    {
+      category: "Commercial",
+      items: [
+        "Office buildings",
+        "Hotels and hospitality",
+        "Retail establishments",
+      ],
+    },
+    {
+      category: "Industrial",
+      items: [
+        "Manufacturing facilities",
+        "Processing plants",
+        "Industrial parks",
+      ],
+    },
+    {
+      category: "Utility & Municipal",
+      items: [
+        "City-wide metering programs",
+        "District metering areas (DMAs)",
+        "Water supply monitoring",
+      ],
+    },
+  ];
+
+export const installationData = {
+    description:
+      "The Ubuntu Smart Water Meter is designed for easy installation by certified plumbers. The standard installation process takes approximately 1-2 hours and requires minimal disruption to your water service.",
+    process: [
+      "Water supply shutdown",
+      "Removal of existing meter (if applicable)",
+      "Installation of Ubuntu Smart Meter with appropriate fittings",
+      "System testing and leak check",
+      "Digital activation and connection to network",
+      "Setup of customer monitoring account",
+    ],
+    maintenance: [
+      "Battery replacement: Once every 5+ years (model dependent)",
+      "Firmware updates: Automatic over-the-air updates",
+      "Physical inspection: Recommended annually",
+      "Calibration check: Every 5 years (or as required by local regulations)",
+    ],
+  };
+
+  export const useCases = [
+    {
+      category: "Urban Communities",
+      items: [
+        "Residential neighborhoods",
+        "Apartment complexes",
+        "Housing societies",
+      ],
+    },
+    {
+      category: "Public Spaces",
+      items: [
+        "Parks and recreational areas",
+        "Transport hubs and stations",
+        "Shopping malls",
+      ],
+    },
+    {
+      category: "Educational Institutions",
+      items: ["School campuses", "College facilities", "University housing"],
+    },
+    {
+      category: "Rural Applications",
+      items: [
+        "Villages without reliable water infrastructure",
+        "Community centers",
+        "Healthcare facilities",
+      ],
+    },
+  ];
+
+  export const serviceSupport = [
+    {
+      category: "Installation Services",
+      items: [
+        "Site assessment and consultation",
+        "Complete installation by technicians",
+        "Staff training for basic operation",
+      ],
+    },
+    {
+      category: "Technical Support",
+      items: [
+        "24/7 remote monitoring and diagnostics",
+        "Phone and email support",
+        "Emergency response service",
+        "Software updates and enhancements",
+      ],
+    },
+    {
+      category: "Business Support",
+      items: [
+        "Revenue management consultancy",
+        "Usage analytics and reporting",
+      ],
+    },
+  ];
   
   

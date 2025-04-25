@@ -8,6 +8,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Newsletter from "@/components/home/Newsletter";
 import Testimonials from "@/components/home/Testimonials";
+import Success from "@/components/home/Success";
 
 export default function Home() {
   const AnimatedSection = ({ children }) => {
@@ -54,9 +55,9 @@ export default function Home() {
           <Products />
         </AnimatedSection>
 
-        {/* <AnimatedSection>
-          <Testimonials />
-        </AnimatedSection> */}
+        <AnimatedSection>
+          <Success />
+        </AnimatedSection>
 
         <AnimatedSection>
           <Newsletter />

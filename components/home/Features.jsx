@@ -23,7 +23,7 @@ const Features = () => {
         <div className="absolute right-1/4 bottom-0 w-96 h-96 bg-blue-100 dark:bg-blue-900/10 rounded-full mix-blend-multiply blur-3xl opacity-70 dark:opacity-30"></div>
       </div>
       
-      <div >
+      <div className='container' >
         <div className="max-w-2xl mx-auto text-center mb-16">
           <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-sky-600 dark:bg-blue-900/30 dark:border-blue-800 dark:text-blue-300 mb-4">
             <span className="text-sm font-medium">Innovative Features</span>
@@ -37,7 +37,7 @@ const Features = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl ">
           {features.map((feature, index) => (
             <FeatureCard
               key={index}
