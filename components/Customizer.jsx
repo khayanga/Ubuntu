@@ -91,7 +91,7 @@ const ProductCustomizer = ({ productName, productType, features }) => {
       ),
     };
 
-    // Simulate API call
+    
     try {
       console.log("Quote request data:", quoteData);
 

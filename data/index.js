@@ -2,12 +2,18 @@ import {  Banknote, ChartNoAxesCombined,  Check,  Handshake, LaptopMinimal, Shie
 
 
 export const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Water Atms', href: '/water-atms' },
-    { name: 'Smart Meters', href: '/smart-meters' },
-    { name: 'Schedule Demo', href: '/schedule-demo' },
-  ];
-
+  { name: 'Home', href: '/' },
+  { name: 'Water Atms', href: '/water-atms' },
+  { 
+    name: 'Meters',
+    subItems: [
+      { name: 'NB-IoT', href: '/smart-meters' },
+      { name: '4G CAT 1', href: '/smart-meters/4g-cat-1' },
+      { name: 'LoRaWAN', href: '/smart-meters/lorawan' },
+    ]
+  },
+  { name: 'Schedule Demo', href: '/schedule-demo' },
+];
   export const atmData = [
     {
       id: 1,
@@ -65,6 +71,24 @@ export const navLinks = [
       reverse: false,
       imageClass: "object-contain" 
     }
+    
+  ];
+  export const payments = [
+    {
+      title: "Mpesa Payment Steps",
+      description: "Pay for water quickly and securely using M-Pesa. Our system ensures instant payment processing with end-to-end encryption for your safety. Follow these simple steps",
+      image: "/images/steps.png",
+      reverse: true,
+      imageClass: "object-contain"
+    },
+    {
+      title: "Tag Payment Steps",
+      description: "Enjoy the fastest way to pay using NFC-enabled devices or contactless cards. Our Tag system provides instant authentication without physical contact",
+      image: "/images/tag_pay.png",
+      reverse: false,
+      imageClass: "object-contain"
+    },
+    
     
   ];
 
@@ -211,52 +235,41 @@ export const navLinks = [
       name: "Measurement Technology",
       description: "Select the flow measurement technology that best suits your needs",
       options: [
-        { value: "ultrasonic", label: "Ultrasonic (Standard)", pricing: "Included" },
-        { value: "electromagnetic", label: "Electromagnetic", pricing: "Premium" },
-        { value: "mechanical", label: "Mechanical", pricing: "Economy" }
+        { value: "nb-iot", label: "NB-IoT" },
+        { value: "lorawan", label: "LoRaWAN"},
+        { value: "4g-cat-1", label: "4G CAT 1" }
       ]
     },
+    
     {
-      id: "connectivity",
-      name: "Connectivity Options",
-      description: "Choose how your meters will transmit data",
+      id: "size",
+      name: "Size and Flow Rate",
+      description: "Select your desired meter size and flow rate",
       options: [
-        { value: "nb-iot", label: "NB-IoT", pricing: "Standard" },
-        { value: "lora", label: "LoRaWAN", pricing: "Standard" },
-        { value: "cellular", label: "4G/LTE Cellular", pricing: "Premium" },
-        { value: "sigfox", label: "Sigfox", pricing: "Economy" }
+        { value: "dn15", label: "DN15 (15mm)"},
+        { value: "dn20", label: "DN20 (20mm)" },
+        { value: "dn25", label: "DN25 (25mm)"},
+        { value: "dn32", label: "DN32 (32mm)"},
+        { value: "dn40", label: "DN40 (40mm)"},
+        { value: "dn50", label: "DN50 (50mm)"},
+        { value: "dn80", label: "DN80 (80mm)"}
       ]
+      
     },
-    {
-      id: "battery",
-      name: "Battery Life",
-      description: "Select your preferred battery lifespan",
-      options: [
-        { value: "5yr", label: "5 Year", pricing: "Economy" },
-        { value: "10yr", label: "10 Year", pricing: "Standard" },
-        { value: "15yr", label: "15 Year", pricing: "Premium" }
-      ]
-    },
-    {
-      id: "alerts",
-      name: "Alert Systems",
-      description: "Choose which alert functionalities you need",
-      options: [
-        { value: "basic", label: "Basic (Leaks & Tampering)", pricing: "Included" },
-        { value: "advanced", label: "Advanced (Leak, Burst, Tampering, Reverse Flow)", pricing: "Premium" },
-        { value: "custom", label: "Custom Alert Configuration", pricing: "Custom" }
-      ]
-    },
-    {
-      id: "software",
-      name: "Management Software",
-      description: "Select the software package for monitoring and management",
-      options: [
-        { value: "basic", label: "Basic Web Dashboard", pricing: "Included" },
-        { value: "advanced", label: "Advanced Analytics Platform", pricing: "Premium" },
-        { value: "enterprise", label: "Enterprise Integration Suite", pricing: "Enterprise" }
-      ]
-    }
+    // {
+    //   id:"quantity",
+    //   name: "Quantity",
+    //   description: "Select the number of meters you need",
+    //   options: [
+    //     { value: "1", label: "1 Meter" },
+    //     { value: "5", label: "5 Meters" },
+    //     { value: "10", label: "10 Meters" },
+    //     { value: "20", label: "20 Meters" },
+    //     { value: "50", label: "50 Meters" }
+    //   ]
+    // }
+    
+    
   ];
 
 export const atmFeatures = [
@@ -475,5 +488,141 @@ export const installationData = {
       ],
     },
   ];
-  
-  
+
+  export const pricingData = [
+    {
+        "technology": "NB-IoT",
+        "parameters": [
+            {
+                "size": "DN15",
+                "price": "6,700 KES",
+                "material":"Nylon",
+            },
+            {
+                "size": "DN20",
+                "price": "8,500 KES",
+                "material":"Nylon",
+            },
+            {
+                "size": "DN25",
+                "price": "8,500 KES",
+                "material":"Nylon",
+            },
+            {
+                "size": "DN32",
+                "price": "30,000 KES",
+                "material":"Nylon",
+            },
+            {
+                "size": "DN40",
+                "price": "45,000 KES",
+                "material":"Nylon",
+            },
+            {
+                "size": "DN50",
+                "price": "50,000 KES",
+                "material":"Brass",
+            },
+            {
+                "size": "DN80",
+                "price": "70,000 KES",
+                "material":"Brass",
+            },
+        ]
+    },
+    {
+        "technology": "4G CAT 1",
+        "parameters": [
+            {
+                "size": "DN15",
+                "price": "6,700 KES",
+                "material":"Nylon",
+            },
+            {
+                "size": "DN20",
+                "price": "8,500 KES",
+                "material":"Nylon",
+            },
+            {
+                "size": "DN25",
+                "price": "8,500 KES",
+                "material":"Nylon",
+            },
+            {
+                "size": "DN32",
+                "price": "30,000 KES",
+                "material":"Nylon",
+            },
+            {
+                "size": "DN40",
+                "price": "45,000 KES",
+                "material":"Nylon",
+            },
+            {
+                "size": "DN50",
+                "price": "50,000 KES",
+                "material":"Brass",
+            },
+            {
+                "size": "DN80",
+                "price": "70,000 KES",
+                "material":"Brass",
+            },
+        ]
+    },
+    {
+        "technology": "LoRaWAN",
+        "parameters": [
+            {
+                "size": "DN15",
+                "price": "6,700 KES",
+                "material":"Nylon",
+            },
+            {
+                "size": "DN20",
+                "price": "8,500 KES",
+                "material":"Nylon",
+            },
+            {
+                "size": "DN25",
+                "price": "8,500 KES",
+                "material":"Nylon",
+            },
+            {
+                "size": "DN32",
+                "price": "30,000 KES",
+                "material":"Nylon",
+            },
+            {
+                "size": "DN40",
+                "price": "45,000 KES",
+                "material":"Nylon",
+            },
+            {
+                "size": "DN50",
+                "price": "50,000 KES",
+                "material":"Brass",
+            },
+            {
+                "size": "DN80",
+                "price": "70,000 KES",
+                "material":"Brass",
+            },
+        ]
+    },
+
+]
+export const technologyContent = {
+  "NB-IoT": {
+    title: "NB-IoT Smart Water Meters",
+    description: "Our NB-IoT smart water meters provide reliable, low-power connectivity for efficient water management. Ideal for urban and rural applications, these meters ensure accurate readings and real-time monitoring."
+  },
+  "4G CAT 1": {
+    title: "4G CAT 1 Smart Water Meters",
+    description: "Experience high-speed data transmission with our 4G CAT 1 smart water meters. Perfect for areas with robust cellular coverage, these meters offer advanced features and seamless integration."
+  },
+  "LoRaWAN": {
+    title: "LoRaWAN Smart Water Meters",
+    description: "Leverage the power of LoRaWAN technology for long-range, low-power water metering solutions. Our LoRaWAN meters are designed for remote areas and large-scale deployments."
+  }
+};

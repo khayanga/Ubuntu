@@ -7,6 +7,7 @@ import Banner from "@/components/water-atm/Banner";
 import AtmOverview from "@/components/water-atm/AtmOverview";
 import AtmSpecs from "@/components/water-atm/AtmSpecs";
 import AtmCta from "@/components/water-atm/AtmCta";
+import Payment from "@/components/water-atm/Payment";
 const page = () => {
   const AnimatedSection = ({ children }) => {
     const ref = useRef(null);
@@ -45,6 +46,9 @@ const page = () => {
         </AnimatedSection>
         <AnimatedSection>
           <AtmSpecs />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Payment />
         </AnimatedSection>
         <AnimatedSection>
           <AtmCta />

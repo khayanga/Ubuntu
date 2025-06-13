@@ -1,10 +1,12 @@
+'use client'
 import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { waterMeterFeatures } from "@/data";
+import { technologyContent, waterMeterFeatures } from "@/data";
 import ProductCustomizer from "../Customizer";
 import Decoration from "../Decoration";
-const Banner = () => {
+const Banner = ({technology="NB-IoT"}) => {
+  const content = technologyContent[technology] || technologyContent["NB-IoT"];
   return (
     <section className="py-16 md:py-24 relative overflow-hidden">
       <Decoration />
@@ -12,16 +14,13 @@ const Banner = () => {
       <div className="container">
         <div className="max-w-3xl">
           <h1 className="text-3xl text-white md:text-4xl lg:text-5xl font-bold mb-6">
-            Smart Water Meters
+            {content.title}
           </h1>
-          <p className="text-xl text-blue-100 mb-8">
-            Advanced metering technology for precise measurement, leak
-            detection, and consumption monitoring.
-          </p>
+          <p className="text-xl text-blue-100 mb-8">{content.description}</p>
           <div className="flex flex-wrap gap-4 relative z-10">
             <ProductCustomizer
-              productName="Smart Water Meter"
-              productType="water-meter"
+              productName={`${technology} Smart Water Meter`}
+              productType={technology.toLowerCase().replace(/\s+/g, "-")}
               features={waterMeterFeatures}
             />
             <Button

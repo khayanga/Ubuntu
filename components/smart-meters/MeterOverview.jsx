@@ -1,7 +1,5 @@
 import { Banknote, Check, Droplet, ShieldCheck, Zap } from "lucide-react";
 import React from "react";
-import { LuDroplet } from "react-icons/lu";
-import { FiZap } from "react-icons/fi";
 import Image from "next/image";
 import { atmItems } from "@/data";
 

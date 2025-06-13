@@ -7,8 +7,11 @@ import Banner from "@/components/smart-meters/Banner";
 import MeterOverview from "@/components/smart-meters/MeterOverview";
 import MetersSpecs from "@/components/smart-meters/MetersSpecs";
 import MeterCta from "@/components/smart-meters/MeterCta";
+import { pricingData } from "@/data";
+import PricingTable from "@/components/smart-meters/PricingTable";
 
 const page = () => {
+  const nbIotData = pricingData.find(item => item.technology === 'NB-IoT');
   const AnimatedSection = ({ children }) => {
     const ref = useRef(null);
     const isInView = useInView(ref);
@@ -39,13 +42,16 @@ const page = () => {
       <Navbar />
       <div className="flex-grow ">
         <AnimatedSection>
-          <Banner />
+          <Banner technology="NB-IoT"  />
         </AnimatedSection>
         <AnimatedSection>
           <MeterOverview />
         </AnimatedSection>
         <AnimatedSection>
           <MetersSpecs />
+        </AnimatedSection>
+        <AnimatedSection>
+          {nbIotData && <PricingTable data={nbIotData} />}
         </AnimatedSection>
         <AnimatedSection>
           <MeterCta />
