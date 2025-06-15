@@ -3,7 +3,7 @@ import { Tabs, TabsContent, TabsTrigger, TabsList } from "../ui/tabs";
 import WaterMeterSpecs from "./Specs";
 import { applicationsData, installationData } from "@/data";
 
-const MetersSpecs = () => {
+const MetersSpecs = ({ technology = "NB-IoT" }) => {
   
   return (
     <section className="py-16 bg-gray-50 dark:bg-gray-900/50 ">
@@ -24,7 +24,7 @@ const MetersSpecs = () => {
             value="specifications"
             className="mt-6  bg-white dark:bg-gray-900  px-2 py-1 sm:px-4 sm:py-2 rounded-lg shadow-sm"
           >
-            <WaterMeterSpecs />
+            <WaterMeterSpecs technology={technology} />
           </TabsContent>
           <TabsContent
             value="applications"

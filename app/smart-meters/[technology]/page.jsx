@@ -4,6 +4,7 @@ import { pricingData } from '@/data';
 import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Banner from '@/components/smart-meters/Banner';
+import MetersSpecs from '@/components/smart-meters/MetersSpecs';
 
 const techMap = {
   '4g-cat-1': '4G CAT 1',
@@ -27,6 +28,8 @@ const Page = ({ params }) => {
     <main className="min-h-screen flex flex-col">
         <Navbar/>
         <Banner technology={techName} />
+        <MetersSpecs technology={techName} />
+        
         <div className="py-16 ">
         {techData && <PricingTable data={techData} />}
         </div>
