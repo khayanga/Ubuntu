@@ -6,7 +6,7 @@ const Banner = () => {
     <section className="py-16 relative overflow-hidden">
       <Decoration />
       <div className="container">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto text-center text-white">
           <h2 className="text-3xl font-bold mb-4 ">Get In Touch With Us</h2>
           <p className="text-blue-100 mb-8">
             Have questions about our smart water meters or ATMs? Our team is

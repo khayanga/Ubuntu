@@ -13,6 +13,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { toast } from "@/hooks/use-toast";
 
 // Define the form schema using Zod
 const formSchema = z.object({
@@ -22,7 +23,6 @@ const formSchema = z.object({
   email: z.string().email({
     message: "Please enter a valid email address",
   }),
-  phone: z.string().optional(),
   subject: z.string().min(5, {
     message: "Subject must be at least 5 characters",
   }),
@@ -32,27 +32,56 @@ const formSchema = z.object({
 });
 
 export function ContactForm() {
-  // Initialize the form
+  
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       email: "",
-      phone: "",
       subject: "",
       message: "",
     },
   });
 
-  // Handle form submission
-  function onSubmit(values) {
-    console.log(values);
-    
+
+ const onSubmit = async (formData) => {
+  try {
+    // console.log("Submitting form data:", formData);
+    const response = await fetch("https://api.waterhub.africa/api/v1/client/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || "Submission failed.");
+    }
+
+    toast({
+      title: "Success",
+      description: data.message || "Thank you for contacting us! We will get back to you soon.",
+      variant: "success",
+    });
+
+    form.reset();
+
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    toast({
+      title: "Submission Failed",
+      description: error.message || "Please try again later.",
+      variant: "destructive",
+    });
   }
+};
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)}className="space-y-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {/* Name Field */}
           <FormField
@@ -88,27 +117,6 @@ export function ContactForm() {
                   <Input
                     type="email"
                     placeholder="your@email.com"
-                    className="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          {/* Phone Field */}
-          <FormField
-            control={form.control}
-            name="phone"
-            render={({ field }) => (
-              <FormItem className="space-y-2">
-                <FormLabel className="text-sm text-foreground font-medium">
-                  Phone Number
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="+1 (555) 000-0000"
                     className="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700"
                     {...field}
                   />

@@ -1,9 +1,10 @@
 import { Banknote, Check, Droplet, ShieldCheck, Zap } from "lucide-react";
 import React from "react";
 import Image from "next/image";
-import { atmItems } from "@/data";
+import { atmItems, meterContent } from "@/data";
 
-const MeterOverview = () => {
+const MeterOverview = ({technology="NB-IoT"}) => {
+  const content = meterContent[technology] || meterContent["NB-IoT"];
   return (
     <section className="py-16 md:py-20">
       <div className="container">
@@ -13,12 +14,7 @@ const MeterOverview = () => {
               Product Overview
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              The Ubuntu Smart Water Meter represents the pinnacle of water
-              metering technology, combining precision measurement with advanced
-              connectivity and analytics capabilities. Designed for both
-              residential and commercial applications, our smart meters provide
-              real-time monitoring, and consumption analysis,
-              helping users save water and reduce costs.
+              {content.description}
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
@@ -38,7 +34,7 @@ const MeterOverview = () => {
           <div className="flex justify-center">
             <div className="rounded-xl overflow-hidden shadow-md bg-blue-50  dark:bg-gray-800 w-full max-w-md">
               <Image
-                src="/images/pic2.png"
+                src={content.image}
                 alt="Smart water management technology"
                 width={600}
                 height={400}

@@ -31,7 +31,7 @@ const Banner = () => {
               variant="outline"
               className="dark:border-blue-200 dark:text-blue-100 border-blue-700 text-blue-300 bg-gray-900 hover:shadow-lg hover:-translate-y-1"
             >
-              <Link href="/schedule-demo">Schedule Demo</Link>
+              <Link href="/contact">Schedule Demo</Link>
             </Button>
           </div>
         </div>

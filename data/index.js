@@ -3,16 +3,16 @@ import {  Banknote, ChartNoAxesCombined,  Check,  Handshake, LaptopMinimal, Shie
 
 export const navLinks = [
   { name: 'Home', href: '/' },
-  { name: 'Water Atms', href: '/water-atms' },
   { 
     name: 'Meters',
     subItems: [
-      { name: 'NB-IoT', href: '/smart-meters' },
-      { name: '4G CAT 1', href: '/smart-meters/4g-cat-1' },
+      { name: 'NB-IoT/4G CAT 1', href: '/smart-meters' },
+      // { name: '4G CAT 1', href: '/smart-meters/4g-cat-1' },
       { name: 'LoRaWAN', href: '/smart-meters/lorawan' },
     ]
   },
-  { name: 'Schedule Demo', href: '/schedule-demo' },
+   { name: 'Water Atms', href: '/water-atms' },
+  // { name: 'Schedule Demo', href: '/schedule-demo' },
 ];
   export const atmData = [
     {
@@ -624,5 +624,22 @@ export const technologyContent = {
   "LoRaWAN": {
     title: "LoRaWAN Smart Water Meters",
     description: "Leverage the power of LoRaWAN technology for long-range, low-power water metering solutions. Our LoRaWAN meters are designed for remote areas and large-scale deployments."
+  }
+};
+export const meterContent = {
+  "NB-IoT": {
+    title: "NB-IoT Smart Water Meters",
+    description: "Our NB-IoT smart water meters provide reliable, low-power connectivity for efficient water management. Ideal for urban and rural applications, these meters ensure accurate readings and real-time monitoring.",
+    image:"/images/newmeter.png"
+  },
+  "4G CAT 1": {
+    title: "4G CAT 1 Smart Water Meters",
+    description: "Experience high-speed data transmission with our 4G CAT 1 smart water meters. Perfect for areas with robust cellular coverage, these meters offer advanced features and seamless integration.",
+    image:"/images/logo.png"
+  },
+  "LoRaWAN": {
+    title: "LoRaWAN Smart Water Meters",
+    description: "Leverage the power of LoRaWAN technology for long-range, low-power water metering solutions. Our LoRaWAN meters are designed for remote areas and large-scale deployments.",
+    image:"/images/smartmeter.png"
   }
 };

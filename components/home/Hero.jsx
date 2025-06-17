@@ -107,7 +107,7 @@ useEffect(() => {
                 variant="outline"
                 className="border-blue-200 text-sky-600 hover:bg-blue-50 dark:border-sky-600 dark:text-blue-300 dark:hover:bg-blue-900/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               >
-                <Link href="/schedule-demo">Schedule Demo</Link>
+                <Link href="/contact">Schedule Demo</Link>
               </Button>
             </div>
           </div>

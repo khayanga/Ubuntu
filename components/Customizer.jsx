@@ -35,13 +35,7 @@ import { ArrowRight, Check, X } from "lucide-react";
 const formSchema = z.object({
   name: z.string().min(2, { message: "Please enter your full name" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
-  phone: z.string().min(10, { message: "Please enter a valid phone number" }),
-  company: z.string().min(2, { message: "Please enter your company name" }),
   quantity: z.string().min(1, { message: "Please specify quantity" }),
-  additionalInfo: z.string().optional(),
-  contactConsent: z.boolean().refine((val) => val === true, {
-    message: "You must agree to be contacted",
-  }),
 });
 
 const ProductCustomizer = ({ productName, productType, features }) => {
@@ -55,11 +49,7 @@ const ProductCustomizer = ({ productName, productType, features }) => {
     defaultValues: {
       name: "",
       email: "",
-      phone: "",
-      company: "",
       quantity: "1",
-      additionalInfo: "",
-      contactConsent: false,
     },
   });
 
@@ -73,35 +63,68 @@ const ProductCustomizer = ({ productName, productType, features }) => {
   const onSubmit = async (data) => {
     setIsSubmitting(true);
 
-    // Combine form data with selected features
-    const quoteData = {
-      ...data,
-      productName,
-      productType,
-      customFeatures: Object.entries(selectedFeatures).map(
-        ([featureId, value]) => {
-          const feature = features.find((f) => f.id === featureId);
-          const option = feature?.options.find((o) => o.value === value);
-          return {
-            feature: feature?.name,
-            selectedOption: option?.label,
-            pricing: option?.pricing,
-          };
-        }
-      ),
+    const sizeOption = selectedFeatures["size"];
+
+    if (!sizeOption) {
+      toast({
+        title: "Size is required",
+        description: "Please select a size for your meter",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+    const technologyMap = {
+      "NB-IoT": "nbiot",
+      "4G CAT 1": "4g",
+      LoRaWAN: "lorawan",
     };
 
-    
-    try {
-      console.log("Quote request data:", quoteData);
+    const payload = {
+      client_name: data.name,
+      client_email: data.email,
+      technology: technologyMap[productType] || "nbiot",
+      size: sizeOption,
+      quantity: parseInt(data.quantity, 10),
+    };
 
-      // In a real app, this would be an API call to send the email
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      console.log("Sending payload:", payload);
+
+      const response = await fetch(
+        "https://api.waterhub.africa/api/v1/client/meter/quote",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      if (!response.ok) {
+        let errorDetails = "";
+        try {
+          const errorResponse = await response.json();
+          errorDetails = errorResponse.message || JSON.stringify(errorResponse);
+        } catch (e) {
+          errorDetails = await response.text();
+        }
+
+        throw new Error(
+          `API request failed with status ${response.status}: ${errorDetails}`
+        );
+      }
+
+      const responseData = await response.json();
+      console.log("API Response:", responseData);
 
       toast({
         title: "Quote request submitted!",
         description:
-          "We'll send the customized price quote to your email within 24 hours.",
+          responseData.message ||
+          "We'll send your customized price quote to your email shortly.",
         variant: "default",
       });
 
@@ -109,9 +132,11 @@ const ProductCustomizer = ({ productName, productType, features }) => {
       form.reset();
       setSelectedFeatures({});
     } catch (error) {
+      console.error("API Error:", error);
       toast({
         title: "Something went wrong",
         description:
+          error.message ||
           "Your quote request couldn't be submitted. Please try again.",
         variant: "destructive",
       });
@@ -240,46 +265,6 @@ const ProductCustomizer = ({ productName, productType, features }) => {
 
                     <FormField
                       control={form.control}
-                      name="phone"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-gray-900 dark:text-white">
-                            Phone Number*
-                          </FormLabel>
-                          <FormControl>
-                            <Input
-                              placeholder="+1 (555) 000-0000"
-                              {...field}
-                              className="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700"
-                            />
-                          </FormControl>
-                          <FormMessage className="text-red-500 dark:text-red-400" />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="company"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-gray-900 dark:text-white">
-                            Company/Organization*
-                          </FormLabel>
-                          <FormControl>
-                            <Input
-                              placeholder="Your company name"
-                              {...field}
-                              className="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700"
-                            />
-                          </FormControl>
-                          <FormMessage className="text-red-500 dark:text-red-400" />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
                       name="quantity"
                       render={({ field }) => (
                         <FormItem>
@@ -300,48 +285,6 @@ const ProductCustomizer = ({ productName, productType, features }) => {
                       )}
                     />
                   </div>
-
-                  <FormField
-                    control={form.control}
-                    name="additionalInfo"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-gray-900 dark:text-white">
-                          Additional Requirements
-                        </FormLabel>
-                        <FormControl>
-                          <Textarea
-                            placeholder="Tell us about any specific needs or requirements..."
-                            className="min-h-[100px] bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700 "
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage className="text-red-500 dark:text-red-400" />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
-                    name="contactConsent"
-                    render={({ field }) => (
-                      <FormItem className="flex flex-row items-start space-x-3 space-y-0  p-4 ">
-                        <FormControl>
-                          <Checkbox
-                            checked={field.value}
-                            onCheckedChange={field.onChange}
-                            className="h-5 w-5 border-2 border-gray-300 dark:border-gray-600 data-[state=checked]:bg-blue-600 data-[state=checked]:text-white"
-                          />
-                        </FormControl>
-                        <div className="space-y-1 leading-none">
-                          <FormLabel className="text-gray-900 dark:text-white">
-                            I agree to be contacted regarding my quote request*
-                          </FormLabel>
-                        </div>
-                        <FormMessage className="text-red-500 dark:text-red-400" />
-                      </FormItem>
-                    )}
-                  />
 
                   <div className="flex justify-end gap-2 pt-4">
                     <Button

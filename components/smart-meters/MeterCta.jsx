@@ -1,10 +1,11 @@
 import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { waterMeterFeatures } from "@/data";
+import { technologyContent, waterMeterFeatures } from "@/data";
 import ProductCustomizer from "../Customizer";
 
-const MeterCta = () => {
+const MeterCta = ({ technology = "NB-IoT" }) => {
+  const content = technologyContent[technology] || technologyContent["NB-IoT"];
   return (
     <section className="py-16 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-sky-600 -z-10"></div>
@@ -25,8 +26,8 @@ const MeterCta = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
             <ProductCustomizer
-              productName="Smart Water Meter"
-              productType="water-meter"
+              productName={`${technology} Smart Water Meter`}
+              productType={technology.toLowerCase().replace(/\s+/g, "-")}
               features={waterMeterFeatures}
             />
             <Button asChild variant="outline">

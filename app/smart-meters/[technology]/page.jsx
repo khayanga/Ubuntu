@@ -5,6 +5,9 @@ import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Banner from '@/components/smart-meters/Banner';
 import MetersSpecs from '@/components/smart-meters/MetersSpecs';
+import MeterOverview from '@/components/smart-meters/MeterOverview';
+import AnimatedPageContent from '@/components/smart-meters/AnimatedContent';
+import Footer from '@/components/Footer';
 
 const techMap = {
   '4g-cat-1': '4G CAT 1',
@@ -27,12 +30,8 @@ const Page = ({ params }) => {
   return (
     <main className="min-h-screen flex flex-col">
         <Navbar/>
-        <Banner technology={techName} />
-        <MetersSpecs technology={techName} />
-        
-        <div className="py-16 ">
-        {techData && <PricingTable data={techData} />}
-        </div>
+        <AnimatedPageContent techName={techName} techData={techData}/>
+        <Footer/>
 
     </main>
     
