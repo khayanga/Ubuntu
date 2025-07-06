@@ -31,7 +31,7 @@ const MeterCta = ({ technology = "NB-IoT" }) => {
               features={waterMeterFeatures}
             />
             <Button asChild variant="outline">
-              <Link href="/schedule-demo">Schedule Demo</Link>
+              <Link href="/contact">Schedule Demo</Link>
             </Button>
           </div>
         </div>

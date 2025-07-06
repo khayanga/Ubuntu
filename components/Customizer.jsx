@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+'use client'
+import React, { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -21,8 +22,7 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
+
 import {
   Dialog,
   DialogContent,
@@ -30,28 +30,29 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { ArrowRight, Check, X } from "lucide-react";
+import { ArrowRight, Check, X, XIcon } from "lucide-react";
 
-const formSchema = z.object({
+const atmFormSchema = z.object({
+  name: z.string().min(2, { message: "Please enter your full name" }),
+  email: z.string().email({ message: "Please enter a valid email address" }),
+  quantity: z.string().min(1, { message: "Please specify quantity" }),
+  installationLocation: z
+    .string()
+    .min(1, { message: "Please enter installation location" }),
+});
+
+const meterFormSchema = z.object({
   name: z.string().min(2, { message: "Please enter your full name" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
   quantity: z.string().min(1, { message: "Please specify quantity" }),
 });
 
 const ProductCustomizer = ({ productName, productType, features }) => {
+  const isATM = productType === "ATM";
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedFeatures, setSelectedFeatures] = useState({});
   const { toast } = useToast();
-
-  const form = useForm({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      quantity: "1",
-    },
-  });
 
   const handleFeatureChange = (featureId, value) => {
     setSelectedFeatures((prev) => ({
@@ -60,68 +61,145 @@ const ProductCustomizer = ({ productName, productType, features }) => {
     }));
   };
 
+  const form = useForm({
+    resolver: zodResolver(isATM ? atmFormSchema : meterFormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      quantity: "1",
+      installationLocation: "",
+    },
+  });
+
   const onSubmit = async (data) => {
     setIsSubmitting(true);
 
-    const sizeOption = selectedFeatures["size"];
-
-    if (!sizeOption) {
-      toast({
-        title: "Size is required",
-        description: "Please select a size for your meter",
-        variant: "destructive",
-      });
-      setIsSubmitting(false);
-      return;
-    }
-    const technologyMap = {
-      "NB-IoT": "nbiot",
-      "4G CAT 1": "4g",
-      LoRaWAN: "lorawan",
-    };
-
-    const payload = {
-      client_name: data.name,
-      client_email: data.email,
-      technology: technologyMap[productType] || "nbiot",
-      size: sizeOption,
-      quantity: parseInt(data.quantity, 10),
-    };
-
     try {
-      console.log("Sending payload:", payload);
+      let payload, endpoint;
 
-      const response = await fetch(
-        "https://api.waterhub.africa/api/v1/client/meter/quote",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(payload),
-        }
-      );
-
-      if (!response.ok) {
-        let errorDetails = "";
-        try {
-          const errorResponse = await response.json();
-          errorDetails = errorResponse.message || JSON.stringify(errorResponse);
-        } catch (e) {
-          errorDetails = await response.text();
+      if (isATM) {
+        if (!selectedFeatures["power"]) {
+          toast({
+            title: "Missing information",
+            description: "Please select a power configuration",
+            variant: "destructive",
+          });
+          setIsSubmitting(false);
+          return;
         }
 
-        throw new Error(
-          `API request failed with status ${response.status}: ${errorDetails}`
-        );
+        if (!selectedFeatures["no-of-taps"]) {
+          toast({
+            title: "Missing information",
+            description: "Please select number of taps",
+            variant: "destructive",
+          });
+          setIsSubmitting(false);
+          return;
+        }
+
+        if (!data.installationLocation) {
+          toast({
+            title: "Missing information",
+            description: "Please enter installation location",
+            variant: "destructive",
+          });
+          setIsSubmitting(false);
+          return;
+        }
+
+        payload = {
+          client_name: data.name,
+          client_email: data.email,
+          taps: parseInt(selectedFeatures["no-of-taps"], 10),
+          solar_availability: selectedFeatures["power"],
+          installation_location: data.installationLocation,
+          quantity: parseInt(data.quantity, 10),
+        };
+
+        endpoint = "https://api.waterhub.africa/api/v1/client/atm/quote";
+      } else {
+        // METER payload
+        if (!selectedFeatures["size"]) {
+          toast({
+            title: "Missing information",
+            description: "Please select a meter size",
+            variant: "destructive",
+          });
+          setIsSubmitting(false);
+          return;
+        }
+
+        if (!selectedFeatures["measurement-tech"]) {
+          toast({
+            title: "Missing information",
+            description: "Please select a measurement technology",
+            variant: "destructive",
+          });
+          setIsSubmitting(false);
+          return;
+        }
+
+        const technologyMap = {
+          "nb-iot": "nbiot",
+          "4g-cat-1": "cat1",
+          lorawan: "lorawan",
+        };
+
+        const selectedTech = selectedFeatures["measurement-tech"];
+        const mappedTech = technologyMap[selectedTech];
+
+        if (!mappedTech) {
+          toast({
+            title: "Invalid technology",
+            description: "The selected technology is not supported.",
+            variant: "destructive",
+          });
+          setIsSubmitting(false);
+          return;
+        }
+
+        payload = {
+          client_name: data.name,
+          client_email: data.email,
+          technology: mappedTech,
+          size: selectedFeatures["size"],
+          quantity: parseInt(data.quantity, 10),
+        };
+
+        endpoint = "https://api.waterhub.africa/api/v1/client/meter/quote";
       }
+
+      console.log("Payload:", JSON.stringify(payload, null, 2));
+
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
 
       const responseData = await response.json();
       console.log("API Response:", responseData);
 
+      if (!response.ok) {
+        if (response.status === 422 && responseData.errors) {
+          const errorMessages = Object.entries(responseData.errors)
+            .map(([field, errors]) => `${field}: ${errors.join(", ")}`)
+            .join("; ");
+          throw new Error(`Validation errors: ${errorMessages}`);
+        }
+        throw new Error(
+          responseData.message ||
+            `API request failed with status ${response.status}`
+        );
+      }
+
       toast({
         title: "Quote request submitted!",
+         className:'bg-blue-500 text-white',
         description:
           responseData.message ||
           "We'll send your customized price quote to your email shortly.",
@@ -134,10 +212,8 @@ const ProductCustomizer = ({ productName, productType, features }) => {
     } catch (error) {
       console.error("API Error:", error);
       toast({
-        title: "Something went wrong",
-        description:
-          error.message ||
-          "Your quote request couldn't be submitted. Please try again.",
+        title: "Submission failed",
+        description: error.message || "Please check your inputs and try again.",
         variant: "destructive",
       });
     } finally {
@@ -171,9 +247,10 @@ const ProductCustomizer = ({ productName, productType, features }) => {
               <h3 className="font-medium text-lg text-gray-900 dark:text-white">
                 1. Select Your Features
               </h3>
+
               <div className="space-y-4">
                 {features.map((feature) => (
-                  <div key={feature.id} className="p-4 border rounded-lg ">
+                  <div key={feature.id} className="p-4 border rounded-lg">
                     <div className="mb-2 gap-2">
                       <h4 className="font-medium text-gray-900 dark:text-white">
                         {feature.name}
@@ -182,31 +259,41 @@ const ProductCustomizer = ({ productName, productType, features }) => {
                         {feature.description}
                       </p>
                     </div>
-                    <Select
-                      value={selectedFeatures[feature.id] || ""}
-                      onValueChange={(value) =>
-                        handleFeatureChange(feature.id, value)
-                      }
-                    >
-                      <SelectTrigger className="bg-white dark:bg-gray-700">
-                        <SelectValue
-                          placeholder="Select an option"
-                          className="text-gray-900 dark:text-white"
-                        />
-                      </SelectTrigger>
-                      <SelectContent className="bg-gray-50 dark:bg-gray-800">
-                        {feature.options.map((option) => (
-                          <SelectItem
-                            key={option.value}
-                            value={option.value}
-                            className="text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-                          >
-                            {option.label}{" "}
-                            {option.pricing && `(${option.pricing})`}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                    {feature.id === "installation location" ? (
+                      <Input
+                        value={form.watch("installationLocation")}
+                        onChange={(e) =>
+                          form.setValue("installationLocation", e.target.value)
+                        }
+                        placeholder="Enter installation location"
+                        className="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700"
+                      />
+                    ) : (
+                      <Select
+                        value={selectedFeatures[feature.id] || ""}
+                        onValueChange={(value) =>
+                          handleFeatureChange(feature.id, value)
+                        }
+                      >
+                        <SelectTrigger className="bg-white dark:bg-gray-700">
+                          <SelectValue
+                            placeholder={`Select ${feature.name.toLowerCase()}`}
+                            className="text-gray-900 dark:text-white"
+                          />
+                        </SelectTrigger>
+                        <SelectContent className="bg-gray-50 dark:bg-gray-800">
+                          {feature.options.map((option) => (
+                            <SelectItem
+                              key={option.value}
+                              value={option.value}
+                              className="text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                            >
+                              {option.label}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    )}
                   </div>
                 ))}
               </div>

@@ -42,12 +42,13 @@ const AnimatedPageContent = ({ techName, techData }) => {
           <Banner technology={techName} />
         </AnimatedSection>
         
-        <AnimatedSection>
-          <MetersSpecs technology={techName} />
-        </AnimatedSection>
         
         <AnimatedSection>
           <MeterOverview technology={techName}/>
+        </AnimatedSection>
+        
+        <AnimatedSection>
+          <MetersSpecs technology={techName} />
         </AnimatedSection>
         
         <AnimatedSection>

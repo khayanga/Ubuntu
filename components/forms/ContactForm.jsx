@@ -63,6 +63,7 @@ export function ContactForm() {
 
     toast({
       title: "Success",
+      className:'bg-blue-500 text-white',
       description: data.message || "Thank you for contacting us! We will get back to you soon.",
       variant: "success",
     });

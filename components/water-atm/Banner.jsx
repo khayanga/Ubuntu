@@ -21,8 +21,8 @@ const Banner = () => {
           </p>
           <div className="flex flex-wrap gap-4 relative z-10">
             <ProductCustomizer
-              productName="Smart Water Meter"
-              productType="water-atm"
+              productName="Smart Water ATM"
+              productType="ATM"
               features={atmFeatures}
             />
             <Button

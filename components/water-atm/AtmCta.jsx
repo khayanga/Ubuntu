@@ -25,11 +25,11 @@ const AtmCta = () => {
             <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
             <ProductCustomizer 
                   productName="Smart Water Atm" 
-                  productType="water-atm" 
+                  productType="ATM" 
                   features={atmFeatures} 
                 />
               <Button asChild variant="outline">
-                <Link href="/schedule-demo">Schedule Demo</Link>
+                <Link href="/contact">Schedule Demo</Link>
               </Button>
             </div>
           </div>

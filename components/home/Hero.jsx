@@ -7,7 +7,7 @@ import { TextGenerateEffect } from "../ui/text-generate-effect";
 import { animate, inView, stagger } from "framer-motion";
 
 const Hero = () => {
-  const words = `Smart Water Mangement Solutions.`;
+  const words = `Smart Water Management Solutions.`;
   const [isVisible, setIsVisible] = useState(false);
   const [particles, setParticles] = useState([]);
   useEffect(() => {

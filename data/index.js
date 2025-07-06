@@ -1,5 +1,9 @@
 import {  Banknote, ChartNoAxesCombined,  Check,  Handshake, LaptopMinimal, Shield, ShieldCheck, TimerReset, Zap } from "lucide-react";
 
+{/* <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBxaRui-f6UsLuv6U3DAfeFeL5Y5M6MPU&libraries=places&region=KE">
+    </script> */}
+
 
 export const navLinks = [
   { name: 'Home', href: '/' },
@@ -256,83 +260,38 @@ export const navLinks = [
       ]
       
     },
-    // {
-    //   id:"quantity",
-    //   name: "Quantity",
-    //   description: "Select the number of meters you need",
-    //   options: [
-    //     { value: "1", label: "1 Meter" },
-    //     { value: "5", label: "5 Meters" },
-    //     { value: "10", label: "10 Meters" },
-    //     { value: "20", label: "20 Meters" },
-    //     { value: "50", label: "50 Meters" }
-    //   ]
-    // }
+    
     
     
   ];
 
 export const atmFeatures = [
   {
-    id: "purification",
-    name: "Purification Technology",
-    description: "Select the water purification technology that best suits your needs",
-    options: [
-      { value: "ro-uv", label: "RO + UV (Standard)", pricing: "Included" },
-      { value: "ro-uv-uf", label: "RO + UV + UF + Mineralization", pricing: "Premium" },
-      { value: "uf-uv", label: "UF + UV", pricing: "Economy" }
-    ]
-  },
-  {
-    id: "capacity",
-    name: "Dispensing Capacity",
-    description: "Choose your daily water dispensing capacity",
-    options: [
-      { value: "1000l", label: "1,000 Liters/day", pricing: "Economy" },
-      { value: "3000l", label: "3,000 Liters/day", pricing: "Standard" },
-      { value: "5000l", label: "5,000+ Liters/day", pricing: "Premium" }
-    ]
-  },
-  {
-    id: "payment",
-    name: "Payment Options",
-    description: "Select which payment methods to include",
-    options: [
-      { value: "basic", label: "Coin/Card Only", pricing: "Economy" },
-      { value: "standard", label: "Coin/Card/Mobile Pay", pricing: "Standard" },
-      { value: "premium", label: "All Methods + RFID + QR", pricing: "Premium" }
-    ]
-  },
-  {
     id: "power",
-    name: "Power Configuration",
-    description: "Choose the power source configuration",
+    name: "Solar Availability",
+    description: "Choose if you want solar to be inculded",
     options: [
-      { value: "mains", label: "Mains Power Only", pricing: "Economy" },
-      { value: "hybrid", label: "Hybrid (Mains + Battery Backup)", pricing: "Standard" },
-      { value: "solar", label: "Solar Compatible", pricing: "Premium" }
+      { value: "yes", label: "Yes" },
+      { value: "no", label: "No" }
     ]
   },
   {
-    id: "monitoring",
-    name: "Remote Monitoring",
-    description: "Select your preferred monitoring capabilities",
+    id:'no-of-taps',
+    name: "Number of Taps",
+    description: "Select the number of dispensing taps",
     options: [
-      { value: "basic", label: "Basic Status Monitoring", pricing: "Included" },
-      { value: "advanced", label: "Advanced Diagnostics & Alerts", pricing: "Premium" },
-      { value: "premium", label: "Full Suite + Predictive Maintenance", pricing: "Enterprise" }
+      { value: "2", label: "2 Taps" },
+      { value: "4", label: "4 Taps" },
+      { value: "6", label: "6 Taps" },
     ]
   },
   {
-    id: "housing",
-    name: "Housing Options",
-    description: "Choose the external housing type",
-    options: [
-      { value: "standard", label: "Standard Indoor", pricing: "Economy" },
-      { value: "weatherproof", label: "Weatherproof", pricing: "Standard" },
-      { value: "ruggedized", label: "Ruggedized for Harsh Environments", pricing: "Premium" }
-    ]
+    id:'installation location',
+    name: "Installation Location",
+    description: "Choose the installation location for your Water ATM",
+    
   }
+ 
 ];
 
 
@@ -411,6 +370,7 @@ export const applicationsData = [
       ],
     },
   ];
+
 
 export const installationData = {
     description:
@@ -612,6 +572,7 @@ export const installationData = {
     },
 
 ]
+
 export const technologyContent = {
   "NB-IoT": {
     title: "NB-IoT Smart Water Meters",
@@ -626,11 +587,12 @@ export const technologyContent = {
     description: "Leverage the power of LoRaWAN technology for long-range, low-power water metering solutions. Our LoRaWAN meters are designed for remote areas and large-scale deployments."
   }
 };
+
 export const meterContent = {
   "NB-IoT": {
     title: "NB-IoT Smart Water Meters",
-    description: "Our NB-IoT smart water meters provide reliable, low-power connectivity for efficient water management. Ideal for urban and rural applications, these meters ensure accurate readings and real-time monitoring.",
-    image:"/images/newmeter.png"
+    description: "NB IOT water meter is a kind of intelligent water meter which can be read remotely and controlled by valve. It communicates with the server directly through the narrow band Internet of things (nb-iot).",
+    image:"/images/iot.png"
   },
   "4G CAT 1": {
     title: "4G CAT 1 Smart Water Meters",
@@ -640,6 +602,39 @@ export const meterContent = {
   "LoRaWAN": {
     title: "LoRaWAN Smart Water Meters",
     description: "Leverage the power of LoRaWAN technology for long-range, low-power water metering solutions. Our LoRaWAN meters are designed for remote areas and large-scale deployments.",
-    image:"/images/smartmeter.png"
+    image:"/images/lorawan.png"
   }
 };
+
+export const atmFeatureSpecs = [
+  {
+    title: "24/7 Availability",
+    description: "Provides access to clean drinking water at all times.",
+  },
+  {
+    title: "Smart Technology",
+    description:
+      "Equipped with IoT capabilities for remote monitoring and management.",
+  },
+  
+  {
+    title: "Payment Options",
+    description:
+      "Accepts various payment methods including cash, RFID, and mobile payments.",
+  },
+  {
+    title: "Tariffs and Calibration Settings",
+    description:
+      "Enables dynamic pricing based on volume or time of day, with precise calibration controls to ensure accurate dispensing.",
+  },
+  {
+    title: "Reporting and Analytics",
+    description:
+      "Allows operators to monitor and manage multiple ATMs from a central location, through the web dashboard.",
+  },
+  {
+    title: "Simultaneous Dispensing",
+    description:
+      "Supports multiple users drawing water from different outlets at the same time without performance loss, enhancing user efficiency in high-demand areas.",
+  },
+];

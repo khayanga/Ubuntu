@@ -1,10 +1,9 @@
 import React from "react";
 import Specs from "./Specs";
 import { Tabs, TabsContent, TabsTrigger, TabsList } from "../ui/tabs";
-import { serviceSupport, useCases } from "@/data";
+import { atmFeatureSpecs, serviceSupport, useCases } from "@/data";
 
 const AtmSpecs = () => {
-  
   return (
     <section className="py-16 bg-gray-50 dark:bg-gray-900/50">
       <div className="container">
@@ -18,13 +17,38 @@ const AtmSpecs = () => {
           <TabsList className="w-full flex overflow-x-auto md:grid md:grid-cols-3 gap-1 md:gap-4">
             <TabsTrigger value="specifications">Specifications</TabsTrigger>
             <TabsTrigger value="use-cases">Use Cases</TabsTrigger>
-            <TabsTrigger value="service">Service & Support</TabsTrigger>
+            <TabsTrigger value="features">Features</TabsTrigger>
+            {/* <TabsTrigger value="service">Service & Support</TabsTrigger> */}
           </TabsList>
           <TabsContent
             value="specifications"
             className="mt-6 bg-white dark:bg-gray-900 p-6 rounded-lg shadow-sm"
           >
             <Specs />
+          </TabsContent>
+
+          <TabsContent
+            value="features"
+            className="mt-6 bg-white dark:bg-gray-900 p-6 rounded-lg shadow-sm"
+          >
+            <div className="space-y-6">
+              <h3 className="text-xl font-bold mb-4 text-sky-600">
+                Key Features
+              </h3>
+              <ul className="list-disc list-inside space-y-2">
+                {atmFeatureSpecs.map((feature, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="text-sky-600 mr-2">✓</span>
+                    <span>
+                      <span className="text-sky-600 font-semibold">
+                        {feature.title}:
+                      </span>{" "}
+                      {feature.description}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </TabsContent>
           <TabsContent
             value="use-cases"
@@ -55,7 +79,7 @@ const AtmSpecs = () => {
             </div>
           </TabsContent>
 
-          <TabsContent
+          {/* <TabsContent
             value="service"
             className="mt-6 bg-white dark:bg-gray-900 p-6 rounded-lg shadow-sm"
           >
@@ -83,7 +107,7 @@ const AtmSpecs = () => {
                 ))}
               </div>
             </div>
-          </TabsContent>
+          </TabsContent> */}
         </Tabs>
       </div>
     </section>
@@ -91,3 +115,5 @@ const AtmSpecs = () => {
 };
 
 export default AtmSpecs;
+
+

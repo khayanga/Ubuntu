@@ -1,11 +1,8 @@
 import React from 'react';
-import PricingTable from '@/components/smart-meters/PricingTable';
 import { pricingData } from '@/data';
 import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar';
-import Banner from '@/components/smart-meters/Banner';
-import MetersSpecs from '@/components/smart-meters/MetersSpecs';
-import MeterOverview from '@/components/smart-meters/MeterOverview';
+
 import AnimatedPageContent from '@/components/smart-meters/AnimatedContent';
 import Footer from '@/components/Footer';
 
