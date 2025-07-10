@@ -39,7 +39,7 @@ const Banner = () => {
           
           <div className="relative w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-full lg:min-h-[400px]">
             <Image
-              src="/images/newatm.png"
+              src="/images/banner.png"
               alt="Smart water management technology"
               fill
               className="object-contain object-center"
