@@ -2,7 +2,6 @@ import React from 'react';
 import { pricingData } from '@/data';
 import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar';
-
 import AnimatedPageContent from '@/components/smart-meters/AnimatedContent';
 import Footer from '@/components/Footer';
 

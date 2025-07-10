@@ -1,8 +1,5 @@
 import {  Banknote, ChartNoAxesCombined,  Check,  Handshake, LaptopMinimal, Shield, ShieldCheck, TimerReset, Zap } from "lucide-react";
 
-{/* <script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBxaRui-f6UsLuv6U3DAfeFeL5Y5M6MPU&libraries=places&region=KE">
-    </script> */}
 
 
 export const navLinks = [
@@ -576,7 +573,8 @@ export const installationData = {
 export const technologyContent = {
   "NB-IoT": {
     title: "NB-IoT Smart Water Meters",
-    description: "Our NB-IoT smart water meters provide reliable, low-power connectivity for efficient water management. Ideal for urban and rural applications, these meters ensure accurate readings and real-time monitoring."
+    description: "Our NB-IoT smart water meters provide reliable, low-power connectivity for efficient water management. Ideal for urban and rural applications, these meters ensure accurate readings and real-time monitoring.",
+    image: "/images/iot.png"
   },
   "4G CAT 1": {
     title: "4G CAT 1 Smart Water Meters",
@@ -584,7 +582,8 @@ export const technologyContent = {
   },
   "LoRaWAN": {
     title: "LoRaWAN Smart Water Meters",
-    description: "Leverage the power of LoRaWAN technology for long-range, low-power water metering solutions. Our LoRaWAN meters are designed for remote areas and large-scale deployments."
+    description: "Leverage the power of LoRaWAN technology for long-range, low-power water metering solutions. Our LoRaWAN meters are designed for remote areas and large-scale deployments.",
+    image: "/images/lorawan.png"
   }
 };
 

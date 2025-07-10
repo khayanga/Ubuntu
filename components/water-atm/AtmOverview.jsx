@@ -62,10 +62,10 @@ const AtmOverview = () => {
           <div className="flex justify-center">
             <div className="rounded-xl overflow-hidden shadow-md bg-blue-50  dark:bg-gray-800 w-full max-w-md">
               <Image
-                src="/images/newatm.png"
+                src="/images/atm2.png"
                 alt="Smart water management technology"
-                width={500}
-                height={300}
+                width={400}
+                height={500}
                 className="w-full h-auto object-contain"
                 priority
               />
