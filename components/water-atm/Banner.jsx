@@ -17,7 +17,9 @@ const Banner = () => {
               Water ATMs
             </h1>
             <p className="text-xl text-blue-100 mb-8">
-              Ubuntu water ATM enures there is  24/7 access to affordable, clean drinking water. Advanced technology for safe and convenient self-service.
+              Our water ATMs aim to promote enterprenuership, sustainability and efficency in the water sector
+              .It fosters accounatability and transparency in water distribution,in terms of sales translating into volumes
+              to the expected revenue expected of the business. 
             </p>
             <div className="flex flex-wrap gap-4 relative z-10">
               <ProductCustomizer
@@ -39,7 +41,7 @@ const Banner = () => {
           
           <div className="relative w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-full lg:min-h-[400px]">
             <Image
-              src="/images/banner.png"
+              src="/images/banner-atm.png"
               alt="Smart water management technology"
               fill
               className="object-contain object-center"

@@ -41,7 +41,7 @@ const Banner = ({ technology = "NB-IoT" }) => {
           {/* Added Image Container */}
           <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-full lg:min-h-[400px]">
             <Image
-              src="/images/iot.png" 
+              src="/images/banner-iot.png" 
               alt={`${technology} Smart Water Meter`}
               fill
               className="object-contain object-center"
