@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -11,7 +11,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-  FormDescription,
+  
 } from "@/components/ui/form";
 import {
   Select,
@@ -30,7 +30,9 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { ArrowRight, Check, X, XIcon } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import LocationAutoComplete from "./LocationAutoComplete";
+
 
 const atmFormSchema = z.object({
   name: z.string().min(2, { message: "Please enter your full name" }),
@@ -170,7 +172,7 @@ const ProductCustomizer = ({ productName, productType, features }) => {
         endpoint = "https://api.waterhub.africa/api/v1/client/meter/quote";
       }
 
-      console.log("Payload:", JSON.stringify(payload, null, 2));
+      // console.log("Payload:", JSON.stringify(payload, null, 2));
 
       const response = await fetch(endpoint, {
         method: "POST",
@@ -199,7 +201,7 @@ const ProductCustomizer = ({ productName, productType, features }) => {
 
       toast({
         title: "Quote request submitted!",
-         className:'bg-blue-500 text-white',
+        className: "bg-blue-500 text-white",
         description:
           responseData.message ||
           "We'll send your customized price quote to your email shortly.",
@@ -260,10 +262,10 @@ const ProductCustomizer = ({ productName, productType, features }) => {
                       </p>
                     </div>
                     {feature.id === "installation location" ? (
-                      <Input
+                      <LocationAutoComplete
                         value={form.watch("installationLocation")}
-                        onChange={(e) =>
-                          form.setValue("installationLocation", e.target.value)
+                        onChange={(value) =>
+                          form.setValue("installationLocation", value)
                         }
                         placeholder="Enter installation location"
                         className="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700"

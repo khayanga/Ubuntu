@@ -103,9 +103,9 @@ const FormSection = () => {
                       </div>
                       <h3 className="font-medium text-lg mb-2">Office Hours</h3>
                       <p className="text-muted-foreground">
-                        Monday - Friday: 9:00 AM - 5:30 PM EST
+                        Monday - Friday: 9:00 AM - 5:30 PM EAT (UTC+3)
                         <br />
-                        Saturday: 10:00 AM - 2:00 PM EST
+                        Saturday: 10:00 AM - 2:00 PM EAT (UTC+3)
                         <br />
                       </p>
                     </div>

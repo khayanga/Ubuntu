@@ -160,3 +160,6 @@
 .hover-glow {
   @apply hover:shadow-[0_0_15px_rgba(0,120,255,0.5)] transition-all duration-300;
 }
+
+
+

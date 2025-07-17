@@ -74,24 +74,7 @@ export const navLinks = [
     }
     
   ];
-  export const payments = [
-    {
-      title: "Mpesa Payment Steps",
-      description: "Pay for water quickly and securely using M-Pesa. Our system ensures instant payment processing with end-to-end encryption for your safety. Follow these simple steps",
-      image: "/images/steps.png",
-      reverse: true,
-      imageClass: "object-contain"
-    },
-    {
-      title: "Tag Payment Steps",
-      description: "Enjoy the fastest way to pay using NFC-enabled devices or contactless cards. Our Tag system provides instant authentication without physical contact",
-      image: "/images/tag_pay.png",
-      reverse: false,
-      imageClass: "object-contain"
-    },
-    
-    
-  ];
+ 
 
   export const cardData = [
     {
@@ -277,9 +260,11 @@ export const atmFeatures = [
     name: "Number of Taps",
     description: "Select the number of dispensing taps",
     options: [
+      { value: "1", label: "1 Tap" },
       { value: "2", label: "2 Taps" },
+      { value: "3", label: "3 Taps" },
       { value: "4", label: "4 Taps" },
-      { value: "6", label: "6 Taps" },
+      
     ]
   },
   {
@@ -306,9 +291,10 @@ export const atmFeatures = [
     answer: "We offer email support, phone support, and on-site technical assistance for enterprise customers. All products come with a standard support package."
   },
   {
-    question: "Do you ship internationally?",
-    answer: "Yes, we ship our products worldwide. Shipping costs and delivery times vary by location. Contact our sales team for specific information."
-  }
+    question: "Can I monitor my water usage remotely?",
+    answer: "Absolutely. With our mobile and web dashboard, you can track real-time water usage, detect leaks, and manage billing."
+  },
+  
 ];
 
 export const atmItems = [
@@ -583,7 +569,7 @@ export const technologyContent = {
   "LoRaWAN": {
     title: "LoRaWAN Smart Water Meters",
     description: "Leverage the power of LoRaWAN technology for long-range, low-power water metering solutions. Our LoRaWAN meters are designed for remote areas and large-scale deployments.",
-    image: "/images/lorawan.png"
+    image: "/images/lorawan1.png"
   }
 };
 
@@ -637,3 +623,28 @@ export const atmFeatureSpecs = [
       "Supports multiple users drawing water from different outlets at the same time without performance loss, enhancing user efficiency in high-demand areas.",
   },
 ];
+
+
+export const atmFeautreCards = [
+  {
+    image: "/images/timer.png",
+    title: "24/7 Access",
+    description: "Enjoy round-the-clock access to clean, safe drinking water whenever you need it. We ensure you stay hydrated day and night!.",
+  },
+  {
+    image:"/images/scalability.png",
+    title: "Scalability",
+    description: "Designed to grow with your community, our Smart Water ATMs can easily adapt to increasing demand, ensuring everyone has access.",
+  },
+  {
+    image:"/images/mpesa.png",
+    title: "M-Pesa Integration",
+    description: "No cash? No worries! Our ATMs support M-Pesa, making mobile payments quick and secure for effortless water access.",
+  },
+  {
+    image:"/images/dispensing.png",
+    title: "Automated Dispensing",
+    description: "Get hassle-free water dispensing at the touch of a button. Only pay for what you need with our precise control system.",
+  },
+  
+];       
