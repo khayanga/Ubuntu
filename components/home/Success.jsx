@@ -37,7 +37,7 @@ const Success = () => {
       <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-sky-500/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-sky-500/10 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
       
-      <div className="container mx-auto px-4">
+      <div className="container p-2 mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">Success Stories</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -50,7 +50,7 @@ const Success = () => {
             align: "center",
             loop: true,
           }}
-          className="w-full max-w-6xl mx-auto"
+          className="w-full mx-auto"
         >
           <CarouselContent className="-ml-4">
             {successStories.map((story, index) => (

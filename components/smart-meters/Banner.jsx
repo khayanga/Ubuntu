@@ -3,9 +3,9 @@ import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { technologyContent, waterMeterFeatures } from "@/data";
-import ProductCustomizer from "../Customizer";
 import Decoration from "../Decoration";
 import Image from "next/image"; 
+import ProductCustomizer from "../product-customizer/ProductCustomizer";
 
 const Banner = ({ technology = "NB-IoT" }) => {
   const content = technologyContent[technology] || technologyContent["NB-IoT"];

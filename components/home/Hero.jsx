@@ -8,6 +8,13 @@ import { animate, inView, stagger } from "framer-motion";
 
 const Hero = () => {
   const words = `Smart Water Management Solutions.`;
+  const images = [
+    "/images/lorawan1.png",
+    "/images/pic2.png",
+    "/images/atm2.png",
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [particles, setParticles] = useState([]);
   useEffect(() => {
@@ -25,6 +32,12 @@ const Hero = () => {
           easing: [0.25, 0.1, 0.25, 1],
         }
       );
+
+       animate(
+      ".hero-image-container",
+      { x: [0, -10, 0] },
+      { duration: 5, easing: "ease-in-out", repeat: Infinity }
+    );
 
       return () => {};
     });
@@ -53,6 +66,14 @@ useEffect(() => {
   }));
   setParticles(newParticles);
 }, []);
+
+ useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }, 3000); 
+    return () => clearInterval(interval);
+  }, [images.length]);
+
 
   return (
     <section className="relative overflow-hidden mx-auto px-4 sm:px-6 lg:px-8">
@@ -99,7 +120,7 @@ useEffect(() => {
                 size="lg"
                 className="bg-sky-600 hover:bg-sky-600 dark:bg-sky-600 dark:hover:bg-blue-600 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               >
-                <Link href="/water-meters">Explore Products</Link>
+                <Link href="/water-atms">Explore Products</Link>
               </Button>
               <Button
                 asChild
@@ -115,7 +136,8 @@ useEffect(() => {
           <div className="relative h-[350px] md:h-[400px] lg:h-[450px]  overflow-hidden  group hero-image-container">
             <div className="absolute inset-0 z-10"></div>
             <Image
-              src="/images/pic2.png"
+               key={currentImageIndex} 
+              src={images[currentImageIndex]}
               alt="Smart water management technology"
               width={800}
               height={600}

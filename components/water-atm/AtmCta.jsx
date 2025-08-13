@@ -1,8 +1,9 @@
 import React from 'react'
-import ProductCustomizer from '../Customizer'
+
 import { atmFeatures } from '@/data'
 import { Button } from '../ui/button'
 import Link from 'next/link'
+import ProductCustomizer from '../product-customizer/ProductCustomizer'
 
 const AtmCta = () => {
   return (

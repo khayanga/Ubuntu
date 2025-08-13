@@ -32,7 +32,7 @@ const Specs = () => {
         </Table>
 
          <div className="mt-6">
-          <h3 className="text-xl font-bold mb-4 text-sky-600">Add Ons</h3>
+          <h3 className="text-xl font-bold mb-4 text-sky-600">AddOns</h3>
           <ul className="list-none space-y-3">
             {[
               "Can support 4 taps",
@@ -54,7 +54,7 @@ const Specs = () => {
 const specs = [
   { name: 'Standard', value: '2 Taps' },
   { name: 'Dimensions', value: '300 x 250 x 150 mm' },
-  { name: 'Weight', value: '2.3 kg' },
+  { name: 'Weight', value: '3.2 kg' },
   { name: 'Power Consumption', value: '24w (12v, 2A)' },
   { name: 'Power Options', value: 'AC Mains , Solar Compatible' },
   { name: 'Network Coverage', value: '2G, 3G, 4G' },

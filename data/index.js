@@ -8,12 +8,10 @@ export const navLinks = [
     name: 'Meters',
     subItems: [
       { name: 'NB-IoT/4G CAT 1', href: '/smart-meters' },
-      // { name: '4G CAT 1', href: '/smart-meters/4g-cat-1' },
       { name: 'LoRaWAN', href: '/smart-meters/lorawan' },
     ]
   },
    { name: 'Water Atms', href: '/water-atms' },
-  // { name: 'Schedule Demo', href: '/schedule-demo' },
 ];
   export const atmData = [
     {
@@ -212,6 +210,8 @@ export const navLinks = [
       
     }
   ];
+
+
 
   export const waterMeterFeatures = [
     {

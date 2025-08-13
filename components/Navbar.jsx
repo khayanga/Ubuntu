@@ -11,12 +11,14 @@ import { navLinks } from "@/data";
 import { ChevronDown } from "lucide-react";
 import {
   NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuTrigger,
   NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
   NavigationMenuLink,
-} from "@/components/ui/navigation-menu";
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,9 +42,9 @@ const Navbar = () => {
           />
         </Link>
 
-        <nav className="hidden md:flex items-center justify-center">
+        {/* <nav className="hidden md:flex items-center justify-center">
           <NavigationMenu>
-            <NavigationMenuList className="flex items-center gap-[56px]">
+            <NavigationMenuList className="flex items-center gap-[60px] ">
               {navLinks.map((link, index) => (
                 <NavigationMenuItem key={index}>
                   {link.subItems ? (
@@ -76,7 +78,52 @@ const Navbar = () => {
               ))}
             </NavigationMenuList>
           </NavigationMenu>
-        </nav>
+        </nav> */}
+  
+    <nav className="hidden md:flex items-center justify-center">
+      <NavigationMenu>
+        <NavigationMenuList className="flex items-center gap-[60px]">
+          {navLinks.map((link, index) => (
+            <NavigationMenuItem key={index}>
+              {link.subItems ? (
+                <>
+                  <NavigationMenuTrigger className="text-sm bg-transparent hover:text-sky-600 dark:hover:text-sky-400 transition-colors data-[state=open]:text-sky-600 dark:data-[state=open]:text-sky-400">
+                    {link.name}
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="absolute left-0 w-80 rounded-md border   shadow-md z-50">
+                    <ul className="p-1 md:w-[180px] ">
+                      {link.subItems.map((sub, subIndex) => (
+                        <li key={subIndex}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              href={sub.href}
+                              className="block px-4 py-2 text-sm hover:bg-accent  rounded-md"
+                            >
+                              {sub.name}
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </>
+              ) : (
+                <NavigationMenuLink asChild>
+                  <Link
+                    href={link.href || "#"}
+                    className="text-sm hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </NavigationMenuLink>
+              )}
+            </NavigationMenuItem>
+          ))}
+        </NavigationMenuList>
+      </NavigationMenu>
+    </nav>
+  
+
 
         {/* Theme Toggle & Contact Button */}
         <div className="hidden md:flex items-center gap-4">

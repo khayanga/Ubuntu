@@ -1,10 +1,11 @@
 import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import ProductCustomizer from "../Customizer";
+
 import { atmFeatures } from "@/data";
 import Decoration from "../Decoration";
 import Image from "next/image";
+import ProductCustomizer from "../product-customizer/ProductCustomizer";
 
 const Banner = () => {
   return (

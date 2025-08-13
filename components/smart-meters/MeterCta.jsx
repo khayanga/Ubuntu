@@ -2,7 +2,8 @@ import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { technologyContent, waterMeterFeatures } from "@/data";
-import ProductCustomizer from "../Customizer";
+import ProductCustomizer from "../product-customizer/ProductCustomizer";
+
 
 const MeterCta = ({ technology = "NB-IoT" }) => {
   const content = technologyContent[technology] || technologyContent["NB-IoT"];
